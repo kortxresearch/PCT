@@ -1,4 +1,4 @@
-# PCT DELIVERABLES - Execution Guide (v59)
+# PCT DELIVERABLES - Execution Guide
 
 **Last Updated**: 2026-02-10
 
@@ -173,7 +173,7 @@ Level 3 requires execution on full GWTC catalog with population-level analysis.
 
 ---
 
-## Contact
+## Contact: contact@kort-x.com
 
-Repository: KORT-X Research / Beyond Frontiers
+Repository: KORT-X Research
 Author: Ciprian Stoichici
