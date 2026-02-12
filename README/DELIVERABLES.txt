@@ -111,7 +111,7 @@ PCT prediction:
 - Compatible with Planck 2018: dn_s/d ln k = -0.0045 ± 0.0067
 
 ================================================================================
-5) GW150914 PCT predictions capsule (NEW in v59)
+5) GW150914 PCT predictions capsule
 ================================================================================
 
 File: `gw150914_pct_predictions.py`
