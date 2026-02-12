@@ -1,0 +1,74 @@
+{
+  "decision_inputs": {
+    "delta_AIC_go_threshold": 10.0,
+    "delta_AIC_k0_vs_best_cp": 556.1214178127195,
+    "prefers_change_point": true
+  },
+  "go_no_go": {
+    "go": true,
+    "reasons": []
+  },
+  "input": {
+    "csv": "data/gw_synth_monthly.csv",
+    "n": 120
+  },
+  "models": [
+    {
+      "aic": 139.26831844001708,
+      "breakpoints": [],
+      "k": 0
+    },
+    {
+      "aic": -416.85309937270245,
+      "breakpoints": [
+        60
+      ],
+      "k": 1
+    },
+    {
+      "aic": -416.85309937270245,
+      "breakpoints": [
+        60
+      ],
+      "k": 2
+    },
+    {
+      "aic": -416.85309937270245,
+      "breakpoints": [
+        60
+      ],
+      "k": 3
+    }
+  ],
+  "null_tests": {
+    "alpha": 0.05,
+    "by_generator": {
+      "phase_randomize": {
+        "num_draws": 300,
+        "p_value": 0.0033222591362126247,
+        "seed": 12
+      },
+      "time_scramble": {
+        "num_draws": 300,
+        "p_value": 0.0033222591362126247,
+        "seed": 11
+      }
+    },
+    "p_value_combined": 0.0033222591362126247,
+    "pass": true
+  },
+  "selected": {
+    "breakpoint_dates": [
+      "2020-01-01"
+    ],
+    "breakpoints": [
+      60
+    ],
+    "k": 1,
+    "segment_means": [
+      10.110333333333331,
+      12.231499999999999
+    ],
+    "total_sse": 1.301758333329417
+  }
+}

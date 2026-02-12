@@ -1,0 +1,15 @@
+{
+  "gw_change_point": {
+    "ok": true,
+    "output": "outputs\\gw_change_points_synth.json"
+  },
+  "lvk_ringdown": {
+    "ok": true,
+    "output": "outputs\\lvk_ringdown_public_run.json"
+  },
+  "outputs_dir": "outputs",
+  "planck_scaffold": {
+    "ok": true,
+    "output": "outputs\\planck2018_running_scaffold.json"
+  }
+}

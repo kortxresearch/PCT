@@ -1,0 +1,120 @@
+{
+  "capsule": {
+    "config": {
+      "convergence": {
+        "ess_min": 1000,
+        "rhat_max": 1.01
+      },
+      "created_utc": "2026-02-10T16:24:27Z",
+      "likelihood": {
+        "high_ell": "Planck 2018 high-ell TT/TE/EE",
+        "lensing": "Planck 2018 lensing",
+        "low_ell": "Planck 2018 low-ell (T+E)"
+      },
+      "model": {
+        "model_name": "LambdaCDM + running",
+        "parameters": [
+          "omega_b",
+          "omega_c",
+          "theta_MC_100",
+          "tau",
+          "ln10^{10}A_s",
+          "n_s",
+          "alpha_s"
+        ]
+      },
+      "notes": "Protocol-level capsule only. Record the exact likelihood component names/versions in the executed run artifact. Running parameter is alpha_s := dn_s/d ln k.",
+      "priors": [
+        {
+          "dist": "uniform",
+          "name": "omega_b",
+          "params": {
+            "max": 0.1,
+            "min": 0.005
+          }
+        },
+        {
+          "dist": "uniform",
+          "name": "omega_c",
+          "params": {
+            "max": 0.99,
+            "min": 0.001
+          }
+        },
+        {
+          "dist": "uniform",
+          "name": "theta_MC_100",
+          "params": {
+            "max": 10.0,
+            "min": 0.5
+          }
+        },
+        {
+          "dist": "uniform",
+          "name": "tau",
+          "params": {
+            "max": 0.8,
+            "min": 0.01
+          }
+        },
+        {
+          "dist": "uniform",
+          "name": "ln10^{10}A_s",
+          "params": {
+            "max": 5.0,
+            "min": 1.0
+          }
+        },
+        {
+          "dist": "uniform",
+          "name": "n_s",
+          "params": {
+            "max": 1.2,
+            "min": 0.8
+          }
+        },
+        {
+          "dist": "uniform",
+          "name": "alpha_s",
+          "params": {
+            "max": 0.1,
+            "min": -0.1
+          }
+        }
+      ]
+    },
+    "pct_prediction_band": {
+      "mu": -0.012,
+      "sigma": 0.005
+    }
+  },
+  "posterior": {
+    "alpha_s": {
+      "ci68": [
+        null,
+        null
+      ],
+      "ci95": [
+        null,
+        null
+      ],
+      "mean": null,
+      "median": null
+    },
+    "convergence": {
+      "ess_min": null,
+      "rhat_max": null
+    },
+    "provenance": {
+      "boltzmann_code": null,
+      "likelihood_components_exact": {
+        "high_ell": null,
+        "lensing": null,
+        "low_ell": null
+      },
+      "likelihood_package": null,
+      "sampler": null,
+      "version_notes": null
+    }
+  }
+}
