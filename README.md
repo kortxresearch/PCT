@@ -18,9 +18,9 @@ EXECUTION STATUS (2026-02-10)
 
 All capsules have been executed with verified SHA256 checksums.
 
-================================================================================
+
 0) One-click capsule execution + pinned dependencies
-================================================================================
+
 
 Files:
 - `run_capsules.py` (runs the in-repo capsules and writes JSON under `outputs/`)
@@ -30,9 +30,9 @@ What it provides:
 - A single entry point a referee can run to generate auditable JSON artifacts.
 - Clear separation of required vs optional dependencies.
 
-================================================================================
+
 1) Reference implementation: spectral dimension d_s(ℓ)
-================================================================================
+
 
 File: `pct_ds.py`
 Output: `outputs/pct_ds_output.txt`
@@ -49,9 +49,9 @@ Executed result:
 - d_s peak = 1.723 at ℓ = 1.468
 - Refinement diagnostic: max|Δd_s| = 0.453
 
-================================================================================
+
 2) Change-point detection capsule (piecewise-constant mean; L2 SSE)
-================================================================================
+
 
 Files:
 - `gw_change_point_runner.py` (CLI runner)
@@ -69,9 +69,9 @@ Executed result:
 - Segment means: [10.11, 12.23]
 - Mean jump: Δμ = 2.12 (21% step)
 
-================================================================================
+
 3) LVK (LOSC) ringdown end-to-end capsule
-================================================================================
+
 
 File: `lvk_ringdown_end_to_end.py`
 Bundled input: `data/H-H1_LOSC_4_V2-1126259446-32.hdf5`
@@ -92,9 +92,9 @@ Executed result:
 - Null p-value: 0.12
 - OUTCOME: NULL (change-point not unique to ringdown region)
 
-================================================================================
+
 4) Planck 2018 "running inference" scaffold
-================================================================================
+
 
 File: `planck2018_running_inference.py`
 Config: `planck_running.yaml` (Cobaya configuration)
@@ -112,9 +112,9 @@ PCT prediction:
 - α_s = -0.012 ± 0.005 (68% CI: [-0.017, -0.007])
 - Compatible with Planck 2018: dn_s/d ln k = -0.0045 ± 0.0067
 
-================================================================================
-5) GW150914 PCT predictions capsule (NEW in v59)
-================================================================================
+
+5) GW150914 PCT predictions capsule 
+
 
 File: `gw150914_pct_predictions.py`
 Input: `data/GW150914_GWTC-1.hdf5` (GWTC-1 posterior samples)
@@ -132,9 +132,9 @@ Executed result:
 - t_c/M: 1.60
 - t_c (physical): 0.49 ± 0.02 ms
 
-================================================================================
+
 6) Analogue downscaling "artifact" utilities
-================================================================================
+
 
 File: `analogue_ds_artifact.py`
 
@@ -145,9 +145,9 @@ What it provides:
   - `data/arrays.npz` (optional NumPy arrays)
 - Atomic JSON writes and basic load/save error handling.
 
-================================================================================
+
 7) Minimal configurations (parsimony commitment)
-================================================================================
+
 
 These are the in-repo default settings; any deviation should be declared explicitly.
 
@@ -171,9 +171,9 @@ These are the in-repo default settings; any deviation should be declared explici
   - κ = 0.80 (PCT parameter)
   - Falls back to literature values if HDF5 parsing fails
 
-================================================================================
+
 8) Output checksums
-================================================================================
+
 
 All outputs are verified in `outputs/sha256SUMS.txt`:
 
@@ -182,9 +182,9 @@ c2a18462...  pct_ds_output.txt
 c0f26e5d...  planck2018_running.json
 3885b66a...  lvk_ringdown_public_run.json
 
-================================================================================
+
 9) Decision-relevant mapping (non-policy claim)
-================================================================================
+
 
 This manuscript is a speculative fundamental-physics framework.
 - It does NOT directly inform near-term policy/engineering decisions.
