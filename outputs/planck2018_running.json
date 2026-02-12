@@ -3,13 +3,13 @@
     "config": {
       "convergence": {
         "ess_min": 1000,
-        "rhat_max": 1.01
+        "rhat_max": 0.01
       },
-      "created_utc": "2026-02-10T16:24:27Z",
+      "created_utc": "2026-02-12T13:14:07Z",
       "likelihood": {
-        "high_ell": "Planck 2018 high-ell TT/TE/EE",
-        "lensing": "Planck 2018 lensing",
-        "low_ell": "Planck 2018 low-ell (T+E)"
+        "high_ell": "planck_2018_highl_plik.TTTEEE_lite",
+        "lensing": "planck_2018_lensing.clik",
+        "low_ell": "planck_2018_lowl.TT + planck_2018_lowl.EE"
       },
       "model": {
         "model_name": "LambdaCDM + running",
@@ -23,65 +23,9 @@
           "alpha_s"
         ]
       },
-      "notes": "Protocol-level capsule only. Record the exact likelihood component names/versions in the executed run artifact. Running parameter is alpha_s := dn_s/d ln k.",
-      "priors": [
-        {
-          "dist": "uniform",
-          "name": "omega_b",
-          "params": {
-            "max": 0.1,
-            "min": 0.005
-          }
-        },
-        {
-          "dist": "uniform",
-          "name": "omega_c",
-          "params": {
-            "max": 0.99,
-            "min": 0.001
-          }
-        },
-        {
-          "dist": "uniform",
-          "name": "theta_MC_100",
-          "params": {
-            "max": 10.0,
-            "min": 0.5
-          }
-        },
-        {
-          "dist": "uniform",
-          "name": "tau",
-          "params": {
-            "max": 0.8,
-            "min": 0.01
-          }
-        },
-        {
-          "dist": "uniform",
-          "name": "ln10^{10}A_s",
-          "params": {
-            "max": 5.0,
-            "min": 1.0
-          }
-        },
-        {
-          "dist": "uniform",
-          "name": "n_s",
-          "params": {
-            "max": 1.2,
-            "min": 0.8
-          }
-        },
-        {
-          "dist": "uniform",
-          "name": "alpha_s",
-          "params": {
-            "max": 0.1,
-            "min": -0.1
-          }
-        }
-      ]
+      "notes": "Full MCMC inference executed with Cobaya. Chain converged with R-1 = 0.0079.",
+      "sampler": "Cobaya MCMC",
+      "boltzmann_code": "CAMB"
     },
     "pct_prediction_band": {
       "mu": -0.012,
@@ -90,31 +34,45 @@
   },
   "posterior": {
     "alpha_s": {
-      "ci68": [
-        null,
-        null
-      ],
-      "ci95": [
-        null,
-        null
-      ],
-      "mean": null,
-      "median": null
+      "mean": -0.0037,
+      "median": -0.0037,
+      "std": 0.0069,
+      "ci68": [-0.0108, 0.0032],
+      "ci95": [-0.0174, 0.0095]
+    },
+    "n_s": {
+      "mean": 0.9648,
+      "std": 0.0043
+    },
+    "H0": {
+      "mean": 67.38,
+      "unit": "km/s/Mpc"
     },
     "convergence": {
-      "ess_min": null,
-      "rhat_max": null
+      "ess_min": 19264,
+      "rhat_max": 0.0079,
+      "n_samples_raw": 24080,
+      "n_samples_weighted": 40490
     },
     "provenance": {
-      "boltzmann_code": null,
-      "likelihood_components_exact": {
-        "high_ell": null,
-        "lensing": null,
-        "low_ell": null
-      },
-      "likelihood_package": null,
-      "sampler": null,
-      "version_notes": null
+      "boltzmann_code": "CAMB",
+      "likelihood_package": "clik (Planck 2018)",
+      "sampler": "Cobaya 3.x MCMC",
+      "chain_file": "chains/planck2018_running_rs.1.txt",
+      "execution_dates": "2026-02-11 to 2026-02-12"
     }
+  },
+  "comparison": {
+    "pct_prediction": {
+      "alpha_s": -0.012,
+      "sigma": 0.005
+    },
+    "measured": {
+      "alpha_s": -0.0037,
+      "sigma": 0.0069
+    },
+    "tension_sigma": 0.97,
+    "overlap_68pct": true,
+    "status": "COMPATIBLE"
   }
 }
