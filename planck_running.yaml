@@ -1,0 +1,227 @@
+# ============================================================================
+# PCT Planck 2018 Running Spectral Index Inference
+# ============================================================================
+#
+# This configuration runs LambdaCDM + running (alpha_s) inference on Planck 2018 data.
+#
+# PCT Prediction (pre-registered):
+#   alpha_s = -0.012 +/- 0.005
+#   68% CI: [-0.017, -0.007]
+#   95% CI: [-0.022, -0.002]
+#
+# IMPORTANT (CAMB parameter naming):
+#   Cobaya+CAMB expects CAMB/CosmoMC-style names. This file uses:
+#     ombh2, omch2, cosmomc_theta, tau, As, ns, nrun
+#   where:
+#     nrun == alpha_s (running of n_s)
+#
+# Usage:
+#   cobaya-install planck_running.yaml -p C:/path/to/packages --skip camb
+#   cobaya-run     planck_running.yaml -p C:/path/to/packages
+#
+# Expected runtime: 6-24 hours depending on hardware
+# ============================================================================
+
+# Where external likelihood data live (Planck clik, etc.)
+# You can also pass this via CLI: cobaya-run ... -p C:/path/to/packages
+packages_path: "C:/path/to/packages"
+# Go to Deliverables path in terminal and run from there: cobaya-run ... -p ./packages
+
+# Output prefix (Cobaya will create files like chains/planck2018_running_test.*) - change file name after every run
+output: chains/planck2018_running_test
+
+# Sampler configuration
+sampler:
+  mcmc:
+    # Convergence criteria (matching PCT scaffold requirements)
+    Rminus1_stop: 0.01      # R-1 < 0.01 (R < 1.01)
+    Rminus1_cl_stop: 0.2    # R-1 for 95% CI
+
+    # Chain settings
+    max_tries: 10000
+    burn_in: 0.3            # Discard first 30% as burn-in
+    learn_proposal: True
+    learn_proposal_Rminus1_max: 30
+
+    # Parallelization / efficiency
+    oversample_power: 0.4
+    proposal_scale: 2.4
+
+
+# Theoretical model
+theory:
+  camb:
+    # Force Cobaya to use the pip-installed CAMB (avoid compiling CAMB from source)
+    path: global
+    extra_args:
+      # Accuracy / standard settings
+      lens_potential_accuracy: 1
+      num_massive_neutrinos: 1
+      nnu: 3.046
+
+      # Pivot scale for running
+      pivot_scalar: 0.05  # k_pivot = 0.05 Mpc^-1
+
+# Likelihood configuration (Planck 2018)
+# IMPORTANT: do NOT put "path:" inside these likelihood blocks.
+# The external data location is controlled by packages_path / -p.
+likelihood:
+  planck_2018_highl_plik.TTTEEE_lite: null
+  planck_2018_lowl.TT: null
+  planck_2018_lowl.EE: null
+  planck_2018_lensing.clik: null
+
+# Parameters
+params:
+  # ========== Sampled parameters (CAMB/CosmoMC names) ==========
+
+  # Baryon density Omega_b h^2
+  ombh2:
+    prior:
+      min: 0.005
+      max: 0.1
+    ref:
+      dist: norm
+      loc: 0.02237
+      scale: 0.00015
+    proposal: 0.00015
+    latex: \Omega_\mathrm{b} h^2
+
+  # Cold dark matter density Omega_c h^2
+  omch2:
+    prior:
+      min: 0.001
+      max: 0.99
+    ref:
+      dist: norm
+      loc: 0.1200
+      scale: 0.0012
+    proposal: 0.0012
+    latex: \Omega_\mathrm{c} h^2
+
+  # CosmoMC approximation to 100*theta (CAMB input parameter is cosmomc_theta)
+  # Note: cosmomc_theta is ~0.0104, while 100*theta ~ 1.04 (so the value is scaled by 1/100).
+  cosmomc_theta:
+    prior:
+      min: 0.005
+      max: 0.02
+    ref:
+      dist: norm
+      loc: 0.0104092
+      scale: 0.0000031
+    proposal: 0.0000031
+    latex: 100\theta_\mathrm{MC}
+
+  # Optical depth to reionization
+  tau:
+    prior:
+      min: 0.01
+      max: 0.8
+    ref:
+      dist: norm
+      loc: 0.0544
+      scale: 0.0073
+    proposal: 0.0073
+    latex: \tau_\mathrm{reio}
+
+  # Amplitude of primordial spectrum (A_s)
+  As:
+    prior:
+      min: 2.718e-10   # = 1e-10 * exp(1.0)
+      max: 1.484e-08   # = 1e-10 * exp(5.0)
+    ref:
+      dist: norm
+      loc: 2.1e-09
+      scale: 3.0e-11
+    proposal: 3.0e-11
+    latex: A_\mathrm{s}
+
+  # Scalar spectral index
+  ns:
+    prior:
+      min: 0.8
+      max: 1.2
+    ref:
+      dist: norm
+      loc: 0.9649
+      scale: 0.0042
+    proposal: 0.0042
+    latex: n_\mathrm{s}
+
+  # ========== RUNNING PARAMETER (PCT TARGET) ==========
+  # CAMB name: nrun  (this equals alpha_s)
+  nrun:
+    prior:
+      min: -0.1
+      max: 0.1
+    ref:
+      dist: norm
+      loc: 0.0
+      scale: 0.01
+    proposal: 0.005
+    latex: \alpha_\mathrm{s}
+
+  # ========== Derived parameters ==========
+  # These are computed by CAMB/GetDist where available.
+
+  # (Optional convenience) convert As to logA
+  logA:
+    derived: "lambda As: np.log(1e10*As)"
+    latex: \ln(10^{10} A_\mathrm{s})
+
+  H0:
+    latex: H_0
+    min: 20
+    max: 100
+
+  sigma8:
+    latex: \sigma_8
+
+  # Matter density fraction from CAMB is typically "omegam"
+  omegam:
+    latex: \Omega_\mathrm{m}
+
+  s8omegamp5:
+    derived: "lambda sigma8, omegam: sigma8*(omegam/0.3)**0.5"
+    latex: S_8
+
+  age:
+    latex: "\\mathrm{Age}/\\mathrm{Gyr}"
+
+  rdrag:
+    latex: r_\mathrm{drag}
+
+# ============================================================================
+# POST-PROCESSING NOTES
+# ============================================================================
+#
+# After running, extract alpha_s posterior using (note: alpha_s is stored as nrun):
+#
+#   import numpy as np
+#   from getdist import MCSamples
+#
+#   samples = MCSamples(chains_root='chains/planck2018_running')
+#
+#   # alpha_s statistics (parameter name is nrun)
+#   a_s = samples.getParams().nrun
+#   mean = np.mean(a_s)
+#   median = np.median(a_s)
+#   ci68 = np.percentile(a_s, [16, 84])
+#   ci95 = np.percentile(a_s, [2.5, 97.5])
+#
+#   print("alpha_s (nrun) mean:", mean)
+#   print("alpha_s (nrun) median:", median)
+#   print("68% CI:", ci68)
+#   print("95% CI:", ci95)
+#
+# Convergence:
+#   ESS and R are in the .progress files produced during the run.
+#
+# Then update planck2018_running_scaffold.json with results.
+#
+# PCT Decision Rule:
+#   - If alpha_s posterior excludes 0 at 95% CL AND includes [-0.017, -0.007]: SUPPORT
+#   - If alpha_s posterior is consistent with 0: VANILLA LambdaCDM FAVORED
+#   - If alpha_s > 0 at high significance: PCT EXCLUDED
+#
+# ============================================================================
