@@ -1,0 +1,63 @@
+{
+  "config_version": 1,
+  "capsule": "gw_capsule_v1",
+  "purpose": "GO/NO-GO change-point discriminator for a groundwater-like time series, with explicit null tests.",
+  "inputs": {
+    "csv": "data/gw_synth_monthly.csv",
+    "date_col": "date",
+    "value_col": "value"
+  },
+  "segmentation": {
+    "max_cps": 3,
+    "min_segment_size": 12
+  },
+  "model_comparison": {
+    "criterion": "AIC",
+    "delta_AIC_go": 10.0,
+    "interpretation": "We compute delta_AIC = AIC(k=0) - min_{k>=1} AIC(k). If delta_AIC >= delta_AIC_go, the change-point family is preferred."
+  },
+  "null_tests": {
+    "enabled": true,
+    "alpha": 0.05,
+    "generators": [
+      {
+        "id": "time_scramble",
+        "num_draws": 300,
+        "seed": 11,
+        "description": "Permutation surrogate: preserves marginal distribution but destroys temporal ordering."
+      },
+      {
+        "id": "phase_randomize",
+        "num_draws": 300,
+        "seed": 12,
+        "description": "Fourier phase-randomization surrogate: approximately preserves the power spectrum but destroys coherent transients."
+      }
+    ]
+  },
+  "go_no_go": {
+    "go_if": [
+      "prefers_change_point",
+      "null_tests_pass"
+    ],
+    "no_go_if": [
+      "not_prefers_change_point",
+      "null_tests_fail"
+    ],
+    "report_fields": [
+      "selected.k",
+      "selected.breakpoints",
+      "selected.breakpoint_dates",
+      "selected.segment_means",
+      "decision_inputs.delta_AIC_k0_vs_best_cp",
+      "null_tests.p_value_combined",
+      "go_no_go.go",
+      "go_no_go.reasons"
+    ]
+  },
+  "artifacts": {
+    "out_json": "outputs/gw_capsule_v1/result.json"
+  },
+  "how_to_run": {
+    "suggested_command": "python gw_capsule_go_nogo.py --config configs/gw_capsule_v1.json"
+  }
+}

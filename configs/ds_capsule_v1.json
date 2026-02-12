@@ -1,0 +1,40 @@
+{
+  "config_version": 1,
+  "capsule": "ds_capsule_v1",
+  "purpose": "GO/NO-GO checklist for PCT-style spectral-dimension ds(ell) invariants: enforce theta-stability, robustness, and null/baseline specificity.",
+  "declared_regime": {
+    "Omega_note": "Declare the analysis region/patch Omega in your report.",
+    "ell_window": {"ell0": 0.5, "ell1": 50.0, "grid": "logspace", "num_points": 50}
+  },
+  "inputs": {
+    "type": "graph_adjacency",
+    "path": "PCT/data/adjacency_placeholder.npy",
+    "notes": "Provide a weighted adjacency / affinity matrix."
+  },
+  "theta": {
+    "num_samples": 32,
+    "seed": 123,
+    "aggregation_variants": [
+      {"id": "mean", "method": "mean"},
+      {"id": "median", "method": "median"}
+    ]
+  },
+  "robustness": {
+    "refinement": {"enabled": true},
+    "regularization_band": {"enabled": true, "values": [1e-6, 1e-5, 1e-4, 1e-3]}
+  },
+  "null_tests": {
+    "enabled": true,
+    "alpha": 0.05,
+    "baseline_generators": [
+      {"id": "shuffle_weights", "num_draws": 200, "seed": 99}
+    ]
+  },
+  "go_no_go": {
+    "hard_stops": [
+      "theta_invariance_fail",
+      "step_vs_smooth_fail",
+      "null_specificity_fail"
+    ]
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "config_version": 1,
+  "capsule": "cmb_capsule_v1",
+  "purpose": "Protocol-level GO/NO-GO checklist for Planck-2018 running (alpha_s) inference. This repo does not bundle the Planck likelihood/sampler stack; this JSON is for pre-registration and decision logging.",
+  "declared_claim": {
+    "parameter": "alpha_s",
+    "statement": "Estimate running alpha_s with Planck 2018 likelihood components under declared priors; report only if convergence and robustness checks pass."
+  },
+  "priors": {
+    "alpha_s": {"type": "uniform", "min": -0.1, "max": 0.1}
+  },
+  "convergence": {"rhat_max": 1.01, "ess_min": 1000, "num_chains": 4},
+  "robustness_checks": ["component_drop", "prior_sensitivity"],
+  "go_no_go": {
+    "go_if": ["convergence_pass", "robustness_pass"],
+    "no_go_if": ["convergence_fail", "robustness_fail"]
+  },
+  "artifacts": {"out_json": "outputs/planck2018_running_capsule_v1.json"},
+  "how_to_run": {
+    "suggested_command": "python PCT/planck2018_running_inference.py --out outputs/planck2018_running.json"
+  }
+}
