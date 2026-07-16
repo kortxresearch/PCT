@@ -56,5 +56,6 @@ Use this folder as the repository snapshot accompanying the v4 submission. The c
 - Retired the duplicate plain-text manuscript export from the GitHub payload; the LaTeX source and PDF remain canonical.
 - Replaced stale placeholder output notes with the executed, checksummed artifact set.
 - Refreshed the README, execution guide, deliverables ledger, release provenance, and deterministic checksum manifest.
+- Made checksum-manifest line endings platform-independent and verified all entries with both the repository validator and GNU `sha256sum --check`.
 - Updated the repository About metadata to describe the reproducibility package and link the Zenodo DOI.
 - Included the later A1/R2, B1/B2, P2a/P6c/P9, T2, and FW1/FW2 records with their negative, conditional, or open status left explicit.

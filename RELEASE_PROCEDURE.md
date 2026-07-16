@@ -94,3 +94,4 @@ Executed:
 - Excluded the deprecated duplicate plain-text manuscript export; `PCT_FoP_v4_submission.tex` and `.pdf` are the canonical public manuscript files.
 - Removed obsolete not-executed placeholders, refreshed public documentation, and regenerated `outputs\sha256SUMS.txt`.
 - Preserved exact file bytes in Git with `.gitattributes` so published files continue to match the checksum manifest.
+- Set the checksum generator to emit LF on every operating system and verified the generated manifest with GNU `sha256sum --check`.
