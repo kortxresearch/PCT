@@ -4,7 +4,7 @@ Last updated: 2026-07-16
 
 Repository: https://github.com/kortxresearch/PCT
 
-This snapshot is aligned with the v4 Springer Nature / Foundations of Physics resubmission:
+This snapshot is aligned with the Springer Nature / Foundations of Physics resubmission:
 
 `Projective Correlation Theory: A Pregeometric Correlator Framework for Emergent Spacetime Observables`
 
