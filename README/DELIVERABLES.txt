@@ -1,7 +1,7 @@
 PCT REPOSITORY SNAPSHOT - DELIVERABLES
 
 This file is a scope and claims checklist for the repository snapshot bundled
-with the v4 Foundations of Physics resubmission package.
+with the Foundations of Physics resubmission package.
 
 Repository: https://github.com/kortxresearch/PCT
 Archive:    https://osf.io/9vc3x
