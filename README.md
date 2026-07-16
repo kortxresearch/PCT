@@ -1,6 +1,6 @@
 # Projective Correlation Theory (PCT)
 
-Reproducibility package for the manuscript **“Projective Correlation Theory: A Pregeometric Correlator Framework for Emergent Spacetime Observables”** (v4 Foundations of Physics resubmission).
+Reproducibility package for the manuscript **“Projective Correlation Theory: A Pregeometric Correlator Framework for Emergent Spacetime Observables”** (Foundations of Physics resubmission).
 
 [Manuscript PDF](PCT_FoP_v4_submission.pdf) · [LaTeX source](PCT_FoP_v4_submission.tex) · [Zenodo DOI 10.5281/zenodo.21396416](https://doi.org/10.5281/zenodo.21396416) · [OSF project](https://osf.io/9vc3x) · [OSF DOI 10.17605/OSF.IO/F4WTD](https://doi.org/10.17605/OSF.IO/F4WTD)
 
