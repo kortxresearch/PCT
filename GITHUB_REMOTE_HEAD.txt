@@ -20,4 +20,4 @@ Publication policy:
 - The LaTeX source and compiled PDF are the canonical public manuscript copies.
 - Historical execution dates and upstream version strings remain unchanged where they are provenance.
 
-Content snapshot commit: PUBLICATION_COMMIT_PENDING
+Content snapshot commit: 8aa95ac689ba3a8c849f9de09ecd8760651dd016
