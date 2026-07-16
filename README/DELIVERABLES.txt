@@ -1,0 +1,197 @@
+PCT REPOSITORY SNAPSHOT - DELIVERABLES
+
+This file is a scope and claims checklist for the repository snapshot bundled
+with the v4 Foundations of Physics resubmission package.
+
+Repository: https://github.com/kortxresearch/PCT
+Archive:    https://osf.io/9vc3x
+DOI:        https://doi.org/10.5281/zenodo.21396416
+Updated:    2026-07-16
+
+================================================================================
+SCOPE
+================================================================================
+
+The repository provides runnable code, configurations, data artifacts, chain
+files, and checksum manifests supporting the v4 manuscript:
+
+Projective Correlation Theory: A Pregeometric Correlator Framework for
+Emergent Spacetime Observables
+
+The repository should be read as a reproducibility package. It does not convert
+the Planck 2018 comparison into empirical confirmation. The manuscript treats
+Planck 2018 as an archival-data consistency check; toy and synthetic outputs as
+algorithmic checks; LVK ringdown as a null-control check; and the new D/NP/P/T
+outputs as declared support, forecast, null, or future-work adjudication
+artifacts.
+
+================================================================================
+EXECUTION STATUS
+================================================================================
+
+| Capsule                  | Script                          | Status |
+|--------------------------|---------------------------------|--------|
+| Spectral dimension       | pct_ds.py                       | Executed toy-chain algorithm check |
+| Synthetic change-point   | gw_change_point_runner.py       | Executed synthetic-data algorithm check |
+| Planck running inference | planck2018_running_inference.py | Executed archival-data consistency check plus deterministic scaffold |
+| LVK ringdown             | lvk_ringdown_end_to_end.py      | Executed public-data null-control check |
+| GW150914 propagation     | gw150914_pct_predictions.py     | Executed posterior-parameter propagation |
+| D1 scalar-running options | d1_option_a_threshold_alpha.py, d1_option_b_corrected_flow.py | Executed option checks |
+| Ringdown corrections     | ringdown_timing_corrections.py  | Executed spin/redshift correction table |
+| Kappa origin             | kappa_origin_hypothesis_check.py | Executed calibration-origin check |
+| NP-1 spin regression     | np1_spin_ringdown_regression.py | Executed harness/scaffold |
+| NP-2 LISA forecast       | np2_lisa_forecast.py            | Executed forecast calculation |
+| NP-6 propagation null    | np6_propagation_null.py         | Executed null check |
+| NP-9 EHT shadow null     | np9_eht_null.py                 | Executed null check |
+| P4 continuum refinement  | p4_continuum_refinement_study.py | Executed draft-support study |
+| P6 kernel tower          | p6_kernel_tower_study.py        | Executed draft-support study |
+| P6b cosmology probe      | p6b_emergence_cosmology_probe.py | Executed exploratory probe |
+| P6c dense flow probe     | p6c_dense_flow_probe.py          | Executed dense monotonicity probe |
+| P2a Bogoliubov pipeline  | p2a_bogoliubov_pipeline.py       | Executed feature/robustness diagnostic |
+| A1 scalar-sector attempt | a1_scalar_sector_attempt.py      | Executed; derivation not closed |
+| R2 flow-clock selection  | r2_flow_clock_selection.py       | Executed conditional selection; P2 gate blocked |
+| B1 update-budget check   | b1_update_budget_check.py        | Executed construction check |
+| B2 horizon demo          | b2_horizon_criterion_demo.py     | Executed fixed-threshold demonstration |
+| T1 adjudication          | t1_step_height_adjudication.py  | Executed frozen protocol; non-adjudicable |
+| T1b ambiguity sweep      | t1b_construction_sweep.py       | Executed 3x2 screen; no cell promoted |
+| T2 horizon campaign      | t2_horizon_profile_campaign.py  | Executed frozen campaign; no refinement-stable step |
+| FW1 SU(2) toy            | fw1_su2_toy.py                  | Executed; interface remains incomplete |
+| FW2 RG commutation       | fw2_rg_commutation.py           | Executed analytic/numerical checks |
+| P9 PiSR pilot            | p9_pisr_pilot.py                | Executed frozen scan; joint criterion not met |
+
+================================================================================
+0) One-command runner and dependencies
+================================================================================
+
+Files:
+- run_capsules.py
+- requirements.txt
+
+What it provides:
+- A lightweight entry point for in-repository capsules.
+- Clear separation between ordinary Python dependencies and optional Planck
+  MCMC dependencies.
+- Root `requirements.txt` as the only active dependency list. The older
+  duplicate in `README\requirements.txt` has been archived.
+
+================================================================================
+1) Reference implementation: spectral dimension d_s(ell)
+================================================================================
+
+File:   pct_ds.py
+Output: outputs/pct_ds_output.txt
+
+Executed result:
+- d_s peak = 1.723 at ell = 1.468
+- Refinement diagnostic: max |Delta d_s| = 0.453
+
+================================================================================
+2) Change-point detection capsule
+================================================================================
+
+File:   gw_change_point_runner.py
+Output: outputs/gw_change_points_synth.json
+
+Executed result:
+- Breakpoint at index 60 (2020-01-01)
+- Segment means: [10.110, 12.231]
+- Mean jump: Delta mu = 2.121, approximately 21 percent
+
+================================================================================
+3) LVK ringdown end-to-end capsule
+================================================================================
+
+File:   lvk_ringdown_end_to_end.py
+Input:  data/H-H1_LOSC_4_V2-1126259446-32.hdf5
+Output: outputs/lvk_ringdown_public_run.json
+
+Executed result:
+- On-source Delta AIC: -219.27
+- Off-source Delta AIC: -23.70, -206.59
+- Null p-value: 0.12
+- Outcome: null-control result, not a detection
+
+================================================================================
+4) Planck 2018 LambdaCDM + running MCMC inference
+================================================================================
+
+File:   planck2018_running_inference.py
+Config: planck_running.yaml
+Output: outputs/planck2018_running.json
+Chain:  chains/planck2018_running_rs.1.txt
+
+MCMC result:
+- Convergence: R-1 = 0.0079
+- alpha_s = -0.0037 +/- 0.0069
+- 68 percent CI: [-0.0108, +0.0032]
+- 95 percent CI: [-0.0174, +0.0095]
+- n_s = 0.9648 +/- 0.0043
+- H0 = 67.38 km/s/Mpc
+
+PCT comparison:
+- Locked-instantiation band: alpha_s = -0.012 +/- 0.005
+- Separation: 0.97 sigma
+- Interpretation: compatible as a consistency check; not confirmation
+
+================================================================================
+5) GW150914 posterior-derived prediction values
+================================================================================
+
+File:   gw150914_pct_predictions.py
+Input:  data/GW150914_GWTC-1.hdf5
+Output: outputs/gw150914_pct_predictions.json
+
+Executed result:
+- Final mass: 62.0 +/- 2.5 M_sun
+- Final spin: 0.67 +/- 0.03
+- Spin-scaled t_c physical: 0.46 +/- 0.02 ms
+- Nonspinning t_c physical: 0.53 +/- 0.02 ms
+
+================================================================================
+6) v4 support, forecast, null, and adjudication outputs
+================================================================================
+
+Files and outputs:
+- d1_option_a_threshold_alpha.py -> outputs/d1_option_a_threshold_alpha.json
+- d1_option_b_corrected_flow.py -> outputs/d1_option_b_corrected_flow.json
+- ringdown_timing_corrections.py -> outputs/ringdown_timing_corrections.json
+- kappa_origin_hypothesis_check.py -> outputs/kappa_origin_hypothesis_check.json
+- np1_spin_ringdown_regression.py -> outputs/np1_spin_ringdown_regression.json
+- np2_lisa_forecast.py -> outputs/np2_lisa_forecast.json
+- np6_propagation_null.py -> outputs/np6_propagation_null.json
+- np9_eht_null.py -> outputs/np9_eht_null.json
+- p4_continuum_refinement_study.py -> outputs/p4_continuum_refinement_study.json
+- p6_kernel_tower_study.py -> outputs/p6_kernel_tower_study.json
+- p6b_emergence_cosmology_probe.py -> outputs/p6b_emergence_cosmology_probe.json
+- t1_step_height_adjudication.py -> outputs/t1_step_height_adjudication.json
+- t1b_construction_sweep.py -> outputs/t1b_construction_sweep.json
+- p2a_bogoliubov_pipeline.py -> outputs/p2a_bogoliubov_pipeline.json
+- p6c_dense_flow_probe.py -> outputs/p6c_dense_flow_probe.json
+- a1_scalar_sector_attempt.py -> outputs/a1_scalar_sector_attempt.json
+- r2_flow_clock_selection.py -> outputs/r2_flow_clock_selection.json
+- b1_update_budget_check.py -> outputs/b1_update_budget_check.json
+- b2_horizon_criterion_demo.py -> outputs/b2_horizon_criterion_demo.json
+- t2_horizon_profile_campaign.py -> outputs/t2_horizon_profile_campaign.json
+- fw1_su2_toy.py -> outputs/fw1_su2_toy.json
+- fw2_rg_commutation.py -> outputs/fw2_rg_commutation.json
+- p9_pisr_pilot.py -> outputs/p9_pisr_pilot.json
+
+T1b screened the documented construction ambiguities and promoted no cell to a
+full ladder. The reported branch is: no documented construction reproduces the
+claimed historical regime.
+
+T2 tested a separately frozen horizon-profile construction and found no
+refinement-stable non-analytic step. A1 remains explicitly open because the
+flow/e-fold and transition-to-pivot maps are not fixed. The P9 pilot found that
+no scanned flow jointly satisfies its register-consistency and inflation-clock
+criteria. These negative/open outcomes are retained as results, not hidden.
+
+================================================================================
+7) Checksums
+================================================================================
+
+Run:
+
+python hash_artifacts.py
+
+The script refreshes outputs/sha256SUMS.txt.

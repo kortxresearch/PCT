@@ -1,0 +1,29 @@
+{
+  "purpose": "FW-1/R-B: executable audit of the v56 |I|=3 SU(2) matter toy.",
+  "construction": "recovered from v56 (MATTER SECTOR EXTENSION, A.9 stratum); 6x6 torus, SU(2)+singlet links, covariant graph Laplacian",
+  "C1_gauge_invariance_relative_error": 3.537583712776243e-16,
+  "C1_pass": true,
+  "C2_puregauge_equals_3x_scalar_relative_error": 2.783635334139264e-16,
+  "C2_pass": true,
+  "C3_internal_sector_ds_deviation_with_holonomy": 1.4579702589533787,
+  "C3_nontrivial": true,
+  "C4_wilson_avg_1x1": 0.07649108564806026,
+  "C4_wilson_avg_2x2": -0.13100192842276293,
+  "C4_blocking_closes_in_group": true,
+  "claim_d_lattice_gauge_action": "NOT TESTED (requires an ensemble over links and an effective-action fit; out of scope)",
+  "fw1_acceptance_tests": {
+    "(i) field content on M": {
+      "grade": "PARTIAL",
+      "reason": "internal states and matrix-valued projected correlators exist (candidate fields = projected internal sectors), but they live on the constraint graph and carry no dynamics of their own"
+    },
+    "(ii) coupling to reconstructed metric": {
+      "grade": "FAIL",
+      "reason": "nothing couples the internal sector to h_munu beyond sharing the scalar kernel; no interface map is defined"
+    },
+    "(iii) back-reaction on rho_K / K": {
+      "grade": "FAIL",
+      "reason": "link variables are fixed external data; no rule updates K from the internal state"
+    }
+  },
+  "reading": "The toy is implementable and internally consistent: projected observables are exactly gauge invariant (C1), the pure-gauge sector reproduces the scalar theory exactly (C2), non-trivial holonomy carries genuine gauge content into the internal spectral sector (C3), and blocking composes links inside the group (C4). As an FW-1 interface it passes only the field-content test partially and fails coupling and back-reaction: the missing objects are an interface map (internal sector -> stress-energy -> rho_bar response) and an update rule for K. FW-1 remains open with these two objects now precisely named."
+}

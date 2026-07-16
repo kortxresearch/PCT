@@ -1,0 +1,138 @@
+{
+  "purpose": "P6 executed numerics: attractor, tower depth, and flattening of the kernel-emergence map.",
+  "locked_parameters": {
+    "sigma_K": 1.0,
+    "sigma_Pi": 0.35
+  },
+  "E1_gaussian_shape_distance_per_iteration": [
+    0.411307,
+    0.250159,
+    0.189989,
+    0.152096,
+    0.125802,
+    0.106435,
+    0.091606,
+    0.079915,
+    0.070484
+  ],
+  "E1_monotone_decreasing": true,
+  "E2_analytic_depth_bound_n_star": 4.0816,
+  "E2_deconvolution_ladder": [
+    {
+      "depth_n": 0,
+      "variance_parameter_v_n": 1.0,
+      "psd_predicted": true,
+      "gram_min_eigenvalue": -9.740235080011982e-16
+    },
+    {
+      "depth_n": 1,
+      "variance_parameter_v_n": 0.755,
+      "psd_predicted": true,
+      "gram_min_eigenvalue": -1.1247893586568921e-15
+    },
+    {
+      "depth_n": 2,
+      "variance_parameter_v_n": 0.51,
+      "psd_predicted": true,
+      "gram_min_eigenvalue": -1.6300838138299484e-15
+    },
+    {
+      "depth_n": 3,
+      "variance_parameter_v_n": 0.265,
+      "psd_predicted": true,
+      "gram_min_eigenvalue": -1.2610210097228913e-15
+    },
+    {
+      "depth_n": 4,
+      "variance_parameter_v_n": 0.02,
+      "psd_predicted": true,
+      "gram_min_eigenvalue": -3.9847776877823e-15
+    },
+    {
+      "depth_n": 5,
+      "variance_parameter_v_n": -0.225,
+      "psd_predicted": false,
+      "gram_min_eigenvalue": -2.948054134168631e-12
+    },
+    {
+      "depth_n": 6,
+      "variance_parameter_v_n": -0.47,
+      "psd_predicted": false,
+      "gram_min_eigenvalue": -6.767253966186309e-09
+    },
+    {
+      "depth_n": 7,
+      "variance_parameter_v_n": -0.715,
+      "psd_predicted": false,
+      "gram_min_eigenvalue": -1.5635568263339398e-05
+    }
+  ],
+  "E3_unrescaled_flattening": [
+    {
+      "level": 0,
+      "ghat_at_sep2": 0.135335,
+      "d_corr_at_sep2": 1.414214
+    },
+    {
+      "level": 1,
+      "ghat_at_sep2": 0.200603,
+      "d_corr_at_sep2": 1.267449
+    },
+    {
+      "level": 2,
+      "ghat_at_sep2": 0.261249,
+      "d_corr_at_sep2": 1.158569
+    },
+    {
+      "level": 3,
+      "ghat_at_sep2": 0.315771,
+      "d_corr_at_sep2": 1.073656
+    },
+    {
+      "level": 4,
+      "ghat_at_sep2": 0.364182,
+      "d_corr_at_sep2": 1.005038
+    },
+    {
+      "level": 5,
+      "ghat_at_sep2": 0.407027,
+      "d_corr_at_sep2": 0.948091
+    },
+    {
+      "level": 6,
+      "ghat_at_sep2": 0.444984,
+      "d_corr_at_sep2": 0.899843
+    },
+    {
+      "level": 7,
+      "ghat_at_sep2": 0.478716,
+      "d_corr_at_sep2": 0.858282
+    },
+    {
+      "level": 8,
+      "ghat_at_sep2": 0.508813,
+      "d_corr_at_sep2": 0.821995
+    },
+    {
+      "level": 9,
+      "ghat_at_sep2": 0.535784,
+      "d_corr_at_sep2": 0.789953
+    },
+    {
+      "level": 10,
+      "ghat_at_sep2": 0.560061,
+      "d_corr_at_sep2": 0.761387
+    },
+    {
+      "level": 11,
+      "ghat_at_sep2": 0.582007,
+      "d_corr_at_sep2": 0.735712
+    },
+    {
+      "level": 12,
+      "ghat_at_sep2": 0.60193,
+      "d_corr_at_sep2": 0.71247
+    }
+  ],
+  "reading": "E1: iterated emergence Gaussianises a non-Gaussian PSD kernel (local CLT). E2: the locked Gaussian instantiation admits ancestors only to depth floor(n*) = 4; the Gram minimum eigenvalue collapses to large negative values exactly where the variance parameter turns negative, i.e. the tower has a white-noise floor at finite depth. E3: without rescaling, ascending the tower drives the normalised correlator at fixed separation to 1 and d_corr to 0 (total-correlation pole)."
+}

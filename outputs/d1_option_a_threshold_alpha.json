@@ -1,0 +1,116 @@
+{
+  "can_replace_beta_flow_now": false,
+  "closed_alpha_s_prediction": null,
+  "conclusion": "Option (a) does not currently yield a unique alpha_s band from the projection-threshold theorem alone.  A threshold-only route may be possible, but it requires an explicit scalar-sector transfer map and a cosmological scale-identification rule not present in the v4 draft.",
+  "derivation_status": "not_closed",
+  "inputs_fixed_by_locked_threshold_sector": {
+    "delta_ds": 0.79,
+    "delta_ds_sigma": 0.15,
+    "kappa": 0.8,
+    "kappa_sigma": 0.05,
+    "threshold_statement": "non-analytic step in d_s(ell) at ell*=kappa*r_H"
+  },
+  "option": "D1(a): threshold-only alpha_s derivation attempt",
+  "purpose": "Inform D1 option (a); this output is not an author decision.",
+  "required_for_alpha_s": {
+    "a5_status": "matter/perturbation coupling is not supplied in the current locked instantiation",
+    "definition": "alpha_s = d^2 log(P_R(k)) / d(log k)^2",
+    "missing_coupling": "amplitude and sign with which d_s affects scalar perturbations",
+    "missing_scale_map": "diffusion/horizon scale ell* -> CMB pivot k and e-fold N",
+    "missing_smoothing_rule": "width/shape of a cosmological threshold crossing",
+    "missing_transfer_map": "d_s(ell) threshold -> primordial scalar power P_R(k)"
+  },
+  "toy_identifiability_scan": {
+    "alpha_s_abs_max": 0.07900000000000001,
+    "alpha_s_abs_min": 2.385885031804249e-13,
+    "alpha_s_max": 0.07900000000000001,
+    "alpha_s_min": -0.07900000000000001,
+    "examples_landing_in_old_band": [
+      {
+        "alpha_s": -0.0158,
+        "coupling": 0.01,
+        "pivot_offset_efolds": 0.0,
+        "sign": -1.0,
+        "width_efolds": 0.25
+      },
+      {
+        "alpha_s": -0.0079,
+        "coupling": 0.01,
+        "pivot_offset_efolds": 0.0,
+        "sign": -1.0,
+        "width_efolds": 0.5
+      },
+      {
+        "alpha_s": -0.0474,
+        "coupling": 0.03,
+        "pivot_offset_efolds": 0.0,
+        "sign": -1.0,
+        "width_efolds": 0.25
+      },
+      {
+        "alpha_s": -0.0237,
+        "coupling": 0.03,
+        "pivot_offset_efolds": 0.0,
+        "sign": -1.0,
+        "width_efolds": 0.5
+      },
+      {
+        "alpha_s": -0.01185,
+        "coupling": 0.03,
+        "pivot_offset_efolds": 0.0,
+        "sign": -1.0,
+        "width_efolds": 1.0
+      },
+      {
+        "alpha_s": -0.005925,
+        "coupling": 0.03,
+        "pivot_offset_efolds": 0.0,
+        "sign": -1.0,
+        "width_efolds": 2.0
+      },
+      {
+        "alpha_s": -0.07900000000000001,
+        "coupling": 0.05,
+        "pivot_offset_efolds": 0.0,
+        "sign": -1.0,
+        "width_efolds": 0.25
+      },
+      {
+        "alpha_s": -0.03950000000000001,
+        "coupling": 0.05,
+        "pivot_offset_efolds": 0.0,
+        "sign": -1.0,
+        "width_efolds": 0.5
+      }
+    ],
+    "lesson": "The threshold theorem alone does not fix C, the smoothing width, the pivot offset, or even the transfer sign.  Extra physics can make alpha_s negligible or order 1e-2.",
+    "toy_transfer": "step in n_s smoothed by tanh; not a PCT derivation",
+    "unknowns_scanned": {
+      "dimensionless_coupling_C": [
+        0.001,
+        0.003,
+        0.01,
+        0.03,
+        0.05
+      ],
+      "pivot_offset_efolds": [
+        -3.0,
+        -1.0,
+        0.0,
+        1.0,
+        3.0
+      ],
+      "sign": [
+        -1,
+        1
+      ],
+      "smoothing_width_efolds": [
+        0.25,
+        0.5,
+        1.0,
+        2.0,
+        5.0
+      ]
+    }
+  }
+}

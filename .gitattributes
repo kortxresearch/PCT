@@ -1,0 +1,2 @@
+# Preserve published byte streams so the SHA256 manifest remains valid.
+* -text

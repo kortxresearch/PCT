@@ -1,0 +1,24 @@
+{
+  "computed": {
+    "eht_observable_modified_in_current_locked_instantiation": false,
+    "predicted_fractional_shadow_diameter_shift": 0.0,
+    "step_scale_inside_schwarzschild_photon_sphere_if_misread_as_radius": true
+  },
+  "conclusion": "The EHT statement is a null: current shadow measurements are not expected to show a PCT-specific deviation in the locked instantiation.",
+  "falsification_rule": "A future PCT extension that supplies a photon-sector coupling would need its own EHT prediction.  The present locked instantiation is not falsified by a standard GR-like EHT shadow, because it predicts no photon-sphere modification.",
+  "inputs": {
+    "kappa_step_scale_over_horizon_radius": 0.8,
+    "representative_eht_fractional_diameter_uncertainties": {
+      "M87_2019": "about 7 percent for 42 +/- 3 microarcsec",
+      "SgrA_2022": "order 10 percent, depending on ring/shadow observable"
+    },
+    "schwarzschild_photon_sphere_radius_over_horizon_radius": 1.5,
+    "schwarzschild_shadow_critical_impact_over_horizon_radius": 2.598076211353316
+  },
+  "purpose": "NP-9 EHT null statement.",
+  "reasoning": [
+    "The PCT step scale is a diffusion/spectral-dimension scale, not a radial displacement of the photon sphere.",
+    "The current locked instantiation supplies no photon-sector coupling and no metric perturbation at the photon sphere.",
+    "Therefore the predicted EHT shadow-diameter shift in the present paper is exactly a null prediction, not a small nonzero number."
+  ]
+}

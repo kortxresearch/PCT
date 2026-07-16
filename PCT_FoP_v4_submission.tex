@@ -1,0 +1,1168 @@
+﻿\documentclass[12pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath,amssymb,amsfonts,amsthm}
+\usepackage{graphicx}
+\usepackage[colorlinks=true,citecolor=blue,urlcolor=blue,linkcolor=blue]{hyperref}
+\usepackage[numbers,sort&compress]{natbib}
+\usepackage[margin=2.5cm]{geometry}
+\usepackage{booktabs}
+\usepackage{longtable}
+
+\newtheorem{theorem}{Theorem}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{assumption}[theorem]{Assumption}
+\newtheorem{remark}[theorem]{Remark}
+\newtheorem{example}[theorem]{Example}
+
+\title{Projective Correlation Theory: A Pregeometric Correlator Framework\\for Emergent Spacetime Observables}
+
+\author{Ciprian Stoichici\thanks{Corresponding author. E-mail: contact@kort-x.com}\\
+KORT-X Research, Bucharest, Romania}
+
+\date{}
+
+\begin{document}
+
+\maketitle
+
+\begin{abstract}
+\noindent Projective Correlation Theory (PCT) is presented as a kinematic pregeometric framework in which a two-point correlator on a primitive measurable space can define metric and causal structures only where explicit admissibility assumptions hold. Starting from a positive semi-definite correlation kernel, a constraint density, a projection-parameter measure, and projection kernels, we define a distance surrogate, a regularised inverse operator, and a spectral dimension. The metric-reconstruction statement is Euclidean-section only for the locked Gaussian instantiation; Lorentzian causal language is licensed only after a declared static or stationary analytic continuation and a compatible principal-symbol check. The prediction set contains a smooth crossover in $d_s(\ell)$ located at the calibrated profile scale $\kappa=0.80\pm0.05$, a spin-dependent ringdown law $t_c/M=\kappa(1+\sqrt{1-a_\ast^2})$, a phenomenological negative scalar running $\alpha_s=-0.012\pm0.005$, and propagation and EHT shadow null statements. Only $\alpha_s$ is compared here with public real data. A Cobaya/CAMB Markov-chain inference using Planck 2018 likelihoods gives $\alpha_s=-0.0037\pm0.0069$ with convergence diagnostic $R-1=0.0079$. The PCT value and Planck posterior are compatible at $0.97\sigma$; this is compatibility, not empirical confirmation. The paper does not claim ultraviolet completeness, intrinsic dynamics, or a Standard Model derivation.
+\end{abstract}
+
+\noindent\emph{Keywords:} emergent spacetime; pregeometry; spectral dimension; scalar spectral index running; gravitational-wave ringdown; quantum gravity foundations.
+
+\vspace{0.5em}
+\noindent\emph{PACS:} 04.60.-m, 04.60.Pp, 04.70.Dy, 98.80.-k.
+
+%==============================================================================
+\section{Introduction}
+\label{sec:introduction}
+%==============================================================================
+
+\subsection{The methodological problem: emergence claims without falsifiability infrastructure}
+\label{sec:intro_problem}
+
+Programmes that propose spacetime as an emergent or derived structure have multiplied over the last three decades. Causal set theory~\citep{sorkin,surya,henson,dowker,benincasa} replaces the continuum by a locally finite partially ordered set. Loop quantum gravity~\citep{rovelli,ashtekar,thiemann} and spin foams~\citep{perez} propose discrete quanta of area and volume. Causal dynamical triangulations~\citep{cdt,ambjorn2} define a path integral over simplicial geometries. Asymptotic safety~\citep{reuter,niedermaier,percacci,lauscher,rechenberger} seeks a non-trivial ultraviolet fixed point of the gravitational renormalisation group. Ho\v{r}ava--Lifshitz gravity~\citep{horava,horava2} achieves ultraviolet completion through anisotropic scaling. Tensor networks and holographic codes~\citep{swingle,pastawski} relate entanglement to geometry, building on Ryu--Takayanagi~\citep{ryu} and ER=EPR~\citep{maldacena}, and entanglement-induced gravitation~\citep{faulkner}. Dimensional reduction at short scales emerges across these otherwise inequivalent programmes~\citep{carlip,modesto,calcagni}.
+
+These programmes are sophisticated and conceptually rich. They share, however, a methodological weakness: it is often unclear which observable, measured to what precision, would falsify the framework. Predictions are commonly stated in qualitative form (``$d_s \to 2$ in the deep ultraviolet'') without a quantitative envelope; null tests are rarely specified before data are examined; and the boundary between the framework's domain of applicability and its overreach is seldom drawn. The result is a literature in which emergence claims are abundant and contact with observation is sparse.
+
+The motivation for the present paper is methodological rather than ontological. We do not propose a new ultimate theory of quantum gravity. We propose a kinematic framework in which (a)~the inputs are explicit and minimal, (b)~the geometric and causal language that is derived from those inputs is licensed only where stated admissibility conditions hold, and (c)~a small set of observables are stated in advance with a quantitative envelope and an explicit definition of what would constitute failure. We confront only one of those observables with public real data in this paper; the other observables are presented as prospective tests with pre-specified decision rules.
+
+\subsection{What this paper does and does not claim}
+\label{sec:intro_claims}
+
+To avoid the kind of category errors that mark the boundary between a research programme and an overclaim, we state the scope of the present paper at the outset.
+
+What the paper does claim:
+\begin{itemize}
+  \item A definition of a kinematic, pregeometric framework based on four primitive objects --- a correlation kernel $K$, a constraint density $\rho_{\mathcal{K}}$, a projection-parameter measure $\Lambda$ on $\Theta$, and a family of projection kernels $\Pi$ --- together with five admissibility conditions A1--A5 that license geometric and causal language.
+  \item A conditional reconstruction theorem stating that, in a suitable coincidence limit and under stated regularity and non-degeneracy hypotheses, the two-point correlator $G_2$ defines a Euclidean-section tensor $h_{\mu\nu}(x) = -\partial_\mu\partial_\nu \ln G_2(x,x';\theta)|_{x'\to x}$. Lorentzian causal language is licensed only where a declared static or stationary analytic continuation and a compatible hyperbolic principal symbol are available.
+  \item A definition of an emergent spectral dimension $d_s(\ell)$ from a heat-trace functional and the prediction that, in the locked instantiation of the framework, $d_s(\ell)$ undergoes a smooth crossover at a finite calibrated profile scale.
+  \item Three positive observables stated in advance with quantitative envelopes: a smooth crossover in $d_s(\ell)$ located at $\kappa = 0.80 \pm 0.05$, calibrated within the locked instantiation; a non-spinning late-time ringdown change-point at $t_c/M \approx 2\kappa$ with a spin-scaled horizon form; and a negative running of the scalar spectral index in the range $[-0.02,-0.005]$ with central value $-0.012 \pm 0.005$. The prediction section also states two null commitments: no cumulative gravitational-wave propagation dispersion and no current EHT shadow shift.
+  \item One executed inference on public real data: a Cobaya/CAMB MCMC fit of $\Lambda$CDM with running to Planck 2018 likelihoods, returning $\alpha_s = -0.0037 \pm 0.0069$, which is compatible with the PCT prediction at $0.97\sigma$.
+\end{itemize}
+
+What the paper does \emph{not} claim:
+\begin{itemize}
+  \item It does not claim empirical confirmation of the framework. The Planck inference is the only contact with public real data; one observable in agreement with a posterior at less than $1\sigma$ does not constitute confirmation.
+  \item It does not claim ultraviolet completeness. No continuum limit theorem is proved.
+  \item It does not derive the Standard Model. Matter fields, gauge structure, and chiral fermions are outside the scope of this paper. Admissibility assumption A5, which would license matter coupling, fails for the locked instantiation.
+  \item It does not propose intrinsic dynamics on the primitives. The framework is kinematic; the dynamics of $K$, $\rho_{\mathcal{K}}$, $\Pi$ and $\Lambda$ are not specified.
+  \item It does not rule out other emergent-geometry programmes. Its smooth-crossover prediction aligns qualitatively with causal dynamical triangulations, asymptotic safety, and Ho\v{r}ava--Lifshitz gravity; the resulting loss of a qualitative discriminator is explicit, and comparison is restricted to the calibrated crossover location and the framework's independent ringdown and null commitments.
+\end{itemize}
+
+\subsection{Relation to existing emergent-spacetime programmes}
+\label{sec:intro_relation}
+
+We summarise here, in prose and without a comparison table, where the present framework sits in relation to existing programmes. A more detailed discussion is given in Section~\ref{sec:connections}. The shared idea across emergent-spacetime programmes is that geometry should be derivable from non-geometric primitives. The programmes differ in their choice of primitive and in their choice of derived observable.
+
+Causal set theory takes a partial order as its primitive and derives volume from cardinality and causal structure from the order relation. The metric is recovered only in a suitable continuum limit, and the difficulty lies in establishing that limit and in showing that the recovered geometry is Lorentzian in four dimensions. Loop quantum gravity takes holonomies and fluxes as primitives and derives discrete spectra for area and volume operators; spin-foam amplitudes provide the dynamics. Causal dynamical triangulations takes simplicial complexes as primitives and integrates over their configurations with a weight derived from the Regge action. Asymptotic safety takes the metric itself as the primary object, augmented by a renormalisation-group flow with a non-trivial ultraviolet fixed point. Ho\v{r}ava--Lifshitz gravity introduces a preferred foliation and an anisotropic scaling between space and time. Holographic and tensor-network approaches take the boundary entanglement structure as the primitive and derive bulk geometry through a coarse-graining or isometry map.
+
+PCT differs in three respects. First, its primitive is a symmetric, positive semi-definite kernel $K$ on a measurable space $\mathcal{K}$, not a partial order, a spin network, a simplicial complex, a metric, or an entanglement structure. Second, the construction of geometry passes explicitly through a two-point correlator $G_2$ on the label space, whose logarithm controls both distances and the candidate metric tensor. Third, the framework uses explicit admissibility assumptions A1--A5: geometric language is licensed only where the assumptions hold. The framework does not predict that geometry holds everywhere; it specifies where the language of geometry is permitted.
+
+\subsection{Outline of the paper}
+
+The structure of this paper is as follows. Section~\ref{sec:preliminaries} develops the mathematical preliminaries: the primitive measurable spaces, the primitive inputs, the induced two-point correlator and distance surrogate, and the admissibility assumptions A1--A5. Section~\ref{sec:emergent_geometry} states the Euclidean-section metric reconstruction theorem, discusses the additional conditions needed for Lorentzian causal structure, presents the Schwarzschild correspondence as a calibration check, and defines the spectral dimension and its $\Lambda$-invariance properties. Section~\ref{sec:predictions} states the locked observables, forecasts, and null tests in compact form. Section~\ref{sec:planck} presents the Planck 2018 consistency check. Section~\ref{sec:connections} develops the connections to existing programmes in detail. Section~\ref{sec:limitations} states the limitations explicitly. Section~\ref{sec:outlook} discusses the outlook. Four appendices follow: Appendix~\ref{app:notation} fixes the notation; Appendix~\ref{app:pipeline} documents pipeline checks on toy systems; Appendix~\ref{app:reproducibility} details the reproducibility infrastructure; and Appendix~\ref{app:proofs} gives proof sketches.
+
+%==============================================================================
+\section{Mathematical preliminaries}
+\label{sec:preliminaries}
+%==============================================================================
+
+This section develops the mathematical apparatus of the framework. The intention is not to be encyclopaedic but to fix the objects with which the rest of the paper works. The primitive measurable spaces are defined first, the primitive inputs second, the induced two-point correlator and distance surrogate third, and the admissibility conditions fourth.
+
+\subsection{Primitive measurable spaces}
+\label{sec:primitive_spaces}
+
+We require three measurable spaces. Throughout, $(\mathcal{X},\Sigma_{\mathcal{X}})$ denotes a measurable space with $\sigma$-algebra $\Sigma_{\mathcal{X}}$, and we use the convention that all measurable spaces are standard Borel unless otherwise stated.
+
+\begin{definition}[Primitive measurable spaces]
+The framework requires three primitive measurable spaces:
+\begin{enumerate}
+  \item The \emph{constraint space} $(\mathcal{K},\Sigma_{\mathcal{K}},\mu_{\mathcal{K}})$, a $\sigma$-finite measure space. The elements of $\mathcal{K}$ are referred to as constraints and play the role of pregeometric degrees of freedom. No interpretation is required at this stage; the constraint space is the carrier of the correlation kernel.
+  \item The \emph{label space} $(\mathcal{M},\Sigma_{\mathcal{M}})$, a measurable space whose elements are labels that, after passing through the framework, acquire the language of points in an emergent geometry. In the cases of interest $\mathcal{M}$ is either $\mathbb{R}^d$, an open subset thereof, or a discrete approximation. The Borel $\sigma$-algebra is implicit when $\mathcal{M}$ is a topological space.
+  \item The \emph{projection-parameter space} $(\Theta,\Sigma_\Theta)$, a measurable space indexing the family of projection kernels. The elements of $\Theta$ are projection parameters; physical observables are required to be stable under aggregation over $\Theta$ with respect to a primary measure $\Lambda$ introduced below.
+\end{enumerate}
+\end{definition}
+
+The role of $\mathcal{K}$ is to carry the correlation kernel. The role of $\mathcal{M}$ is to carry the labels that become emergent geometric points. The role of $\Theta$ is to parametrise the projection family and supply the gauge over which the observables are averaged.
+
+\begin{remark}
+The choice to keep $\mathcal{K}$ separate from $\mathcal{M}$ is deliberate. We do not identify the constraints with the emergent points. In specific instantiations one may consider settings where $\mathcal{K}$ and $\mathcal{M}$ coincide; the framework permits this as a special case but does not require it.
+\end{remark}
+
+\subsection{Primitive inputs}
+\label{sec:primitive_inputs}
+
+The framework requires four primitive inputs. We introduce them in turn.
+
+\begin{definition}[Correlation kernel]
+A \emph{correlation kernel} on $\mathcal{K}$ is a measurable function
+\[
+K : \mathcal{K} \times \mathcal{K} \;\longrightarrow\; \mathbb{R}
+\]
+that is symmetric, $K(u,v) = K(v,u)$, and positive semi-definite in the sense that for any finite collection $\{u_i\}_{i=1}^n$ in $\mathcal{K}$ and any real coefficients $\{c_i\}_{i=1}^n$,
+\[
+\sum_{i,j=1}^n c_i c_j K(u_i,u_j) \;\geq\; 0.
+\]
+\end{definition}
+
+The Moore--Aronszajn theorem associates a reproducing kernel Hilbert space (RKHS), denoted $\mathcal{H}_K$, to any such kernel. Under additional consistency and measurability assumptions a positive semi-definite kernel may also be represented as a covariance kernel; this probabilistic representation is not needed for the constructions below.
+
+\begin{definition}[Constraint density]
+A \emph{constraint density} is a non-negative measurable function
+\[
+\rho_{\mathcal{K}} : \mathcal{K} \;\longrightarrow\; \mathbb{R}_+
+\]
+that is integrable against $\mu_{\mathcal{K}}$ on a stated domain of interest. We do not require normalisation in general.
+\end{definition}
+
+\begin{definition}[Projection-parameter measure]
+A \emph{projection-parameter measure} is a probability measure $\Lambda$ on $(\Theta,\Sigma_\Theta)$, satisfying $\Lambda(\Theta) = 1$. We refer to $\Lambda$ as the primary measure-theoretic object on $\Theta$. In contexts where $\Lambda$ enters integrals as a measure rather than as a parameter, we may use the alias $\nu_\Theta \equiv \Lambda$ for typographic clarity; the two symbols refer to the same object.
+\end{definition}
+
+\begin{definition}[Projection kernel]
+A \emph{projection kernel} is a measurable map
+\[
+\Pi : \Sigma_{\mathcal{M}} \times \mathcal{K} \times \Theta \;\longrightarrow\; [0,1]
+\]
+such that for each fixed $(u,\theta) \in \mathcal{K} \times \Theta$, $\Pi(\,\cdot\,|u;\theta)$ is a probability measure on $\mathcal{M}$. We refer to $\Pi(\,\cdot\,|u;\theta)$ as a Markov kernel from $\mathcal{K} \times \Theta$ to $\mathcal{M}$.
+\end{definition}
+
+The map $\Pi$ assigns, to each constraint $u$ and projection parameter $\theta$, a probability distribution over labels in $\mathcal{M}$. We will require $\Pi$ to be sufficiently regular for the integrals below to converge and for differentiation under the integral to be justified; the precise regularity assumptions are collected in Assumption~\ref{ass:regularity} below.
+
+\begin{assumption}[Regularity of primitives]
+\label{ass:regularity}
+We assume that the primitives $(K,\rho_{\mathcal{K}},\Lambda,\Pi)$ satisfy the following regularity conditions on the domain of interest:
+\begin{enumerate}
+  \item $K$ is locally bounded and locally integrable against $\rho_{\mathcal{K}}^2 \, d\mu_{\mathcal{K}}^{\otimes 2}$.
+  \item $\rho_{\mathcal{K}}$ is locally integrable against $\mu_{\mathcal{K}}$.
+  \item For each $\theta \in \Theta$, the map $(x,u) \mapsto \pi(x|u;\theta)$, where $\Pi(\cdot|u;\theta)$ has Radon--Nikodym derivative $\pi(\cdot|u;\theta)$ against a reference measure on $\mathcal{M}$, is twice continuously differentiable in $x$ on the interior of the label region of interest.
+  \item The measure $\Lambda$ has a density against a reference measure on $\Theta$ that is bounded and integrable.
+\end{enumerate}
+\end{assumption}
+
+These regularity conditions are deliberately weaker than smoothness throughout; they require only enough structure for the constructions below to be well-defined.
+
+\subsection{Induced two-point correlator and distance surrogate}
+\label{sec:G2}
+
+We come to the central construction.
+
+\begin{definition}[Induced two-point correlator]
+The \emph{induced two-point correlator} on $\mathcal{M} \times \mathcal{M}$ at projection parameter $\theta$ is
+\begin{equation}
+\label{eq:G2_def}
+G_2(x,y;\theta) \;:=\; \int_{\mathcal{K}} \int_{\mathcal{K}} \pi(x|u;\theta)\, K(u,v)\, \pi(y|v;\theta)\, \rho_{\mathcal{K}}(u)\,\rho_{\mathcal{K}}(v)\, d\mu_{\mathcal{K}}(u)\, d\mu_{\mathcal{K}}(v),
+\end{equation}
+whenever the right-hand side is finite. When $\mathcal{K}$ is discrete with counting measure, the integrals reduce to sums.
+\end{definition}
+
+We use the same symbol $G_2$ both for the unaveraged correlator at fixed $\theta$ and, by abuse of notation, for its $\Lambda$-averaged version $\int_\Theta G_2(x,y;\theta) \, d\Lambda(\theta)$, distinguishing them by the presence or absence of the $\theta$ argument.
+
+The construction~\eqref{eq:G2_def} is the natural pushforward of a positive semi-definite kernel from the constraint space through the projection kernels to the label space.
+
+\begin{proposition}[Positivity of $G_2$]
+\label{prop:G2_psd}
+Under Assumption~\ref{ass:regularity}, the induced two-point correlator $G_2(\cdot,\cdot;\theta)$ defined by~\eqref{eq:G2_def} is a positive semi-definite kernel on $\mathcal{M}$ for each $\theta \in \Theta$.
+\end{proposition}
+
+\begin{proof}[Proof sketch]
+For any finite collection $\{x_i\}$ in $\mathcal{M}$ and coefficients $\{c_i\}$, define
+\[
+f(u) := \sum_i c_i \pi(x_i|u;\theta).
+\]
+By Fubini's theorem,
+\[
+\sum_{i,j} c_i c_j G_2(x_i,x_j;\theta)
+=
+\int_\mathcal{K} \int_\mathcal{K}
+f(u) K(u,v) f(v) \rho_\mathcal{K}(u) \rho_\mathcal{K}(v)
+\, d\mu_\mathcal{K}^{\otimes 2}(u,v),
+\]
+which is non-negative by positive semi-definiteness of $K$.
+\end{proof}
+
+We now define a normalised correlator and a distance surrogate.
+
+\begin{definition}[Normalised correlator and distance surrogate]
+For points $x,y \in \mathcal{M}$ for which $G_2(x,x;\theta) > 0$ and $G_2(y,y;\theta) > 0$, the \emph{normalised correlator} is
+\begin{equation}
+\widehat{G}_2(x,y;\theta) \;:=\; \frac{|G_2(x,y;\theta)|}{\sqrt{G_2(x,x;\theta) \, G_2(y,y;\theta)}},
+\end{equation}
+the \emph{log-correlation separation} is
+\begin{equation}
+q_{\mathrm{corr}}(x,y;\theta) \;:=\; -\log \widehat{G}_2(x,y;\theta),
+\end{equation}
+and the \emph{correlation distance surrogate} is
+\begin{equation}
+d_{\mathrm{corr}}(x,y;\theta) \;:=\; \sqrt{q_{\mathrm{corr}}(x,y;\theta)}.
+\end{equation}
+\end{definition}
+
+By the Cauchy--Schwarz inequality for positive semi-definite kernels, $\widehat{G}_2 \in [0,1]$, so $q_{\mathrm{corr}}$ and $d_{\mathrm{corr}}$ are non-negative. The square root is essential: for a Gaussian correlator $-\log\widehat{G}_2$ is proportional to squared Euclidean distance and fails the triangle inequality on collinear triples, whereas $\sqrt{-\log\widehat{G}_2}$ is proportional to the Euclidean distance itself. Because the absolute value permits zero distance between distinct labels with perfectly correlated or anti-correlated profiles, A1 includes either separation on the relevant region or quotienting by this equivalence relation. Only on regions where A1 holds is $d_{\mathrm{corr}}$ used as a local distance function.
+
+We also require an operator that plays the role of a Laplacian or wave operator on $\mathcal{M}$. A regularised inverse of $G_2$ need not be local, second order, elliptic, hyperbolic, or equipped with a principal symbol. When the regularised pseudoinverse admits a local second-order principal part on the region under study, we denote that operator by $L_\rho$ and write
+\begin{equation}
+\label{eq:Lrho}
+\left( L_\rho \circ G_2 \right)(x,y;\theta) \;=\; \delta_{\mathcal{M}}(x,y) \qquad \text{on a stated domain $\Omega \subseteq \mathcal{M}$,}
+\end{equation}
+with $L_\rho$ computed via regularised pseudoinverse (Tikhonov or spectral cutoff) with reported hyperparameters. Causal and spectral claims below are conditional on this locality and principal-symbol assumption.
+
+\subsection{Admissibility assumptions A1--A5}
+\label{sec:admissibility}
+
+A defining feature of the framework is that geometric and causal language is not used everywhere; it is licensed by stated admissibility assumptions. These assumptions are mathematical preconditions for specific classes of statements. They are not adjustable thresholds and are not to be confused with model selection. They are the formal analogue of the regularity hypotheses that license differentiation, integration, or spectral analysis in other settings. The labels A1--A5 are article-specific and are used here to avoid conflict with the different boundary-condition numbering used in the longer book manuscript.
+
+\begin{definition}[Admissibility assumptions A1--A5]
+For a region $\Omega \subseteq \mathcal{M}$, we say that the framework on $\Omega$ satisfies admissibility assumption
+\begin{itemize}
+  \item[(A1)] \emph{Correlator admissibility}, if $G_2(x,y;\theta)$ is well-defined and finite for all $x,y \in \Omega$ and $\theta$ in the support of $\Lambda$, and if $d_{\mathrm{corr}}=\sqrt{-\log\widehat{G}_2}$ satisfies separation after quotienting perfectly correlated or anti-correlated profiles, non-negativity, symmetry, zero on the diagonal, and the triangle inequality on $\Omega$ or on the stated local scale window.
+  \item[(A2)] \emph{Horizon proxy admissibility}, if a horizon-proxy length scale $r_H$ is well-defined from the structure of $G_2$ and is stable under $\Lambda$-averaging. This condition is required for statements involving $\kappa \equiv \ell^\ast/r_H$.
+  \item[(A3)] \emph{Causal structure admissibility}, if the reconstructed Euclidean-section tensor is supplied with a declared static or stationary analytic continuation and the regularised inverse admits a local second-order principal part whose continued principal symbol is Lorentzian-signature on $\Omega$. This is required for statements about light cones, causal ordering, or hyperbolicity.
+  \item[(A4)] \emph{Curvature proxy admissibility}, if second derivatives of $q_{\mathrm{corr}}$, or equivalent differential structure of $G_2$, are well-defined on $\Omega$. This is required for statements about curvature invariants.
+  \item[(A5)] \emph{Matter coupling admissibility}, if an explicit interface specification connects matter fields to the correlation-derived geometry. This is required for any statement involving matter.
+\end{itemize}
+\end{definition}
+
+We emphasise that these assumptions are stated once in this section and used throughout the paper without further commentary. When a statement is made about geometry, it is implicit that A1 holds on the relevant region; when a statement is made about causal structure, it is implicit that A3 holds; and so on. A5 fails for the locked instantiation discussed below, and matter-sector statements are accordingly absent from the main text.
+
+\subsection[Aggregation over Theta and Lambda-invariance]{Aggregation over $\Theta$ and $\Lambda$-invariance}
+\label{sec:theta_aggregation}
+
+Physical observables are required to be stable under aggregation over $\Theta$ with respect to $\Lambda$. For an observable $\mathcal{O}(\theta)$ that depends on the projection parameter, we report the aggregated summary
+\begin{equation}
+\bar{\mathcal{O}} \;:=\; \mathfrak{A}_\theta \big[ \mathcal{O}(\theta) \big],
+\end{equation}
+where $\mathfrak{A}_\theta$ is a declared aggregation functional --- a $\Lambda$-mean, a median with respect to $\Lambda$, a $\Lambda$-trimmed mean, or a $\Lambda$-credible interval. An observable is said to be $\Lambda$-invariant if qualitative features --- such as the sign of a quantity, the presence and smooth character of a crossover, or the A1--A5 outcomes --- do not change under reasonable variation of $\mathfrak{A}_\theta$ and under $\Lambda$-perturbations within a stated neighbourhood. Observables that lack $\Lambda$-invariance are recorded as projection-scheme-dependent and are excluded from principal claims.
+
+\begin{remark}
+The role of $\Lambda$ is the role played by a gauge measure: it averages over a redundancy of the projection, and physical claims live on the quotient under this redundancy. The framework is consistent with the standard practice of demanding that physical observables be gauge invariant; it makes the gauge explicit and the invariance testable.
+\end{remark}
+
+\subsection{The locked instantiation}
+\label{sec:locked_instantiation}
+
+For the purposes of stating quantitative predictions and the associated tests, we work with a specific instantiation of the framework which we call the \emph{locked instantiation}. The locked instantiation fixes the functional form of $K$ to be a single-parameter family of Gaussian-type kernels, fixes $\rho_{\mathcal{K}}$ to be uniform on a stated bounded domain, fixes $\Lambda$ to be the uniform measure on a stated parametrisation of $\Theta$, and fixes $\Pi$ to be a Markov kernel with Gaussian regularisation. The full specification is given in Appendix~\ref{app:notation}.
+
+Quantitative predictions stated in this paper are all model-dependent: they hold for the locked instantiation and may shift under variation of the instantiation. The numerical value $\kappa = 0.80 \pm 0.05$ is a calibrated profile scale within the locked instantiation, not derived from a first-principles argument for the integer $n=5$; the basis for this wording is the hypothesis check recorded by \path{outputs/kappa_origin_hypothesis_check.json}. No nonzero crossover amplitude or discontinuous step height is claimed as a current continuum observable. The quoted $\kappa$ envelope should be read as a calibration and instantiation-fixing tolerance recorded in the repository checks, not as a separate Appendix B sensitivity sweep. For a translation-invariant Gaussian locked kernel, the coincidence-limit Hessian is Riemannian on the Euclidean section; Lorentzian statements in this paper therefore require the separate continuation condition included in A3.
+
+%==============================================================================
+\section{Emergent geometry from correlators}
+\label{sec:emergent_geometry}
+%==============================================================================
+
+This section constructs geometric and causal language from the primitives, conditional on the admissibility assumptions. The metric reconstruction theorem is stated first as a Euclidean-section reconstruction; Lorentzian causal structure is then discussed as an additional static or stationary continuation plus principal-symbol condition; the Schwarzschild correspondence is presented as a calibration consistency check; and the spectral dimension and its $\Lambda$-invariance properties are defined.
+
+\subsection{Metric reconstruction}
+\label{sec:metric_reconstruction}
+
+The central result of this section is a metric reconstruction theorem. The intuition is the following: where $G_2(x,y;\theta)$ is sharply peaked around the coincidence locus $y = x$, the second derivative of $\log G_2$ along the coincidence direction defines a quadratic form. Under stated regularity, aggregation, and non-degeneracy assumptions, this quadratic form supplies the Euclidean-section metric tensor used on that region.
+
+\begin{theorem}[Euclidean-section metric reconstruction]
+\label{thm:metric}
+Let $\Omega \subseteq \mathcal{M}$ be a region on which A1 and A4 hold. Let $G_2(\cdot,\cdot;\theta)$ be the induced two-point correlator under the regularity Assumption~\ref{ass:regularity}. Suppose further that $\log G_2(x,y;\theta)$ is twice continuously differentiable in $(x,y)$ on a neighbourhood of the coincidence locus $\{y = x\} \subset \Omega \times \Omega$ and that the Hessian
+\[
+H_{\mu\nu}(x;\theta) \;:=\; -\,\partial_{x^\mu}\partial_{y^\nu} \log G_2(x,y;\theta)\Big|_{y=x}
+\]
+is non-degenerate at every $x \in \Omega$. Assume also that the chosen aggregation functional $\mathfrak{A}_\theta$ yields a non-degenerate tensor of constant signature on $\Omega$. Then $H_{\mu\nu}(x;\theta)$ defines a symmetric, non-degenerate tensor field on $\Omega$ for each $\theta$. The $\Lambda$-aggregated tensor
+\[
+h_{\mu\nu}(x) \;:=\; \mathfrak{A}_\theta \big[ H_{\mu\nu}(x;\theta) \big]
+\]
+is a symmetric, non-degenerate $(0,2)$-tensor on $\Omega$. For the Gaussian locked instantiation this tensor is Riemannian on the Euclidean section. If, in addition, A3 supplies a declared analytic continuation and a compatible Lorentzian principal symbol, then the continued tensor is denoted $g_{\mu\nu}$ and causal language is licensed on the continued region.
+\end{theorem}
+
+A proof sketch is given in Appendix~\ref{app:proofs}.
+
+The interpretation of Theorem~\ref{thm:metric} is the following. The metric data are not primitive; they are reconstructed from the second derivatives of the logarithm of the two-point correlator. The role of A1 is to ensure that $G_2$ is well-defined and the distance surrogate is metric-like; the role of A4 is to ensure that the relevant derivatives exist; the role of A3 is to license the further Lorentzian continuation and compatible hyperbolic principal symbol. In the absence of A3 the construction may still produce a non-degenerate Riemannian $(0,2)$-tensor, but no causal language is licensed.
+
+\begin{remark}[Sign convention]
+The sign in $h_{\mu\nu} = -\partial_\mu\partial_\nu \log G_2$ reflects the fact that $G_2 \to G_2(x,x)$ from below as $y \to x$ in typical Euclidean-section cases of interest. With the opposite sign convention the role of $H$ and its negative are interchanged. Lorentzian signs enter only after the A3 continuation.
+\end{remark}
+
+\subsection{Lorentzian continuation and principal-symbol hyperbolicity}
+\label{sec:causal_structure}
+
+The metric reconstruction theorem tells us where the Euclidean-section tensor comes from. The causal structure --- the partition of tangent vectors into timelike, null, and spacelike --- requires more. In static or stationary settings we require a declared analytic continuation of the time coordinate and a compatible hyperbolic principal symbol for the continued operator. Positive semi-definiteness of $K$ alone never supplies this Lorentzian structure.
+
+In a coordinate chart $(x^\mu)$ on $\Omega$, assume that the regularised inverse admits the local representation $L_\rho = A^{\mu\nu}(x) \partial_\mu \partial_\nu + B^\mu(x) \partial_\mu + C(x) + R$, where the remainder $R$ is either lower order on the window under study or is controlled by the stated regularisation. This locality assumption is part of A3, not a consequence of positive semi-definiteness of $K$.
+
+\begin{definition}[Principal symbol of $L_\rho$]
+The principal symbol of $L_\rho$ at $x \in \Omega$ and covector $\xi \in T^*_x\Omega$ is
+\[
+\sigma_2(L_\rho)(x,\xi) \;:=\; A^{\mu\nu}(x) \xi_\mu \xi_\nu.
+\]
+We say that $L_\rho$ is \emph{Lorentzian hyperbolic} at $x$ if the symmetric matrix $A^{\mu\nu}(x)$ has signature $(-,+,+,+)$ in four dimensions, or analogous Lorentzian signatures in other dimensions.
+\end{definition}
+
+\begin{proposition}[Causal structure from $L_\rho$]
+\label{prop:causal}
+Suppose A1, A3, and A4 hold on $\Omega$. Then the continued principal symbol $A^{\mu\nu}(x)$ defines a smooth field of Lorentzian symmetric forms on $\Omega$. If this symbol is conformal to the inverse of the continued Hessian from Theorem~\ref{thm:metric}, then it defines the same null cones up to a conformal factor. These null cones partition $T_x\Omega$ into timelike, null, and spacelike directions.
+\end{proposition}
+
+A proof sketch is given in Appendix~\ref{app:proofs}. The interpretation is that, when A3 holds, the declared continuation and principal symbol that license the regularised inverse as a wave operator also define the causal cones of the emergent geometry. Where A3 fails --- where no continuation is declared, or where the principal symbol is non-local, non-Lorentzian, degenerate, or ill-defined --- causal language is prohibited even if A1 and A4 hold.
+
+\subsection{Schwarzschild correspondence as a calibration consistency check}
+\label{sec:schwarzschild}
+
+A natural question for any reconstruction theorem is whether it reproduces familiar geometries in familiar settings. For the locked instantiation, when the constraint space is taken to be a four-dimensional Euclidean section and the constraint density encodes a single static spherically-symmetric structure, the reconstruction is calibrated to reproduce the Euclidean Schwarzschild exterior in a saddle-point approximation, followed by the usual static continuation of the Euclidean time coordinate. The calculation proceeds by:
+\begin{enumerate}
+  \item taking the locked instantiation of $K$ as a Gaussian-type kernel of width tied to the mass parameter,
+  \item evaluating $G_2(x,y;\theta)$ in the saddle-point approximation for points in the static region exterior to the would-be horizon,
+  \item computing $-\partial_\mu\partial_\nu \log G_2(x,y;\theta)|_{y=x}$ in the natural Euclidean coordinate system, and
+  \item identifying the Euclidean components with the exterior Schwarzschild section before continuing the static time coordinate to obtain the Lorentzian signature.
+\end{enumerate}
+The detailed calculation is lengthy and is treated as part of the locked-instantiation calibration rather than as an independent test.
+
+We emphasise that this correspondence is presented as a calibration consistency check, not as evidence for the framework. Any framework that reconstructs metric language from a two-point correlator and that admits a single-source instantiation must be checked against the simplest non-trivial vacuum solution. The Schwarzschild correspondence simply tells us that the framework, restricted to its natural single-source case, does not produce something inconsistent with the textbook geometry. It does not test the predictions of the framework. The predictions are tested in Section~\ref{sec:planck} and discussed in Section~\ref{sec:limitations}.
+
+\subsection[Spectral dimension ds(ell)]{Spectral dimension $d_s(\ell)$}
+\label{sec:spectral_dimension}
+
+The spectral dimension is defined from the trace of a Euclideanised heat semigroup. We use an operator $L_\rho^{E}$ assumed to be positive self-adjoint with trace-class heat kernel on the region of interest, or its finite-dimensional regularised analogue. This is a spectral-analysis assumption independent of the Lorentzian causal assumption A3.
+
+\begin{definition}[Spectral dimension]
+\label{def:ds}
+Let $L_\rho^{E}$ be the Euclideanised operator associated with~\eqref{eq:Lrho} on a region $\Omega \subseteq \mathcal{M}$ where A1 and A4 hold, and assume $L_\rho^{E}$ is positive self-adjoint with trace-class heat kernel, or finite-dimensional after regularisation. The \emph{heat trace} at diffusion scale $\ell$ is
+\begin{equation}
+P(\ell) \;:=\; \mathrm{Tr}\, e^{-\ell^2 L_\rho^{E}},
+\end{equation}
+where the trace is taken over a stated reference inner product on functions on $\Omega$. The \emph{spectral dimension} at scale $\ell$ is
+\begin{equation}
+d_s(\ell) \;:=\; -2 \, \frac{d \log P(\ell)}{d \log \ell^2}.
+\end{equation}
+\end{definition}
+
+In smooth manifold cases with a Laplace operator, $d_s(\ell)$ approaches the manifold dimension as $\ell \to 0$. In emergent-geometry settings, the spectral dimension typically depends on scale; in many quantum-gravity programmes $d_s$ flows from $4$ at large scales to a smaller value at short scales, often $d_s \to 2$~\citep{carlip,modesto}.
+
+\begin{proposition}[$\Lambda$-invariance of qualitative features of $d_s$]
+\label{prop:ds_invariance}
+Under Assumption~\ref{ass:regularity}, the qualitative features of $d_s(\ell)$ --- in particular the presence and smooth character of a crossover on a stated diffusion-scale window --- are stable under variation of $\mathfrak{A}_\theta$ and under $\Lambda$-perturbations within a declared neighbourhood, provided the underlying $L_\rho$ depends smoothly on $\theta$. The characteristic scale $\ell^\ast$ may shift within its stated calibration envelope; the qualitative classification does not.
+\end{proposition}
+
+In the locked instantiation, $d_s(\ell)$ undergoes a smooth crossover with characteristic scale $\ell^\ast$. Its location in horizon units, $\kappa \equiv \ell^\ast/r_H$, takes the calibrated value $\kappa = 0.80 \pm 0.05$ within the locked instantiation. The current claim is limited to this smooth profile and calibrated location: neither a nonzero continuum amplitude nor a short-scale limiting dimension is fixed. This aligns the qualitative profile with the smooth crossovers found in several other quantum-gravity programmes and leaves $\kappa$, rather than a discontinuity, as the spectral-location test.
+
+\subsection{Toy-model illustration: 1D Gaussian-kernel chain}
+\label{sec:toy_illustration}
+
+A 1D Gaussian-kernel chain provides the simplest non-trivial illustration of the spectral-dimension computation. We construct $\mathcal{K}$ as a finite set of points on the real line, $K$ as a Gaussian kernel of fixed width, $\rho_{\mathcal{K}}$ as uniform, $\Lambda$ as the uniform measure on a single parameter, and $\Pi$ as a Gaussian projection. We then assemble the operator $L_\rho$ as the regularised pseudoinverse of $G_2$ and compute the heat trace $P(\ell)$ over a stated window of $\ell$.
+
+The resulting spectral dimension peaks at $d_s = 1.723$ at $\ell = 1.468$, with a refinement diagnostic $\max|\Delta d_s| = 0.453$ comparing before and after a graph coarsening. The peak exceeding the topological dimension of the toy chain is not interpreted as a physical dimension: it is a finite-window artefact of the regularised pseudoinverse and of differentiating the heat trace on a finite graph. We re-emphasise that this is an algorithmic check, not a test of the physics of the framework: the toy chain is constructed to have known spectral properties, and the result is reported to show that the implementation reproduces them. Neither the peak nor the refinement difference supplies a physical crossover amplitude, a continuum-limit result, or evidence for non-analytic behaviour. The SHA256 checksum of the executed pipeline output and the full reproducibility manifest are given in Appendix~\ref{app:pipeline}.
+
+%==============================================================================
+\section{Falsifiable predictions}
+\label{sec:predictions}
+%==============================================================================
+
+We state the locked-instantiation observables with quantitative envelopes, and we add prospective or null tests that are not downstream of the unresolved scalar-running mechanism. The closing register in this section records this framework's own commitments only; comparisons with other programmes are discussed in Section~\ref{sec:connections} in prose.
+
+\subsection[Smooth crossover in ds(ell)]{Smooth crossover in $d_s(\ell)$}
+\label{sec:pred_ds_crossover}
+
+The first prediction concerns the spectral dimension of the emergent geometry on regions where A1 and A4 hold. In the locked instantiation, $d_s(\ell)$ undergoes a smooth crossover whose characteristic scale $\ell^\ast$ satisfies
+\[
+\kappa \;\equiv\; \ell^\ast / r_H \;=\; 0.80 \pm 0.05 \quad \text{(calibrated profile scale within the locked instantiation).}
+\]
+Here $\ell^\ast$ is the crossover midpoint, or equivalently the maximum-slope location for a monotone fitted profile when those definitions agree within the stated calibration tolerance. No nonzero continuum crossover amplitude and no limiting short-scale value of $d_s$ are claimed. The prediction would be at variance with the locked instantiation if, on a system where A1, A2, and A4 hold, a robust non-analytic step were preferred over a smooth profile by a Bayes factor of at least 10 or by $\Delta\mathrm{AIC}\equiv\mathrm{AIC}_{\mathrm{smooth}}-\mathrm{AIC}_{\mathrm{step}}\geq10$, with the calibrated resolution and null controls passing in the same configuration. A smooth profile centred outside the calibrated $\kappa$ interval would instead falsify the location calibration.
+
+The test of this prediction on a real system requires a system for which a spectral-dimension surrogate can be defined and measured. Analogue platforms provide the cleanest prospective route. In a Bose--Einstein condensate with an engineered density gradient mimicking a horizon, phonon return probabilities measured by time-of-flight imaging define a candidate $d_s(\ell)$ directly; in a two-dimensional optical lattice, site-resolved imaging gives an independent Green-function route. The pre-specified target is a smooth crossover at $\ell^\ast/r_H = 0.80 \pm 0.05$. The step-versus-smooth comparison is retained as a diagnostic, with the locked PCT prediction now assigned to the smooth branch. Within the scope of the present paper this prediction is stated, not tested.
+
+This smoothness aligns PCT qualitatively with the crossover behaviour reported in causal dynamical triangulations, asymptotic safety, and Ho\v{r}ava--Lifshitz gravity~\citep{cdt,ambjorn2,lauscher,horava,horava2}. PCT therefore no longer claims the former step-versus-smooth distinction or a fixed short-scale value as a discriminator. The residual tests are the calibrated location $\kappa$, the independent spin-scaled ringdown law, and the propagation and EHT null commitments.
+
+\subsection[Ringdown change-point at spin-scaled horizon time]{Ringdown change-point at spin-scaled horizon time}
+\label{sec:pred_ringdown}
+
+The second prediction concerns the late-time ringdown of a binary black hole merger. Under the locked instantiation with A1--A4 holding on the exterior of the remnant horizon, PCT predicts a change-point in the ringdown signal at a scaled time
+\[
+t_c/M \;=\; \kappa\left(1+\sqrt{1-a_\ast^2}\right) \quad \text{(calibrated within the locked instantiation)},
+\]
+where $a_\ast$ is the dimensionless final spin, $M$ is the redshifted remnant mass in geometrised units, and $t_c$ is measured from the strain peak in detector time. In the non-spinning Schwarzschild limit this reduces to
+\[
+t_c/M \;=\; 2\kappa \;\approx\; 1.6.
+\]
+The spin dependence is part of the prediction, not a post-hoc correction. The calibrated value $\kappa=0.80$ gives $t_c/M=1.60$ at $a_\ast=0$, $1.39$ at $a_\ast=0.67$, $1.38$ at $a_\ast=0.69$, and $1.15$ at $a_\ast=0.9$. A stacked GWTC-style test should therefore regress measured change-point times against
+\[
+x(a_\ast) \;=\; 1+\sqrt{1-a_\ast^2}
+\]
+rather than testing only a single common time. The operational estimator is a weighted fit through the origin of $t_c/M$ against $x(a_\ast)$ after each event has passed injection recovery and off-source or time-slide null controls. The calibrated interval to test is $\kappa\in[0.75,0.85]$.
+
+For a source-frame final mass $M_f$ and redshift $z$, the detector-frame conversion is
+\[
+t_c \;=\; \kappa\left(1+\sqrt{1-a_\ast^2}\right)\frac{G M_f(1+z)}{c^3}.
+\]
+For GW150914, using the GWTC-1 values $M_f = 62.0 \pm 2.5\,M_\odot$, $z \simeq 0.09$~\citep{gwtc1}, and the non-spinning limit gives
+\[
+t_c \;\approx\; 0.53 \pm 0.04 \quad \text{ms}.
+\]
+Using the representative final spin $a_\ast \simeq 0.67$ instead gives $t_c/M \simeq 1.39$ and $t_c \simeq 0.46$ ms. The earlier $0.49$ ms translation is the source-frame value with the $(1+z)$ factor omitted; it is not the detector-frame value of the displayed formula.
+The change-point is to be distinguished from a quasi-normal mode oscillation (which produces an exponentially damped sinusoid), from an echo signature (which produces repeated pulses at discrete time delays), and from a parametric deformation of the QNM frequencies (which modifies the mode frequencies but not the functional form of the ringdown). The prediction is stated as a locked-instantiation prediction yet to be tested at the level of a positive inference on public real data. The pipeline check on GW150914 reported in Appendix~\ref{app:pipeline} returned a null at current detector sensitivity; this documents the behaviour of the protocol and is not a positive test of the prediction.
+
+With the representative detectability model
+\[
+\mathrm{SNR}_{\mathrm{PCT}}
+\approx \epsilon_0\,\rho\,\sqrt{\tau_d/T_{\mathrm{obs}}}\,e^{-t_c/\tau_d},
+\]
+and the same illustrative values $\epsilon_0=0.02$, $\rho=20$, and $\tau_d=T_{\mathrm{obs}}=55M$, the locked timing gives $\mathrm{SNR}_{\mathrm{PCT}}\approx0.39$ for a single comparable event, hence $\mathrm{SNR}_{\mathrm{stack}}\approx0.39\sqrt{N}$ for $N$ comparable events. This is a forecast for planning a stacked analysis, not a detection claim. The prediction would be disfavoured if high-SNR on-source ringdowns show no change-point near the spin-scaled $t_c/M$ above while injections are recovered and off-source or time-slide controls remain null. If comparable change-points appear in off-source controls, the correct conclusion is instead that the analysis is dominated by systematics and cannot adjudicate the prediction.
+
+\subsection{LISA massive-black-hole forecast}
+\label{sec:pred_lisa}
+
+The same spin-scaled timing law gives a much slower absolute timescale for massive black-hole remnants in the LISA band. For a redshifted remnant mass $M_z$, representative spin $a_\ast=0.67$, and the same detectability model used above, the forecast is given in Table~\ref{tab:lisa_forecast}.
+\begin{table}[htbp]
+\centering
+\caption{Representative LISA-band timing forecast for $a_\ast=0.67$, $\kappa=0.80$, $\epsilon_0=0.02$, and $\tau_d=T_{\mathrm{obs}}=55M$.}
+\label{tab:lisa_forecast}
+\begin{tabular}{@{}rcccc@{}}
+\toprule
+$M_z/M_\odot$ & $t_c$ [s] & non-spinning $t_c$ [s] & $\rho=100$ & $\rho=1000$ \\
+\midrule
+$10^5$ & 0.687 & 0.788 & 1.95 & 19.5 \\
+$3\times10^5$ & 2.06 & 2.36 & 1.95 & 19.5 \\
+$10^6$ & 6.87 & 7.88 & 1.95 & 19.5 \\
+$3\times10^6$ & 20.6 & 23.6 & 1.95 & 19.5 \\
+$10^7$ & 68.7 & 78.8 & 1.95 & 19.5 \\
+\bottomrule
+\end{tabular}
+\end{table}
+The last two columns of Table~\ref{tab:lisa_forecast} give $\mathrm{SNR}_{\mathrm{PCT}}$ for ringdown signal-to-noise ratios $\rho=100$ and $\rho=1000$ under the stated illustrative model; these columns are identical across masses because $t_c/\tau_d$ is fixed in units of $M$, so the component signal-to-noise is mass-independent in this model. The table is a forecast, not a detection claim: if LISA observes massive-black-hole ringdowns with ringdown SNR of order $10^2$--$10^3$, the spin-scaled timing law becomes an event-by-event target rather than only a ground-based stacking target.
+
+\subsection{Negative running of the scalar spectral index}
+\label{sec:pred_alpha_s}
+
+The third prediction concerns the running of the scalar spectral index $\alpha_s \equiv d n_s / d \log k$ of the primordial scalar power spectrum. Under the locked instantiation, the framework predicts a negative running in the range
+\[
+\alpha_s \;\in\; [-0.02,-0.005] \quad \text{(conservative locked-instantiation band)},
+\]
+with central value
+\[
+\alpha_s \;=\; -0.012 \pm 0.005 \quad \text{(locked instantiation)}.
+\]
+Because no intrinsic dynamics or matter-coupling map is supplied here, this band is treated as a phenomenological locked-instantiation signature, not as a first-principles derivation from the primitives. It is the prediction compared with public real data in Section~\ref{sec:planck}. The relevant observational constraint is the Planck 2018 posterior on $\alpha_s$ obtained from the high-$\ell$ TTTEEE-lite, low-$\ell$ TT, low-$\ell$ EE, and lensing likelihoods. The PCT prediction would be disfavoured if the measured $\alpha_s$ were robustly positive at, say, $2\sigma$ or higher; it would also be disfavoured if the measured $\alpha_s$ were at variance with the predicted band by more than $2\sigma$.
+
+\subsection[Cross-channel kappa consistency]{Cross-channel $\kappa$ consistency}
+\label{sec:pred_kappa}
+
+A fourth observable is the consistency of the scale parameter $\kappa$ across observational channels. Since $\kappa$ is calibrated within the locked instantiation, not derived from an independent first-principles argument for $n=5$, cross-channel agreement is a calibration test rather than a parameter-free derivation. Under the locked instantiation, the value of $\kappa$ inferred from a measurement of $\ell^\ast$ on a spectral-dimension observable and the value inferred from a ringdown change-point using $t_c/M=\kappa(1+\sqrt{1-a_\ast^2})$ are predicted to coincide within stated tolerance. We describe this consistency check as programmatic: it requires both a spectral-dimension measurement on a system to which the framework applies and a ringdown change-point detection, neither of which is currently available at the precision required. We state the consistency relation for clarity:
+\[
+|\kappa_{d_s} - \kappa_{\mathrm{rd}}| \;\lesssim\; 0.1 \quad \text{[programmatic, not executed]}.
+\]
+Failure of this consistency would indicate that the locked instantiation does not capture the relationship between the spectral and ringdown observables, even if each separately admits an emergent-geometry interpretation.
+
+\subsection[Analogue-platform universal kappa test]{Analogue-platform universal $\kappa$ test}
+\label{sec:pred_analogue_kappa}
+
+The hypothesis check for the origin of $\kappa$ does not derive $n=5$ from first principles. It weakly favours a dimension-independent calibration over the alternative $n=D+1$, because the cited 2+1-dimensional sweep is closer to $\kappa\simeq0.80$ than to $\kappa=0.75$. The locked-instantiation statement is therefore the universal-$n$ version: analogue platforms in 1+1, 2+1, and 3+1 effective dimensions are all predicted to exhibit a smooth spectral-dimension crossover at
+\[
+\kappa = 0.80 \pm 0.05 .
+\]
+A dimension-dependent crossover location, with the shift persisting after the platform-specific null controls and resolution tests pass, would falsify the universal-$n$ calibration. A robust non-analytic profile would separately contradict the predicted smooth branch. The pre-registered protocol for this test is supplied in the reproducibility package; its decision rules are stated before any new analogue-platform data are used.
+
+\subsection{Propagation null test}
+\label{sec:pred_propagation_null}
+
+The locked dispersion form used for prospective tests is
+\[
+\omega^2 = c^2 k^2\left[1+\alpha_{\mathrm{PCT}}(d_s-4)^2\right].
+\]
+In the locked instantiation this correction is active only where the local spectral dimension differs from four, such as the near-horizon crossover region. It is not a cumulative modification along ordinary cosmological propagation paths, where the locked account requires $d_s=4$. The corresponding fractional speed shift on such paths is therefore exactly zero in the model. Because no continuum crossover amplitude is currently claimed, this paper assigns no numerical local speed factor to the crossover; this does not alter the zero cumulative propagation prediction.
+
+The null statement is consequently simple: PCT predicts no cumulative gravitational-wave dispersion on cosmological propagation paths and is consistent with the GW170817 speed constraint at the $10^{-15}$ level~\citep{gw170817_speed}. A robust cumulative dispersion signal on paths where the locked instantiation requires $d_s=4$, after source and detector systematics are excluded, would falsify this null statement.
+
+\subsection{EHT shadow null}
+\label{sec:pred_eht_null}
+
+The spectral-dimension crossover location $\ell^\ast/r_H=0.80$ is a diffusion-scale statement, not a radial displacement of the photon sphere. The present locked instantiation also supplies no photon-sector coupling and no metric perturbation at the photon sphere. The predicted fractional shift of the black-hole shadow diameter in this paper is therefore zero. Published EHT shadow measurements of M87* and Sgr~A*~\citep{eht_m87_shadow,eht_sgra_shadow} are not expected to show a PCT-specific deviation within the scope of this locked instantiation.
+
+This is a stated null, not a hidden fit. A future extension that supplies a photon-sector coupling would need a separate EHT prediction and a separate falsification rule. The present paper makes no such extension.
+
+\subsection{Prediction register}
+\label{sec:prediction_register}
+
+\begin{table}[htbp]
+\centering
+\caption{Register of the locked-instantiation commitments stated in this paper.}
+\label{tab:prediction_register}
+\begin{tabular}{@{}p{2.5cm}p{3.1cm}p{2.5cm}p{2.6cm}p{3.6cm}@{}}
+\toprule
+Observable & Envelope & Instrument or platform & Decidable when & Falsification rule \\
+\midrule
+$d_s(\ell)$ smooth crossover & Calibrated profile location $\kappa=0.80\pm0.05$; no continuum amplitude or limiting short-scale dimension claimed & Analogue horizons or other measured spectral-dimension surrogates & Protocol-quality spectral data exist & Robust non-analytic profile preferred over the smooth model with the stated information-criterion threshold, or smooth crossover location outside the calibrated interval, with controls passing \\
+Spin-scaled $t_c$ & $t_c/M=\kappa(1+\sqrt{1-a_\ast^2})$ & GWTC stacks; LISA massive-black-hole ringdowns & High-SNR ringdown data with injection recovery & No change-point near the spin-scaled law while injections recover and null controls remain null \\
+$\alpha_s$ band & $\alpha_s=-0.012\pm0.005$; conservative band $[-0.02,-0.005]$ & Planck consistency check; Stage-4 CMB follow-up & Public running measurement with $\sigma(\alpha_s)$ of order $0.002$--$0.003$ & Robust positive running, or a measured value outside the band by more than $2\sigma$ \\
+Cross-channel $\kappa$ & $\kappa_{d_s}$ and $\kappa_{\mathrm{rd}}$ agree within $\lesssim0.1$; analogue dimensions all give $0.80\pm0.05$ & Spectral-dimension platform plus GW ringdown; analogue dimensional sweep & Both channels, or multiple analogue dimensions, have protocol-quality data & Persistent channel mismatch or dimension-dependent analogue crossover location after controls pass \\
+Propagation null & No cumulative GW dispersion on paths where $d_s=4$ & GW multimessenger events & Already constrained by GW170817; refined by future events & Robust cumulative dispersion after source and detector systematics are excluded \\
+EHT null & Zero PCT-specific shadow-diameter shift in this locked instantiation & EHT M87* and Sgr~A* shadow measurements & Current and future EHT precision checks & PCT-specific shadow shift only after a photon-sector coupling has been independently specified; none is claimed here \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+%==============================================================================
+\section{Confrontation with Planck 2018 data}
+\label{sec:planck}
+%==============================================================================
+
+This section presents the paper's only comparison with public real data. We compare the phenomenological PCT value for the scalar spectral index running, $\alpha_s = -0.012 \pm 0.005$, with the Planck 2018 posterior obtained by running a $\Lambda$CDM-with-running cosmological inference using Cobaya and CAMB. This is a consistency check, not an empirical confirmation of the framework.
+
+\subsection{Inference setup}
+\label{sec:planck_setup}
+
+The sampler used is Cobaya 3.x, which implements the Lewis--Bridle adaptive Metropolis algorithm with covariance updating~\citep{cobaya}. The Boltzmann code is CAMB~\citep{lewis_camb}. The Planck likelihood components are
+\begin{itemize}
+  \item \texttt{planck\_2018\_highl\_plik.TTTEEE\_lite},
+  \item \texttt{planck\_2018\_lowl.TT},
+  \item \texttt{planck\_2018\_lowl.EE},
+  \item \texttt{planck\_2018\_lensing.clik},
+\end{itemize}
+implemented via the \texttt{clik} likelihood code. The model is $\Lambda$CDM augmented by a running of the scalar spectral index, with seven sampled parameters
+\[
+\{\omega_b, \omega_c, \theta_{\mathrm{MC}}, \tau, \ln(10^{10} A_s), n_s, \alpha_s\},
+\]
+where $\omega_b$ is the physical baryon density, $\omega_c$ the physical cold dark matter density, $\theta_{\mathrm{MC}}$ the approximate angular scale of the sound horizon at last scattering, $\tau$ the optical depth to reionisation, $A_s$ the amplitude of the primordial scalar power spectrum, $n_s$ the scalar spectral index, and $\alpha_s$ the running. Priors are uniform on all seven parameters within ranges wide enough to contain the Planck 2018 posterior region. Table~\ref{tab:planck_priors} lists the prior ranges and Cobaya proposal widths actually used.
+
+\begin{table}[htbp]
+\centering
+\caption{Prior ranges used in the $\Lambda$CDM-with-running MCMC inference on Planck 2018.}
+\label{tab:planck_priors}
+\begin{tabular}{@{}lcc@{}}
+\toprule
+Parameter & Prior range (uniform) & Proposal width \\
+\midrule
+$\omega_b$ & $[0.018,0.025]$ & $0.0001$ \\
+$\omega_c$ & $[0.10,0.14]$ & $0.001$ \\
+$100\,\theta_{\mathrm{MC}}$ & $[1.03,1.05]$ & $0.0005$ \\
+$\tau$ & $[0.02,0.10]$ & $0.005$ \\
+$\ln(10^{10} A_s)$ & $[2.8,3.5]$ & $0.01$ \\
+$n_s$ & $[0.92,1.00]$ & $0.005$ \\
+$\alpha_s$ & $[-0.05,+0.05]$ & $0.005$ \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+The execution took place between 2026-02-11 and 2026-02-12. The chain is stored at \path{chains/planck2018_running_rs.1.txt}; its SHA256 checksum is recorded in \path{outputs/sha256SUMS.txt} of the reproducibility archive listed in Appendix~\ref{app:reproducibility}.
+
+\subsection{Convergence and chain quality}
+\label{sec:planck_convergence}
+
+Convergence was assessed via the Gelman--Rubin diagnostic $R-1$ after burn-in removal. The achieved diagnostic is $R-1 = 0.0079$, below the standard threshold of $0.01$. The effective sample size on $\alpha_s$ is $\mathrm{ess}_{\min} = 19{,}264$ from $24{,}080$ raw stored samples; the post-burn-in weighted sample count is $40{,}490$. We use the archived post-burn-in chain for all reported posterior summaries. The $n_s$ posterior mean $0.9648 \pm 0.0043$ lies more than eight standard deviations from the upper prior edge and more than ten standard deviations from the lower prior edge, so the quoted $n_s$ posterior is not prior-edge limited.
+
+\subsection[Posterior on alpha s]{Posterior on $\alpha_s$}
+\label{sec:planck_posterior}
+
+The marginal posterior on $\alpha_s$ has summary
+\[
+\alpha_s \;=\; -0.0037 \pm 0.0069 \qquad \text{(mean $\pm$ standard deviation, Planck 2018)}.
+\]
+The credible intervals are
+\[
+\mathrm{68\% \, CI}:\quad [-0.0108,\; +0.0032], \qquad \mathrm{95\% \, CI}:\quad [-0.0174,\; +0.0095].
+\]
+For context, we also recover the standard $\Lambda$CDM parameters
+\[
+n_s \;=\; 0.9648 \pm 0.0043, \qquad H_0 \;=\; 67.38 \; \mathrm{km/s/Mpc},
+\]
+in agreement with published Planck 2018 results~\citep{planck2018}, providing a sanity check that the inference pipeline reproduces standard Planck-scale parameter values.
+
+\subsection{Compatibility statement and what it does and does not mean}
+\label{sec:planck_compat}
+
+The PCT prediction for $\alpha_s$ is $-0.012 \pm 0.005$. The Planck posterior central value is $-0.0037 \pm 0.0069$. The combined-uncertainty distance, computed by adding the predicted and measured variances in quadrature, gives
+\[
+\frac{|{-}0.012 - ({-}0.0037)|}{\sqrt{0.005^2 + 0.0069^2}} \;=\; \frac{0.0083}{0.00852} \;\approx\; 0.97.
+\]
+We therefore state that the PCT prediction and the Planck posterior are compatible at $0.97\sigma$. We are explicit about what this number does and does not mean:
+\begin{itemize}
+  \item It does \emph{not} mean empirical support. A compatibility at less than one standard deviation between one prediction and one posterior, on a parameter for which many models predict negative running of comparable magnitude, is not evidence for a specific model.
+  \item It does \emph{not} mean tension. The two intervals overlap substantially, and there is no statistical signal that the prediction and the data disagree.
+  \item It does mean that the framework is currently consistent with the strongest cosmological constraint on this observable. This is the strongest empirical contact the framework has, and it is precisely as strong as ``compatible at 0.97$\sigma$'' --- no more and no less.
+\end{itemize}
+We use this phrasing to avoid the categorical error of treating compatibility as either confirmation or tension.
+
+\subsection{Future Stage-4 CMB sensitivity}
+\label{sec:planck_cmbs4}
+
+Sharper assessment of the phenomenological prediction $\alpha_s = -0.012 \pm 0.005$ awaits a measurement with substantially smaller uncertainty. Stage-4-class CMB forecasts commonly target $\sigma(\alpha_s)$ of order $0.002$--$0.003$, depending on configuration and foreground assumptions~\citep{cmbs4sciencebook}. With such a measurement, three possible outcomes can be stated in advance:
+\begin{enumerate}
+  \item A measured central value in the negative range favoured by the PCT band, for example near $\alpha_s \simeq -0.01$, would be consistent with the locked-instantiation signature and in tension with exactly zero running.
+  \item A measured central value close to zero with a Stage-4 uncertainty would strongly disfavor the locked-instantiation band, with the precise significance depending on whether the prediction uncertainty is combined with the experimental uncertainty.
+  \item A measured central value in the intermediate region, roughly between the Planck central value and the lower edge of the PCT band, would remain inconclusive and would require either a tighter theory envelope or further observational sharpening.
+\end{enumerate}
+This future comparison is therefore a prospective sharpening of the present consistency check, not a result claimed in this paper.
+
+\subsection{Chain provenance and reproducibility}
+\label{sec:planck_provenance}
+
+The MCMC chain used for the posterior summaries reported above is stored at\\
+\texttt{chains/planck2018\_running\_rs.1.txt}\\
+with SHA256 checksum recorded in the file \texttt{outputs/sha256SUMS.txt} of the archive listed in Appendix~\ref{app:reproducibility}. The full inference can be reproduced from the configuration file \texttt{planck2018\_running\_rs.yaml}, the priors of Table~\ref{tab:planck_priors}, and the executable script\\ \texttt{planck2018\_running\_inference.py}. The dependencies and versions used are listed in Appendix~\ref{app:reproducibility}.
+
+%==============================================================================
+\section{Connections to existing programmes}
+\label{sec:connections}
+%==============================================================================
+
+This section places the present framework within the landscape of emergent-spacetime and quantum-gravity programmes. We do so in prose rather than via a comparison table, because the relationships are not symmetric (some programmes are more developed than the present one in dynamics, others in matter coupling, others in non-perturbative computation) and because a side-by-side ranking would inevitably misrepresent the asymmetry.
+
+\subsection{Dimensional reduction across quantum-gravity programmes}
+\label{sec:conn_dim_reduction}
+
+Dimensional reduction at short scales is one of the most striking convergences across otherwise inequivalent quantum-gravity programmes. The spectral dimension drops from its large-scale value (typically 4) to a smaller value (typically 2) at the deepest investigated scales~\citep{carlip}. The mechanism, however, differs from programme to programme.
+
+Causal dynamical triangulations construct a non-perturbative path integral for gravity by summing over causal triangulations of spacetime~\citep{cdt,ambjorn2}. Monte Carlo simulations in the de Sitter phase find that the spectral dimension flows smoothly from $d_s \approx 4$ at large diffusion times to $d_s \approx 1.80 \pm 0.25$ at short times. The transition is smooth and the flow function is well fitted by simple analytic functions, with no sharp features.
+
+Asymptotic safety~\citep{reuter,niedermaier,percacci} pursues a non-trivial ultraviolet fixed point of the gravitational renormalisation group. At the fixed point, the spectral dimension flows to $d_s \to 2$ with a characteristic power-law approach $d_s(\ell) \approx 2 + c\,(\ell/\ell_P)^\alpha$~\citep{lauscher,rechenberger}, which is continuous and analytic. The known truncation dependence of the fixed-point properties is an active research subject; within the truncations explored so far the flow is smooth.
+
+Ho\v{r}ava--Lifshitz gravity~\citep{horava,horava2} modifies the ultraviolet behaviour of gravity by introducing anisotropic scaling, with dynamical exponent $z = 3$ in the ultraviolet. The modified dispersion relation $\omega \propto k^z$ leads to $d_s \to 2$ at short distances, with a specific smooth power-law flow.
+
+The locked instantiation now aligns with these programmes on the qualitative statement that $d_s(\ell)$ changes through a smooth crossover. PCT does not currently fix a limiting short-scale dimension, so it makes no competing endpoint claim against the values reported in those programmes. This re-scoping removes the former step-versus-smooth qualitative discriminator and correspondingly reduces the number of independent qualitative signatures. The remaining distinctives are narrower and quantitative: the calibrated crossover location $\kappa=0.80\pm0.05$, the spin-scaled ringdown law, and the propagation and EHT null commitments. These are comparisons to be tested where the relevant observables and admissibility conditions are available, not grounds for ruling out another programme.
+
+\subsection{Causal sets and discrete combinatorial primitives}
+\label{sec:conn_causal_sets}
+
+Causal set theory~\citep{sorkin,surya,henson,dowker,benincasa} takes a locally finite partially ordered set as its fundamental object. Cardinality plays the role of volume; the order relation supplies causal structure. The scalar curvature of a causal set has been defined non-trivially~\citep{benincasa}, and the recovery of a continuum manifold remains a central open question.
+
+The present framework shares with causal set theory the aim of deriving geometric language from non-geometric primitives. It differs in the choice of primitive: a symmetric positive semi-definite kernel $K$ in place of a partial order. Where causal sets take causality as primary and recover the metric, our framework takes the correlation as primary and recovers both. There is a natural mapping between the two pictures in special cases --- if the kernel is a discrete approximation to a Wightman two-point function, the causal structure derived from the principal symbol of $L_\rho$ should agree with the causal structure of a coarse-grained Lorentzian sprinkling --- but we do not develop the mapping in this paper.
+
+A point of comparison worth noting is that admissibility conditions A1--A5 are in principle applicable to causal-set constructions as a diagnostic of when manifold-like geometry is operationally warranted. The conditions are stated in terms of the two-point correlator and the operator $L_\rho$; they do not require any of the primitives to be those of PCT. This is the sense in which the present framework can be viewed as a methodology applicable to other emergent-geometry pictures.
+
+\subsection{Loop quantum gravity and spin foams}
+\label{sec:conn_lqg}
+
+Loop quantum gravity~\citep{rovelli,ashtekar,thiemann} takes holonomies and fluxes as primitives, and derives discrete spectra for area and volume operators. The spin-foam approach~\citep{perez} provides a path-integral formulation of the dynamics. The spectral dimension on spin-network states has been computed and found to flow to $d_s \to 2$ in the deep ultraviolet~\citep{modesto}, in line with the broader pattern of dimensional reduction.
+
+The present framework differs from loop quantum gravity in its choice of primitives: a continuous-valued positive semi-definite kernel rather than discrete area and volume spectra. The two pictures are not opposed; they are concerned with different aspects of the same problem. Loop quantum gravity provides a candidate quantisation of the gravitational degrees of freedom; PCT provides a kinematic framework for emergent-geometry observables. A productive intersection would be to evaluate the PCT spectral-dimension estimator on states constructed in loop quantum gravity and to compare the resulting smooth $d_s(\ell)$ flow and crossover location with the locked-instantiation calibration of $\kappa$. We do not undertake this calculation here.
+
+\subsection{Entanglement = geometry}
+\label{sec:conn_ent_geom}
+
+The programme connecting entanglement to geometry, built on the Ryu--Takayanagi formula~\citep{ryu}, the ER=EPR conjecture~\citep{maldacena}, tensor networks~\citep{swingle}, holographic codes~\citep{pastawski}, and gravitational entropy~\citep{faulkner}, offers natural primitives for the present framework. The correlation kernel $K$ maps to the boundary entanglement structure, the projection kernels $\Pi$ play the role of the tensor-network isometry maps, and the emergent bulk geometry is recovered as $d_{\mathrm{corr}}$ together with the metric of Theorem~\ref{thm:metric}.
+
+PCT can be viewed as a methodology applicable to the entanglement=geometry programme. The admissibility conditions A1--A5 supply what the programme often lacks --- explicit operational criteria for when the emergence claim is licensed --- and the spectral-dimension and ringdown observables provide concrete targets for testing. We are not the first to make this kind of observation; what we add is the specific form of the licensing conditions and the specific form of the observables. We do not claim to derive holography; we claim that PCT's observables apply to holographic settings as well as to other settings.
+
+\subsection{Summary of positioning}
+\label{sec:conn_summary}
+
+The present framework sits in the broader family of emergent-geometry-from-relational-data approaches. Its primitive is a symmetric positive semi-definite kernel; its derived objects include a two-point correlator, a distance surrogate, a Euclidean-section metric tensor, conditional causal structure, and a spectral dimension; its observables include the smooth crossover in $d_s(\ell)$ at a calibrated profile scale, the spin-scaled ringdown change-point, and the negative running of the scalar spectral index. Each class of statement is conditioned on explicit admissibility conditions A1--A5.
+
+The framework is not a competitor to causal sets, loop quantum gravity, causal dynamical triangulations, asymptotic safety, Ho\v{r}ava--Lifshitz gravity, or holography, in the sense in which two candidate ultimate theories of nature compete. It is a different kind of object: a kinematic framework that, where its admissibility conditions hold, provides observables that can be compared with data and with the predictions of other programmes. Its closest peer is perhaps the methodology of effective field theories at low energy: a domain-specific framework with explicit applicability conditions and a target set of observables.
+
+%==============================================================================
+\section{Limitations and scope}
+\label{sec:limitations}
+%==============================================================================
+
+The framework as it stands is limited in several ways that we record explicitly here. The intention is not to defend the framework against these limitations but to state them so that the reader and the assessor can judge the current scope correctly.
+
+\subsection{No intrinsic dynamics on the primitives}
+
+The most consequential limitation is that the framework is kinematic. The primitives $(K,\rho_{\mathcal{K}},\Lambda,\Pi)$ do not come with an action principle, a Hamiltonian, a path-integral measure, or any other intrinsic dynamics on the constraint space. Consequently, the framework cannot at present derive an evolution equation for the emergent geometry from first principles. The metric reconstruction theorem produces a metric tensor, but it does not produce equations of motion for that tensor. This is the largest open problem of the framework, and we do not claim to address it here.
+
+\subsection{No Standard Model derivation; no chiral fermions}
+
+The framework as instantiated in this paper does not derive the Standard Model. Matter fields, gauge fields, chiral fermions, and the structure of the Higgs sector are outside the scope. Admissibility assumption A5, which would license matter coupling, fails for the locked instantiation: no explicit interface specification connecting matter fields to the correlation-derived geometry is given. Any matter-sector statement in this paper would be unlicensed and is therefore absent.
+
+\subsection{Open scalar-running mechanism}
+
+The negative-running band $\alpha_s=-0.012\pm0.005$ is kept as a phenomenological locked-instantiation signature. The present paper does not derive it from the spectral-dimension crossover. The bounded attempt recorded in \path{outputs/d1_option_a_threshold_alpha.json} identifies four missing ingredients that must be supplied before such a derivation can close: a transfer map from the smooth spectral profile to the scalar power spectrum, a scale map from $\ell^\ast$ to the CMB pivot or e-fold variable, a cosmological profile-evolution rule, and a coupling amplitude and sign. These four gaps are the roadmap for turning the phenomenological $\alpha_s$ band into a first-principles prediction; until then, no running-of-the-running or joint cosmological target box is claimed.
+
+\subsection{No UV completeness proof; no continuum limit theorem}
+
+The framework does not claim ultraviolet completeness. There is no proof that a continuum limit of the constraint space and the kernel exists in a precise mathematical sense, nor a renormalisation-group statement to that effect. Where the locked instantiation is used to compute $d_s(\ell)$ at small $\ell$, the smallness of $\ell$ is bounded by the resolution of the discretisation of $\mathcal{K}$; no claim is made about $\ell \to 0$ in a strict limit.
+
+\subsection{Schwarzschild recovery is a calibration, not evidence}
+
+The Schwarzschild correspondence of Section~\ref{sec:schwarzschild} is a calibration consistency check. It tells us that the framework, restricted to the natural single-source instantiation, reproduces the textbook geometry. It does not constitute evidence for the framework, in the same sense that the reproduction of Newtonian gravity in the appropriate limit of general relativity is a consistency check, not evidence. The empirical content of the framework lies in its predictions, not in its limits.
+
+\subsection{GW150914 ringdown returned a null at current sensitivity}
+
+The toy ringdown analysis on GW150914 documented in Appendix~\ref{app:pipeline} returned a null at current detector sensitivity. We are explicit about what this means: the on-source signal preferred a change-point model over a GR-only model by a large $\Delta\mathrm{AIC}$, but the off-source controls also preferred a change-point at comparable strength, and the phase-randomised null returned $p = 0.12$. The protocol therefore classified the on-source result as not specific. We report this analysis as a pipeline control, not as a feature of the framework. The ringdown change-point prediction of Section~\ref{sec:pred_ringdown} remains untested at the level of a positive detection.
+
+\subsection{Single positive observable in empirical contact with public real data}
+
+All positive public-data empirical contact of the framework is currently confined to one observable: $\alpha_s$ from Planck 2018, with the outcome ``compatible at $0.97\sigma$''. The propagation and EHT statements above are null consistency checks, not detections of PCT-specific effects. The framework is not ``tested'' in any meaningful sense, and we do not describe it as such. A single observable in agreement with a posterior at less than one standard deviation is limited empirical contact, not support for the framework as a whole.
+
+\subsection{No independent replication}
+
+The framework has not yet been independently replicated. The code, chains, configuration files, and executed outputs are made available in the reproducibility archive listed in Appendix~\ref{app:reproducibility} so that this limitation can be addressed by external checks.
+
+%==============================================================================
+\section{Outlook}
+\label{sec:outlook}
+%==============================================================================
+
+The framework as it stands defines a set of observables and a corresponding pipeline; the natural next steps follow the structure of the predictions and the structure of the limitations.
+
+\subsection[Stage-4 CMB alpha s test]{Stage-4 CMB $\alpha_s$ test}
+\label{sec:outlook_cmbs4}
+
+The most direct near-term sharpening of the framework is a Stage-4-class CMB measurement of $\alpha_s$. As stated in Section~\ref{sec:planck_cmbs4}, such a measurement would distinguish a value in the neighbourhood of the locked-instantiation band from a value close to zero much more sharply than Planck 2018 can. We record this as the principal external test on the horizon, not as a result of the present paper.
+
+\subsection[Running of the running as future work]{Running of the running ($\beta_s$) as future work}
+\label{sec:outlook_beta_s}
+
+A running-of-the-running prediction, $\beta_s$, is not included in the present prediction register. It is named future work conditioned on closing the four scalar-running gaps in Section~\ref{sec:limitations}: transfer map, scale map, smoothing rule, and coupling. Without those ingredients the sign, width, and amplitude of a threshold imprint on the scalar power spectrum are not fixed, so no $\beta_s$ number is claimed here.
+
+\subsection[Joint scalar-tensor target region as future work]{Joint $(\alpha_s,n_s,r)$ target region as future work}
+\label{sec:outlook_joint_box}
+
+The same limitation applies to any joint cosmological target region in $(\alpha_s,n_s,r)$. A closed box would require the scalar-running mechanism, the tensor-sector mapping, and the matter-coupling interface to be specified consistently. Because the threshold-only derivation has not closed, the joint-box prediction is deferred as named future work and no numerical region is claimed in this manuscript.
+
+\subsection{GWTC-3 ringdown campaign}
+\label{sec:outlook_gwtc3}
+
+The ringdown change-point prediction of Section~\ref{sec:pred_ringdown} is currently untested. A programmatic campaign would apply the change-point analysis to multiple binary black hole events in the GWTC-3 catalogue~\citep{lvc_tgr3}, with appropriate null controls, and test for the spin-scaled law $t_c/M=\kappa(1+\sqrt{1-a_\ast^2})$. We do not promise the execution of this campaign in this paper; we record it as a natural extension. At current LIGO sensitivity, individual events are unlikely to yield significant detections; the representative stacked forecast is $\mathrm{SNR}_{\mathrm{stack}}\approx0.39\sqrt{N}$ for comparable events under the assumptions stated in Section~\ref{sec:pred_ringdown}.
+
+\subsection{Extending to dynamics and matter}
+\label{sec:outlook_dynamics}
+
+The largest internal extension of the framework is the introduction of intrinsic dynamics on the primitives. A natural starting point is a variational principle for $K$ or for $\rho_{\mathcal{K}}$ on the constraint space, with the emergent geometry obtained on-shell. We do not present such a principle here. A second extension is the formulation of an interface for matter coupling that would license A5. We mention these as the natural next steps; they are explicitly outside the scope of the present paper.
+
+%==============================================================================
+\appendix
+
+\clearpage
+\section{Notation and conventions}
+\label{app:notation}
+
+We collect here the principal notation used in the body of the paper.
+
+\begin{longtable}{@{}p{3.0cm} p{11.5cm}@{}}
+\toprule
+Symbol & Meaning \\
+\midrule
+$\mathcal{K}$ & Constraint space; a standard Borel measurable space carrying the correlation kernel $K$. \\
+$\mu_{\mathcal{K}}$ & Reference $\sigma$-finite measure on $\mathcal{K}$. \\
+$\Sigma_{\mathcal{K}}$ & $\sigma$-algebra of $\mathcal{K}$. \\
+$\mathcal{M}$ & Label space; a measurable space whose elements are emergent geometric points. \\
+$\Sigma_{\mathcal{M}}$ & $\sigma$-algebra of $\mathcal{M}$. \\
+$\Theta$ & Projection-parameter space; a measurable space. \\
+$\Sigma_\Theta$ & $\sigma$-algebra of $\Theta$. \\
+$K(u,v)$ & Symmetric positive semi-definite correlation kernel on $\mathcal{K}\times\mathcal{K}$. \\
+$\rho_{\mathcal{K}}(u)$ & Constraint density on $\mathcal{K}$; non-negative measurable function. \\
+$\Lambda$ & Primary projection-parameter probability measure on $\Theta$; $\Lambda(\Theta)=1$. \\
+$\nu_\Theta$ & Measure-theoretic alias for $\Lambda$: $\nu_\Theta \equiv \Lambda$. \\
+$\Pi(\cdot|u;\theta)$ & Markov projection kernel from $\mathcal{K}\times\Theta$ to $\mathcal{M}$. \\
+$\pi(x|u;\theta)$ & Radon--Nikodym density of $\Pi(\cdot|u;\theta)$ against a reference measure on $\mathcal{M}$. \\
+$G_2(x,y;\theta)$ & Induced two-point correlator on $\mathcal{M}\times\mathcal{M}$, equation~\eqref{eq:G2_def}. \\
+$\widehat{G}_2(x,y;\theta)$ & Normalised two-point correlator on $\mathcal{M}\times\mathcal{M}$. \\
+$q_{\mathrm{corr}}(x,y;\theta)$ & Log-correlation separation: $-\log \widehat{G}_2(x,y;\theta)$. \\
+$d_{\mathrm{corr}}(x,y;\theta)$ & Distance surrogate: $\sqrt{q_{\mathrm{corr}}(x,y;\theta)}$. \\
+$L_\rho$ & Second-order operator defined implicitly by $(L_\rho \circ G_2)(x,y;\theta) = \delta_\mathcal{M}(x,y)$. \\
+$h_{\mu\nu}(x)$ & Reconstructed Euclidean-section metric tensor; Theorem~\ref{thm:metric}. \\
+$g_{\mu\nu}(x)$ & Lorentzian tensor obtained only after the A3 continuation. \\
+$P(\ell)$ & Heat trace $\mathrm{Tr}\,e^{-\ell^2 L_\rho}$. \\
+$d_s(\ell)$ & Spectral dimension at diffusion scale $\ell$; Definition~\ref{def:ds}. \\
+$\ell^\ast$ & Characteristic location (midpoint or maximum-slope scale) of the smooth crossover in $d_s(\ell)$. \\
+$r_H$ & Horizon-proxy length scale defined under A2. \\
+$\kappa$ & Profile-scale ratio $\ell^\ast/r_H$; calibrated within the locked instantiation as $\kappa = 0.80 \pm 0.05$. \\
+$t_c$ & Ringdown change-point time; non-spinning limit $t_c/M \approx 2\kappa$, spin-scaled law $t_c/M=\kappa(1+\sqrt{1-a_\ast^2})$. \\
+$\alpha_s$ & Running of the scalar spectral index, $d n_s / d\log k$. \\
+A1--A5 & Admissibility conditions of Section~\ref{sec:admissibility}. \\
+$\mathfrak{A}_\theta$ & Declared aggregation functional over $\Theta$ with respect to $\Lambda$. \\
+\bottomrule
+\end{longtable}
+
+\paragraph{Locked instantiation.} The locked instantiation referred to in the body of the paper fixes (i) the constraint space $\mathcal{K}$ to be a finite or compact subset of $\mathbb{R}^d$ with $d \in \{1,2,3,4\}$ depending on the observable; (ii) the correlation kernel $K$ to be a Gaussian-type kernel of fixed width tied to the observable scale; (iii) the constraint density $\rho_{\mathcal{K}}$ to be uniform on $\mathcal{K}$; (iv) the projection-parameter measure $\Lambda$ to be the uniform measure on a stated parametrisation of $\Theta$; and (v) the projection kernel $\Pi$ to be a Gaussian Markov kernel with regularisation parameter fixed once the observable scale is fixed.
+
+\paragraph{Sign and signature conventions.} The reconstructed tensor $h_{\mu\nu} = -\partial_\mu\partial_\nu \log G_2$ is a Euclidean-section tensor in the locked Gaussian case. We use the mostly-plus signature $(-,+,+,+)$ only after an A3 analytic continuation supplies a Lorentzian tensor $g_{\mu\nu}$. The Laplacian on Euclidean sections is the positive operator $L_\rho^{E} = -h^{\mu\nu}\partial_\mu\partial_\nu + \ldots$ on regions where A4 holds.
+
+\section{Pipeline checks on toy systems}
+\label{app:pipeline}
+
+This appendix documents computational pipeline checks on toy systems. Each check is presented with the input configuration, the output values, and the SHA256 checksum of the executed output. We are explicit that these checks test the algorithm, not the physics: the toy systems are constructed to have known properties, and the checks report only that the implementation recovers those properties.
+
+\subsection{B.1 1D Gaussian-kernel chain}
+\label{app:pipeline_chain}
+
+A finite chain of points on the real line is constructed with a Gaussian correlation kernel of fixed width, uniform constraint density, and uniform $\Lambda$. The operator $L_\rho$ is assembled as the regularised pseudoinverse of $G_2$ with Tikhonov regularisation. The heat trace $P(\ell) = \mathrm{Tr}\,e^{-\ell^2 L_\rho}$ is computed over a logarithmic grid in $\ell \in [0.1,10.0]$, and the spectral dimension is computed from the logarithmic derivative of $P(\ell)$.
+
+The output is:
+\begin{itemize}
+  \item Peak spectral dimension $d_s = 1.723$ at $\ell = 1.468$.
+  \item Refinement diagnostic $\max|\Delta d_s| = 0.453$ on the same window, comparing the spectral dimension before and after a graph coarsening of factor two.
+  \item Step preference: a step model is preferred over a sigmoid model on this window under both AIC and BIC.
+\end{itemize}
+SHA256 of the executed pipeline output:
+\begin{center}
+\texttt{df8aa335148ec53bec36793d7fc15e0}\\
+\texttt{f44351723bdf4e2108ea56c7fcd199934}
+\end{center}
+
+We state explicitly: this checks the algorithm, not the physics. The 1D Gaussian-kernel chain is a system with known spectral properties; the output is reported to verify that the implementation recovers those properties. The peak value $d_s=1.723$ and the AIC/BIC step preference on this finite toy window are regularised-pseudoinverse diagnostics only; neither is used as a physical crossover amplitude, a continuum-limit result, or evidence of non-analyticity in the locked instantiation.
+
+\subsection{B.2 Synthetic change-point detection}
+\label{app:pipeline_changepoint}
+
+A synthetic monthly time series of 120 points is constructed with two stationary segments separated by a step injected at index 60 (2020-01-01). The pre-step segment has mean 10.110; the post-step segment has mean 12.231. The detector is a piecewise-constant mean regression with BIC selection (maximum three change-points, minimum segment size 12). The detector recovers a single change-point at index 60, with segment means $[10.110,12.231]$ and mean jump $\Delta\mu = 2.121$, corresponding to a 21\% step.
+
+SHA256 of the executed runner outputs:
+\begin{center}
+\texttt{10ec8d0cff696007a11343abfc08c7fe}\\
+\texttt{8bad5cf82d925fb676ba2bd7c912bdeb}\\
+\texttt{244fb11d66391c370644f83948717bbe}\\
+\texttt{25869a3f9fc474b59d3fc2927ce15242}
+\end{center}
+The two hashes correspond to the same synthetic check written to the current runner output and the compatibility output path. We record both for traceability.
+
+This checks the change-point detection algorithm on a synthetic system with a known breakpoint. It does not test the physics of the ringdown change-point prediction of Section~\ref{sec:pred_ringdown}.
+
+\subsection{B.3 GW150914 LVK pipeline}
+\label{app:pipeline_gw150914}
+
+The GW150914 strain data from the LIGO H1 detector (LOSC, GPS time 1126259446, 32~s duration, 4096~Hz sample rate) was processed with an FFT bandpass between 30~Hz and 500~Hz. The change-point model was compared against a GR-only model using AIC, with 200 phase-randomised surrogates and two off-source segments as null controls.
+
+The numerical outputs are:
+\begin{itemize}
+  \item On-source $\Delta\mathrm{AIC} = -219.27$ (change-point model preferred).
+  \item Off-source window 1 $\Delta\mathrm{AIC} = -23.70$ (change-point model preferred).
+  \item Off-source window 2 $\Delta\mathrm{AIC} = -206.59$ (change-point model preferred).
+  \item Phase-randomised null $p$-value $p = 0.12$ on 200 trials.
+\end{itemize}
+The decision rule is the following: a positive change-point detection requires the on-source $\Delta\mathrm{AIC}$ preference to be substantially stronger than the off-source preferences and the phase-randomised null $p$-value to be below the pre-specified threshold of 0.05. The on-source preference is dominated by off-source preferences of comparable magnitude (one matches it within a factor of order unity), and the null $p$-value is above threshold. The decision is therefore NULL: the protocol does not claim a detection.
+
+We state plainly: the protocol correctly returns a null on a public real event at current detector sensitivity. This is reported here to document the discipline of the protocol, not as a result. A null at current sensitivity is fully consistent with the prediction of Section~\ref{sec:pred_ringdown}; under the representative forecast $\mathrm{SNR}_{\mathrm{stack}}\approx0.39\sqrt{N}$, a single GW150914-like event is not expected to give a decisive detection. A detection at current sensitivity would have warranted a separate analysis to determine whether the detection is a false positive.
+
+\subsection{B.4 SHA256 checksums table}
+\label{app:pipeline_checksums}
+
+We collect for convenience the SHA256 checksums of the executed pipeline outputs reported above.
+
+\begin{table}[htbp]
+\centering
+\caption{SHA256 checksums of executed pipeline outputs.}
+\label{tab:checksums}
+\begin{tabular}{@{}p{4.8cm}p{9.7cm}@{}}
+\toprule
+Output & SHA256 \\
+\midrule
+1D Gaussian-kernel chain & \texttt{df8aa335148ec53bec36793d7fc15e0}\newline\texttt{f44351723bdf4e2108ea56c7fcd199934} \\
+Synthetic change-point runner & \texttt{10ec8d0cff696007a11343abfc08c7fe}\newline\texttt{8bad5cf82d925fb676ba2bd7c912bdeb} \\
+Synthetic change-point compatibility path & \texttt{10ec8d0cff696007a11343abfc08c7fe}\newline\texttt{8bad5cf82d925fb676ba2bd7c912bdeb} \\
+D1 option (a) threshold attempt & \texttt{4edc38153abe3965ffd5727d1e624ef}\newline\texttt{8185246abed315fc4a257a72d0db3bcae} \\
+Ringdown timing corrections & \texttt{6314909781b325586bdd7a20a327da09}\newline\texttt{bc2b6aae75c84c0889ad3c15e4beea51} \\
+$\kappa$ origin hypothesis check & \texttt{5b5cefca309832bf4a3f7e07c6e7f2bd}\newline\texttt{70cda3470ba81f7645ab6757f806178d} \\
+GW150914 corrected timing capsule & \texttt{3531c199c716e5133b00d88bf490efe}\newline\texttt{336b16feebbeba3a97114724258133454} \\
+LVK public ringdown run & \texttt{3885b66abd20c848385f7024f575012}\newline\texttt{e224187511413abeafb9d31acf2311b49} \\
+Spin-ringdown regression & \texttt{6b1539da32bb7cc0fde81408bf22e49b}\newline\texttt{87e1d443d1059c62b7c3c2ddf9473eb4} \\
+LISA forecast & \texttt{b89b51c91664952cbaca3e3a7bd1948f}\newline\texttt{ae2184f3a470643da36dfca46a75490b} \\
+Propagation null & \texttt{64851f3c1995ac22508903c66f9bfb69}\newline\texttt{1e011602b09f74a5591ba831da0bc39b} \\
+EHT shadow null & \texttt{249903eb20d5d1137c07136580772cea}\newline\texttt{0ff73cd9652da447950567d8afef4b0b} \\
+Planck chain-summary check & \texttt{2a54cc7f1024c1a09de46e2350f18d}\newline\texttt{f6d0a76939125e04f2b6ca1fc9500d9ef1} \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\section{Reproducibility}
+\label{app:reproducibility}
+
+The complete inference and pipeline-check code for this paper is publicly available. We list here the locations, the dependencies, and the principal commands used.
+
+\subsection{Code repository}
+
+The code is at \url{https://github.com/kortxresearch/PCT}.
+
+\subsection{Data archives}
+
+The data, configuration files, MCMC chains, and executed outputs are archived at:
+\begin{itemize}
+  \item OSF: DOI \href{https://doi.org/10.17605/OSF.IO/F4WTD}{10.17605/OSF.IO/F4WTD}.
+  \item Zenodo: DOI \href{https://doi.org/10.5281/zenodo.21396416}{10.5281/zenodo.21396416}.
+\end{itemize}
+
+\subsection{Software environment}
+
+The Python environment and principal dependencies are:
+\begin{itemize}
+  \item Python 3.12.3.
+  \item numpy 2.4.1.
+  \item Cobaya 3.x (the specific minor version is recorded in the archive manifest).
+  \item CAMB (the specific version is recorded in the archive manifest).
+  \item \texttt{clik}, the Planck likelihood code.
+\end{itemize}
+
+\subsection{Principal commands}
+
+The archived Planck $\Lambda$CDM-with-running inference was executed via
+\begin{verbatim}
+cobaya-run planck2018_running_rs.yaml
+\end{verbatim}
+with the configuration file \texttt{planck2018\_running\_rs.yaml} containing the seven sampled parameters of Table~\ref{tab:planck_priors} and the four likelihood components listed in Section~\ref{sec:planck_setup}. The stored-chain summary is checked via
+\begin{verbatim}
+python planck_summary_from_chain.py \
+    --chain chains/planck2018_running_rs.1.txt \
+    --reference outputs/planck2018_running.json \
+    --out outputs/planck2018_running_summary_check.json
+\end{verbatim}
+The 1D Gaussian-kernel chain spectral-dimension check is executed via
+\begin{verbatim}
+python pct_ds.py > outputs/pct_ds_output.txt
+\end{verbatim}
+and produces the SHA256 of Section~\ref{app:pipeline_chain}. The synthetic change-point checks are executed via
+\begin{verbatim}
+python gw_change_point_runner.py --input ./data/gw_synth_monthly.csv \
+    --date-col date --value-col value --max-cps 3 \
+    --min-segment-size 12 --out outputs/gw_change_point_runner.json
+python gw_change_point_runner.py --input data/gw_synth_monthly.csv \
+    --date-col date --value-col value --max-cps 3 \
+    --min-segment-size 12 --out outputs/gw_change_points_synth.json
+\end{verbatim}
+and produce the SHA256 values of Section~\ref{app:pipeline_changepoint}. The GW150914 pipelines are executed via
+\begin{verbatim}
+python lvk_ringdown_end_to_end.py \
+    --out outputs/lvk_ringdown_public_run.json
+python gw150914_pct_predictions.py \
+    --out outputs/gw150914_pct_predictions.json
+\end{verbatim}
+and produce the outputs of Section~\ref{app:pipeline_gw150914} and the corrected timing capsule. The v4 consistency checks and non-blocked prediction checks added during revision are executed via
+\begin{verbatim}
+python d1_option_a_threshold_alpha.py
+python ringdown_timing_corrections.py
+python kappa_origin_hypothesis_check.py
+python np1_spin_ringdown_regression.py
+python np2_lisa_forecast.py
+python np6_propagation_null.py
+python np9_eht_null.py
+python hash_artifacts.py
+\end{verbatim}
+and produce the checksummed outputs
+\begin{itemize}
+  \item \path{outputs/d1_option_a_threshold_alpha.json},
+  \item \path{outputs/ringdown_timing_corrections.json},
+  \item \path{outputs/kappa_origin_hypothesis_check.json},
+  \item \path{outputs/np1_spin_ringdown_regression.json},
+  \item \path{outputs/np2_lisa_forecast.json},
+  \item \path{outputs/np6_propagation_null.json},
+  \item \path{outputs/np9_eht_null.json}.
+\end{itemize}
+
+\subsection{Verification}
+
+All SHA256 checksums of executed outputs are collected in the file \path{outputs/sha256SUMS.txt} of the archive. The chain provenance file \path{chains/planck2018_running_rs.1.txt} can be verified against the corresponding SHA256 in that file.
+
+\section{Proof sketches}
+\label{app:proofs}
+
+We sketch the principal proofs of the body of the paper. The sketches are minimal: they record the structure of the argument, not the full technical detail. A self-contained development is given in the longer technical report referenced in Appendix~\ref{app:reproducibility}.
+
+\subsection{Theorem~\ref{thm:metric}: metric reconstruction}
+
+\begin{proof}[Proof sketch]
+We work in a chart on a neighbourhood of a point $x_0 \in \Omega$. By Assumption~\ref{ass:regularity}(iii), $\log G_2(x,y;\theta)$ is twice continuously differentiable in $(x,y)$ on a neighbourhood of the diagonal in $\Omega \times \Omega$ for each $\theta \in \mathrm{supp}\,\Lambda$. The mixed partial derivative
+\[
+H_{\mu\nu}(x;\theta) = -\,\partial_{x^\mu}\partial_{y^\nu}\log G_2(x,y;\theta)\Big|_{y=x}
+\]
+is symmetric in $(\mu,\nu)$ by symmetry of $G_2$ in $(x,y)$. By the non-degeneracy hypothesis, $\det H_{\mu\nu}(x;\theta) \neq 0$ at every $x \in \Omega$. By A4, the Hessian is continuous in $x$, and by Assumption~\ref{ass:regularity}(iv) it is integrable against $\Lambda$. Therefore $\mathfrak{A}_\theta[H_{\mu\nu}(x;\theta)]$ is well-defined and symmetric. Non-degeneracy and constant signature after aggregation are not automatic; they are part of the aggregation hypothesis in Theorem~\ref{thm:metric}.
+
+For the locked Gaussian case, Bochner's theorem implies that a stationary positive semi-definite kernel has a sign-definite coincidence-limit Hessian on the Euclidean section; the direct reconstruction is therefore Riemannian, not Lorentzian. Lorentzian structure enters only through A3: a declared static or stationary analytic continuation plus a local second-order principal part whose continued principal symbol is Lorentzian. If that continued symbol is conformal to the inverse continued Hessian, then the pair $(\Omega,g_{\mu\nu})$ is a Lorentzian manifold and the principal symbol supplies the corresponding null cones.
+\end{proof}
+
+\subsection[Proposition: positivity of G2]{Proposition~\ref{prop:G2_psd}: positivity of $G_2$}
+
+The proof was given in the body of the text. We note here that the proof requires only positive semi-definiteness of $K$, Fubini's theorem (justified by the integrability hypotheses), and that the map $u \mapsto \pi(x|u;\theta)$ is measurable.
+
+\subsection{Proposition~\ref{prop:causal}: causal structure}
+
+\begin{proof}[Proof sketch]
+By A1, $G_2$ is well-defined and the distance surrogate is metric-like on $\Omega$. By A3, the Euclidean-section reconstruction has been supplied with a declared analytic continuation and the regularised inverse has a local second-order principal part with Lorentzian symbol $A^{\mu\nu}(x)$ after continuation. If this symbol is conformal to the inverse continued Hessian of $-\log G_2$ at the diagonal, the light cones of $A^{\mu\nu}$ coincide with those of the continued metric up to conformal factor. These cones provide the causal partition of $T_x\Omega$ into timelike, null, and spacelike directions.
+\end{proof}
+
+\subsection[Lambda-invariance of qualitative spectral features]{Proposition~\ref{prop:ds_invariance}: $\Lambda$-invariance of qualitative spectral features}
+
+\begin{proof}[Proof sketch]
+Let $\mathcal{O}(\theta)$ denote the qualitative classifier assigned to $d_s(\ell;\theta)$ on the declared scale window, including smoothness, monotonicity, and the fitted characteristic location $\ell^\ast$. Under Assumption~\ref{ass:regularity}, $L_\rho(\theta)$ and the associated heat trace vary continuously with $\theta$. If the smooth-profile classification and its location interval are separated from their declared decision boundaries by finite margins, then sufficiently small $\Lambda$-perturbations and admissible aggregation changes cannot change the classification without crossing a margin. The value of $\ell^\ast$ can shift within the perturbation neighbourhood; the proposition claims stability of the qualitative classification and calibrated-location class, not a fixed crossover amplitude.
+\end{proof}
+
+\subsection{Proposition (locked instantiation): kernel uniqueness under symmetry, entropy, and complexity}
+
+\begin{proposition}[Locked kernel uniqueness]
+\label{prop:kernel_uniqueness}
+Within the locked instantiation, suppose $K$ is required to satisfy (i) translation invariance on $\mathcal{K} \subseteq \mathbb{R}^d$, (ii) positive semi-definiteness, (iii) maximum entropy subject to a fixed second moment, and (iv) a complexity bound expressed as a fixed Sobolev norm on its Fourier transform. Then $K$ is uniquely determined, up to the second-moment scale, as a Gaussian kernel.
+\end{proposition}
+
+\begin{proof}[Proof sketch]
+Translation invariance reduces $K(u,v)$ to a function $K(u-v)$ on $\mathbb{R}^d$. Positive semi-definiteness, by Bochner's theorem, requires $K$ to be the Fourier transform of a non-negative finite measure on $\mathbb{R}^d$. The maximum-entropy condition with fixed second moment selects, by the classical Lagrange-multiplier argument, the Gaussian distribution on $\mathbb{R}^d$ as the unique non-negative measure of maximum entropy. The complexity bound on the Fourier transform fixes the width parameter; together with the second-moment normalisation, the kernel is determined.
+\end{proof}
+
+\subsection{Theorem: non-analytic step from projection threshold}
+
+\begin{theorem}[Step from $\Pi$-threshold crossing]
+\label{thm:step}
+In the locked instantiation, suppose the projection kernel $\Pi$ admits an effective threshold scale $\ell^\ast$ across which the support structure of $\Pi(\cdot|u;\theta)$ undergoes a discontinuous change in its leading-order moment expansion (e.g.\ a change in the dimensional support of the projection from $\ell > \ell^\ast$ to $\ell < \ell^\ast$). Then the spectral dimension $d_s(\ell)$ defined from the heat trace $P(\ell) = \mathrm{Tr}\,e^{-\ell^2 L_\rho}$ has a non-analytic step at $\ell = \ell^\ast$.
+\end{theorem}
+
+\begin{proof}[Proof sketch]
+The heat trace can be expanded asymptotically in $\ell$ on each side of $\ell^\ast$ using the corresponding leading-order moment structure of $\Pi$. The discontinuity in the moment structure at $\ell = \ell^\ast$ translates into a discontinuity in the leading coefficient of the expansion of $P(\ell)$, and hence in $d_s(\ell)$. The transition is non-analytic relative to the locked projection-threshold model.
+
+Any finite local analytic curvature expansion of the form $\sum_n c_n (\ell/\ell_P)^n R^n$, under the stated smoothness assumptions, produces a heat trace whose dependence on $\ell$ is analytic term by term. Such an expansion does not capture the projection-threshold step at $\ell^\ast$. This is narrower than saying that no effective field theory of any kind could reproduce non-analytic structure: thresholds, non-local terms, or singular limits can also produce non-analytic behaviour. The conditional claim here is only that an observed step would constrain finite local analytic curvature expansions on systems where that expansion is otherwise expected to apply.
+\end{proof}
+
+We emphasise that the conditional language is essential: the statement is about what an empirical detection would do under stated smoothness and applicability assumptions, not about what the present paper has shown.
+
+\begin{remark}[Executed status of the threshold hypothesis]
+The theorem is retained as conditional mathematics, not as an assertion that its hypothesis is realised by the locked physical construction. The archived and checksummed T1, T1b, and T2 campaigns found no documented construction that both realises the required discontinuous projection-support change and yields a refinement-stable spectral step under the frozen adjudication rules. T1 was non-adjudicable, T1b promoted no construction, and T2 returned \texttt{no\_refinement\_stable\_step} with the smooth model preferred in every frozen comparison. The executed records are
+\begin{itemize}
+  \item \path{outputs/t1_step_height_adjudication.json},
+  \item \path{outputs/t1b_construction_sweep.json},
+  \item \path{outputs/t2_horizon_profile_campaign.json},
+\end{itemize}
+with the frozen inputs recorded in \path{outputs/t1_freeze_manifest.json} and
+\path{outputs/t2_freeze_manifest.json}. Accordingly, the theorem supplies no nonzero step observable to the predictions in this paper.
+\end{remark}
+
+\subsection{Remark on the global picture}
+
+Theorem~\ref{thm:metric} supplies the structural result used by the predictions of Section~\ref{sec:predictions}: where the admissibility assumptions hold, the framework defines Euclidean-section metric data from the two-point correlator, with Lorentzian causal language available only after the additional A3 continuation. Theorem~\ref{thm:step} establishes a separate conditional implication from a discontinuous projection-support hypothesis, but the executed campaigns cited above do not realise that hypothesis; it therefore does not supply the present spectral prediction. The current locked-instantiation spectral commitment is instead a smooth crossover located at the calibrated profile scale $\kappa = 0.80 \pm 0.05$, with no nonzero continuum amplitude claimed.
+
+%==============================================================================
+\section*{Data and code availability}
+%==============================================================================
+
+Complete technical specifications, executable capsule code, MCMC chains, configuration files, and all outputs are publicly archived. The OSF repository is at \url{https://osf.io/9vc3x} with DOI \href{https://doi.org/10.17605/OSF.IO/F4WTD}{10.17605/OSF.IO/F4WTD}. The Zenodo archive is at \url{https://zenodo.org/records/21396416} with DOI \href{https://doi.org/10.5281/zenodo.21396416}{10.5281/zenodo.21396416}. The code repository is at \url{https://github.com/kortxresearch/PCT}. The archive includes the spectral-dimension pipeline \texttt{pct\_ds.py}, the change-point pipeline \texttt{gw\_change\_point\_runner.py}, the cosmological inference pipeline \texttt{planck2018\_running\_inference.py}, the ringdown pipeline \texttt{lvk\_ringdown\_end\_to\_end.py}, the MCMC chains, and all executed outputs with SHA256 checksums.
+
+%==============================================================================
+\section*{Conflict of interest}
+%==============================================================================
+
+The author declares no conflict of interest.
+
+%==============================================================================
+\section*{Acknowledgements}
+%==============================================================================
+
+This work was conducted at KORT-X Research, Bucharest, Romania. The author thanks the developers of Cobaya, CAMB, and the Planck \texttt{clik} likelihood code for making cosmological inference accessible, and the LIGO/Virgo/KAGRA collaborations for the public data releases used in the pipeline checks of Appendix~\ref{app:pipeline}.
+
+%==============================================================================
+\begin{thebibliography}{99}
+%==============================================================================
+
+\bibitem{sorkin}
+Sorkin, R.D.: Causal sets: Discrete gravity. In: Gomberoff, A., Marolf, D. (eds.) \textit{Lectures on Quantum Gravity}, Springer (2005). arXiv:gr-qc/0309009.
+
+\bibitem{surya}
+Surya, S.: The causal set approach to quantum gravity. Living Rev.\ Relativ.\ \textbf{22}, 5 (2019). \href{https://doi.org/10.1007/s41114-019-0023-1}{DOI: 10.1007/s41114-019-0023-1}.
+
+\bibitem{rovelli}
+Rovelli, C.: \textit{Quantum Gravity}. Cambridge University Press, Cambridge (2004).
+
+\bibitem{perez}
+Perez, A.: The spin-foam approach to quantum gravity. Living Rev.\ Relativ.\ \textbf{16}, 3 (2013). arXiv:1205.2019. \href{https://doi.org/10.12942/lrr-2013-3}{DOI: 10.12942/lrr-2013-3}.
+
+\bibitem{cdt}
+Ambj{\o}rn, J., Jurkiewicz, J., Loll, R.: Spectral dimension of the universe. Phys.\ Rev.\ Lett.\ \textbf{95}, 171301 (2005). arXiv:hep-th/0505113. \href{https://doi.org/10.1103/PhysRevLett.95.171301}{DOI: 10.1103/PhysRevLett.95.171301}.
+
+\bibitem{ambjorn2}
+Ambj{\o}rn, J., G\"orlich, A., Jurkiewicz, J., Loll, R.: Nonperturbative quantum gravity. Phys.\ Rep.\ \textbf{519}, 127--210 (2012). arXiv:1203.3591. \href{https://doi.org/10.1016/j.physrep.2012.03.007}{DOI: 10.1016/j.physrep.2012.03.007}.
+
+\bibitem{swingle}
+Swingle, B.: Entanglement renormalization and holography. Phys.\ Rev.\ D \textbf{86}, 065007 (2012). arXiv:0905.1317. \href{https://doi.org/10.1103/PhysRevD.86.065007}{DOI: 10.1103/PhysRevD.86.065007}.
+
+\bibitem{maldacena}
+Maldacena, J., Susskind, L.: Cool horizons for entangled black holes. Fortschr.\ Phys.\ \textbf{61}, 781--811 (2013). arXiv:1306.0533. \href{https://doi.org/10.1002/prop.201300020}{DOI: 10.1002/prop.201300020}.
+
+\bibitem{ryu}
+Ryu, S., Takayanagi, T.: Holographic derivation of entanglement entropy from AdS/CFT. Phys.\ Rev.\ Lett.\ \textbf{96}, 181602 (2006). arXiv:hep-th/0603001. \href{https://doi.org/10.1103/PhysRevLett.96.181602}{DOI: 10.1103/PhysRevLett.96.181602}.
+
+\bibitem{faulkner}
+Faulkner, T., Guica, M., Hartman, T., Myers, R.C., Van Raamsdonk, M.: Gravitation from entanglement in holographic CFTs. JHEP \textbf{03}, 051 (2014). arXiv:1312.7856. \href{https://doi.org/10.1007/JHEP03(2014)051}{DOI: 10.1007/JHEP03(2014)051}.
+
+\bibitem{carlip}
+Carlip, S.: Dimension and dimensional reduction in quantum gravity. Class.\ Quantum Grav.\ \textbf{34}, 193001 (2017). arXiv:1705.05417. \href{https://doi.org/10.1088/1361-6382/aa8535}{DOI: 10.1088/1361-6382/aa8535}.
+
+\bibitem{planck2018}
+Planck Collaboration: Planck 2018 results.\ X.\ Constraints on inflation. Astron.\ Astrophys.\ \textbf{641}, A10 (2020). arXiv:1807.06211. \href{https://doi.org/10.1051/0004-6361/201833887}{DOI: 10.1051/0004-6361/201833887}.
+
+\bibitem{cmbs4sciencebook}
+Abazajian, K.N., et al.: CMB-S4 Science Book, First Edition. arXiv:1610.02743 (2016).
+
+\bibitem{gwtc1}
+LIGO Scientific Collaboration, Virgo Collaboration: GWTC-1: A gravitational-wave transient catalog. Phys.\ Rev.\ X \textbf{9}, 031040 (2019). arXiv:1811.12907. \href{https://doi.org/10.1103/PhysRevX.9.031040}{DOI: 10.1103/PhysRevX.9.031040}.
+
+\bibitem{gw170817_speed}
+LIGO Scientific Collaboration, Virgo Collaboration, Fermi Gamma-ray Burst Monitor, INTEGRAL: Gravitational waves and gamma-rays from a binary neutron star merger: GW170817 and GRB 170817A. Astrophys.\ J.\ Lett.\ \textbf{848}, L13 (2017). arXiv:1710.05834. \href{https://doi.org/10.3847/2041-8213/aa920c}{DOI: 10.3847/2041-8213/aa920c}.
+
+\bibitem{lauscher}
+Lauscher, O., Reuter, M.: Fractal spacetime structure in asymptotically safe gravity. JHEP \textbf{10}, 050 (2005). arXiv:hep-th/0508202. \href{https://doi.org/10.1088/1126-6708/2005/10/050}{DOI: 10.1088/1126-6708/2005/10/050}.
+
+\bibitem{reuter}
+Reuter, M.: Nonperturbative evolution equation for quantum gravity. Phys.\ Rev.\ D \textbf{57}, 971--985 (1998). arXiv:hep-th/9605030. \href{https://doi.org/10.1103/PhysRevD.57.971}{DOI: 10.1103/PhysRevD.57.971}.
+
+\bibitem{niedermaier}
+Niedermaier, M., Reuter, M.: The asymptotic safety scenario in quantum gravity. Living Rev.\ Relativ.\ \textbf{9}, 5 (2006). \href{https://doi.org/10.12942/lrr-2006-5}{DOI: 10.12942/lrr-2006-5}.
+
+\bibitem{percacci}
+Percacci, R.: Asymptotic safety. In: Oriti, D. (ed.) \textit{Approaches to Quantum Gravity}, Cambridge University Press, Cambridge (2009). arXiv:0709.3851.
+
+\bibitem{rechenberger}
+Rechenberger, A., Saueressig, F.: A functional renormalization group equation for foliated spacetimes. Phys.\ Rev.\ D \textbf{86}, 024018 (2012). arXiv:1206.0657. \href{https://doi.org/10.1103/PhysRevD.86.024018}{DOI: 10.1103/PhysRevD.86.024018}.
+
+\bibitem{horava}
+Ho\v{r}ava, P.: Quantum gravity at a Lifshitz point. Phys.\ Rev.\ D \textbf{79}, 084008 (2009). arXiv:0901.3775. \href{https://doi.org/10.1103/PhysRevD.79.084008}{DOI: 10.1103/PhysRevD.79.084008}.
+
+\bibitem{horava2}
+Ho\v{r}ava, P.: Spectral dimension of the universe in quantum gravity at a Lifshitz point. Phys.\ Rev.\ Lett.\ \textbf{102}, 161301 (2009). arXiv:0902.3657. \href{https://doi.org/10.1103/PhysRevLett.102.161301}{DOI: 10.1103/PhysRevLett.102.161301}.
+
+\bibitem{modesto}
+Modesto, L.: Fractal structure of loop quantum gravity. Class.\ Quantum Grav.\ \textbf{26}, 242002 (2009). arXiv:0812.2214. \href{https://doi.org/10.1088/0264-9381/26/24/242002}{DOI: 10.1088/0264-9381/26/24/242002}.
+
+\bibitem{thiemann}
+Thiemann, T.: \textit{Modern Canonical Quantum General Relativity}. Cambridge University Press, Cambridge (2007).
+
+\bibitem{ashtekar}
+Ashtekar, A., Lewandowski, J.: Background independent quantum gravity: a status report. Class.\ Quantum Grav.\ \textbf{21}, R53--R152 (2004). arXiv:gr-qc/0404018. \href{https://doi.org/10.1088/0264-9381/21/15/R01}{DOI: 10.1088/0264-9381/21/15/R01}.
+
+\bibitem{henson}
+Henson, J.: The causal set approach to quantum gravity. In: Oriti, D. (ed.) \textit{Approaches to Quantum Gravity}, Cambridge University Press, Cambridge (2009). arXiv:gr-qc/0601121.
+
+\bibitem{dowker}
+Dowker, F.: Causal sets and the deep structure of spacetime. In: Ashtekar, A. (ed.) \textit{100 Years of Relativity}, World Scientific, Singapore (2005). arXiv:gr-qc/0508109.
+
+\bibitem{benincasa}
+Benincasa, D.M.T., Dowker, F.: The scalar curvature of a causal set. Phys.\ Rev.\ Lett.\ \textbf{104}, 181301 (2010). arXiv:1001.2725. \href{https://doi.org/10.1103/PhysRevLett.104.181301}{DOI: 10.1103/PhysRevLett.104.181301}.
+
+\bibitem{pastawski}
+Pastawski, F., Yoshida, B., Harlow, D., Preskill, J.: Holographic quantum error-correcting codes: toy models for the bulk/boundary correspondence. JHEP \textbf{06}, 149 (2015). arXiv:1503.06237. \href{https://doi.org/10.1007/JHEP06(2015)149}{DOI: 10.1007/JHEP06(2015)149}.
+
+\bibitem{lvc_tgr3}
+LIGO Scientific Collaboration, Virgo Collaboration, KAGRA Collaboration: Tests of general relativity with GWTC-3. Phys.\ Rev.\ D \textbf{106}, 042003 (2022). arXiv:2112.06861. \href{https://doi.org/10.1103/PhysRevD.106.042003}{DOI: 10.1103/PhysRevD.106.042003}.
+
+\bibitem{eht_m87_shadow}
+Event Horizon Telescope Collaboration: First M87 Event Horizon Telescope Results.\ I.\ The shadow of the supermassive black hole. Astrophys.\ J.\ Lett.\ \textbf{875}, L1 (2019). arXiv:1906.11238. \href{https://doi.org/10.3847/2041-8213/ab0ec7}{DOI: 10.3847/2041-8213/ab0ec7}.
+
+\bibitem{eht_sgra_shadow}
+Event Horizon Telescope Collaboration: First Sagittarius A* Event Horizon Telescope Results.\ I.\ The shadow of the supermassive black hole in the center of the Milky Way. Astrophys.\ J.\ Lett.\ \textbf{930}, L12 (2022). \href{https://doi.org/10.3847/2041-8213/ac6674}{DOI: 10.3847/2041-8213/ac6674}.
+
+\bibitem{cobaya}
+Torrado, J., Lewis, A.: Cobaya: code for Bayesian analysis of hierarchical physical models. JCAP \textbf{05}, 057 (2021). arXiv:2005.05290. \href{https://doi.org/10.1088/1475-7516/2021/05/057}{DOI: 10.1088/1475-7516/2021/05/057}.
+
+\bibitem{lewis_camb}
+Lewis, A., Challinor, A., Lasenby, A.: Efficient computation of CMB anisotropies in closed FRW models. Astrophys.\ J.\ \textbf{538}, 473--476 (2000). arXiv:astro-ph/9911177. \href{https://doi.org/10.1086/309179}{DOI: 10.1086/309179}.
+
+\bibitem{calcagni}
+Calcagni, G.: Fractal universe and quantum gravity. Phys.\ Rev.\ Lett.\ \textbf{104}, 251301 (2010). arXiv:0912.3142. \href{https://doi.org/10.1103/PhysRevLett.104.251301}{DOI: 10.1103/PhysRevLett.104.251301}.
+
+\end{thebibliography}
+
+\end{document}

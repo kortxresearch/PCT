@@ -1,0 +1,74 @@
+{
+  "all_checks_pass": true,
+  "checks": {
+    "dense_identity_pass": true,
+    "dense_locked_form_pass": true,
+    "dense_monotonicity_pass": true,
+    "quoted_points_pass": true
+  },
+  "coordinate_statement": "v_char/c is the radial characteristic speed in the declared static proxy chart; it is not a locally measured superluminal or subluminal speed.",
+  "dense_sweep": {
+    "f_max": 0.999,
+    "f_min": 0.0,
+    "max_identity_abs_residual": 2.220446049250313e-16,
+    "max_locked_form_abs_residual": 1.1102230246251565e-16,
+    "samples": 10001,
+    "v_char_monotone_nonincreasing": true
+  },
+  "purpose": "Audit the quantitative values and algebraic identity in v56 V.W.6.",
+  "quoted_radius_checks": [
+    {
+      "Z_s": 0.6666666666666667,
+      "Z_t": 1.4999999999999998,
+      "d_tau_over_dt": 0.8164965809277261,
+      "f_equals_r_s_over_r": 0.3333333333333333,
+      "identity_abs_residual": 0.0,
+      "locked_form_abs_residual": 0.0,
+      "one_minus_f": 0.6666666666666667,
+      "r_over_r_s": 3.0,
+      "sqrt_Z_s_times_d_tau_over_dt": 0.6666666666666667,
+      "v_char_over_c_direct": 0.6666666666666667
+    },
+    {
+      "Z_s": 0.5,
+      "Z_t": 2.0,
+      "d_tau_over_dt": 0.7071067811865475,
+      "f_equals_r_s_over_r": 0.5,
+      "identity_abs_residual": 0.0,
+      "locked_form_abs_residual": 0.0,
+      "one_minus_f": 0.5,
+      "r_over_r_s": 2.0,
+      "sqrt_Z_s_times_d_tau_over_dt": 0.5,
+      "v_char_over_c_direct": 0.5
+    },
+    {
+      "Z_s": 0.33333333333333337,
+      "Z_t": 2.9999999999999996,
+      "d_tau_over_dt": 0.5773502691896258,
+      "f_equals_r_s_over_r": 0.6666666666666666,
+      "identity_abs_residual": 5.551115123125783e-17,
+      "locked_form_abs_residual": 0.0,
+      "one_minus_f": 0.33333333333333337,
+      "r_over_r_s": 1.5,
+      "sqrt_Z_s_times_d_tau_over_dt": 0.3333333333333334,
+      "v_char_over_c_direct": 0.33333333333333337
+    }
+  ],
+  "status_ledger": {
+    "derived": [
+      "v_char/c = sqrt(Z_s/Z_t)",
+      "d_tau/dt = 1/sqrt(Z_t)",
+      "v_char/c = sqrt(Z_s) (d_tau/dt)"
+    ],
+    "locked": [
+      "Z_s = 1-f and Z_t = 1/(1-f)",
+      "f(r) = r_s/r for the Schwarzschild correspondence check"
+    ],
+    "not_tested": [
+      "matter-to-environment coupling (FW-1)",
+      "an operational time-of-flight observable",
+      "any discrete-substructure correction"
+    ]
+  },
+  "tolerance": 5e-15
+}

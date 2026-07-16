@@ -1,0 +1,106 @@
+{
+  "chain": "chains\\planck2018_running_rs.1.txt",
+  "comparison_to_recorded_json": {
+    "alpha_s_mean_difference": -4.473522496242256e-05,
+    "alpha_s_std_difference": -6.08974173925414e-06,
+    "matches_manuscript_rounding": true,
+    "n_s_mean_difference": -2.5961040746591557e-05,
+    "reference_file": "outputs\\planck2018_running.json"
+  },
+  "computed_from_archived_chain": {
+    "H0": {
+      "ci68": [
+        66.826616,
+        67.940216
+      ],
+      "ci95": [
+        66.326427,
+        68.383073
+      ],
+      "kish_effective_sample_size": 17115.297323255523,
+      "mean": 67.38336766777014,
+      "std": 0.5352342595582718,
+      "weighted_sample_count": 40490.0
+    },
+    "alpha_s": {
+      "ci68": [
+        -0.01077456,
+        0.0031813884
+      ],
+      "ci95": [
+        -0.01740345,
+        0.0094792663
+      ],
+      "kish_effective_sample_size": 17115.297323255523,
+      "mean": -0.0037447352249624227,
+      "std": 0.006893910258260746,
+      "weighted_sample_count": 40490.0
+    },
+    "kish_effective_sample_size": 17115.297323255523,
+    "n_rows_raw": 24080,
+    "n_s": {
+      "ci68": [
+        0.96036349,
+        0.96909834
+      ],
+      "ci95": [
+        0.9562256,
+        0.97321489
+      ],
+      "kish_effective_sample_size": 17115.297323255523,
+      "mean": 0.9647740389592534,
+      "std": 0.0043322271665773154,
+      "weighted_sample_count": 40490.0
+    },
+    "weighted_sample_count": 40490.0
+  },
+  "diagnostic_second_half_only": {
+    "H0": {
+      "ci68": [
+        66.827303,
+        67.922246
+      ],
+      "ci95": [
+        66.333878,
+        68.389956
+      ],
+      "kish_effective_sample_size": 8539.932835353768,
+      "mean": 67.37541267495388,
+      "std": 0.5275185127083621,
+      "weighted_sample_count": 20231.0
+    },
+    "alpha_s": {
+      "ci68": [
+        -0.010749418,
+        0.0026327214
+      ],
+      "ci95": [
+        -0.01740345,
+        0.0089105041
+      ],
+      "kish_effective_sample_size": 8539.932835353768,
+      "mean": -0.004030008465585089,
+      "std": 0.006688208516266709,
+      "weighted_sample_count": 20231.0
+    },
+    "kish_effective_sample_size": 8539.932835353768,
+    "n_rows_raw": 12040,
+    "n_s": {
+      "ci68": [
+        0.96034847,
+        0.96895844
+      ],
+      "ci95": [
+        0.95617746,
+        0.97273035
+      ],
+      "kish_effective_sample_size": 8539.932835353768,
+      "mean": 0.9646975099609438,
+      "std": 0.004230984839877669,
+      "weighted_sample_count": 20231.0
+    },
+    "weighted_sample_count": 20231.0
+  },
+  "interpretation": "The stored chain file matches the recorded posterior summary when used as the archived post-burn-in chain.  A diagnostic second-half split is also reported for stability but is not the source of the published summary numbers.",
+  "purpose": "Part 4.2 Planck posterior-summary verification from stored chain."
+}

@@ -1,0 +1,95 @@
+{
+  "baseline_metrics": {
+    "beta_area_abs": 0.9999999975000033,
+    "beta_area_ratio": 1.0,
+    "beta_peak_abs": 0.7698003589192499,
+    "beta_peak_at_ds": 3.1547,
+    "beta_peak_ratio": 1.0,
+    "d_uv": 2.0,
+    "delta_ds": 2.0,
+    "interval_ratio": 1.0
+  },
+  "conclusion": "Option (b) is underdetermined unless the manuscript supplies a transfer functional from the effective d_s flow to alpha_s. Under simple no-retuning scalings, the corrected endpoint weakens the old alpha_s magnitude; only the most generous linear-excursion scaling lands on the edge of the original [-0.02,-0.005] band.",
+  "corrected_metrics": {
+    "delta_central": {
+      "beta_area_abs": 0.07405856627318681,
+      "beta_area_ratio": 0.07405856645833298,
+      "beta_peak_abs": 0.14103708063633255,
+      "beta_peak_at_ds": 3.6264485,
+      "beta_peak_ratio": 0.18321254206004725,
+      "d_uv": 3.21,
+      "delta_ds": 0.79,
+      "interval_ratio": 0.395
+    },
+    "delta_minus_sigma": {
+      "beta_area_abs": 0.040195413232845145,
+      "beta_area_ratio": 0.04019541333333354,
+      "beta_peak_abs": 0.09438541921019497,
+      "beta_peak_at_ds": 3.6938239999999998,
+      "beta_peak_ratio": 0.12261025617434891,
+      "d_uv": 3.36,
+      "delta_ds": 0.64,
+      "interval_ratio": 0.32
+    },
+    "delta_plus_sigma": {
+      "beta_area_abs": 0.1221650630279205,
+      "beta_area_ratio": 0.12216506333333275,
+      "beta_peak_abs": 0.19580070699010713,
+      "beta_peak_at_ds": 3.560879,
+      "beta_peak_ratio": 0.2543525794986621,
+      "d_uv": 3.06,
+      "delta_ds": 0.9400000000000001,
+      "interval_ratio": 0.47000000000000003
+    }
+  },
+  "inputs": {
+    "corrected_d_uv": 3.21,
+    "corrected_d_uv_sigma": 0.15,
+    "corrected_delta_ds": 0.79,
+    "corrected_delta_ds_sigma": 0.15,
+    "flow_form": "beta(d_s)=d_s(d_s-4)(d_s-d_UV)/4",
+    "old_alpha_s_central": -0.012,
+    "old_alpha_s_sigma": 0.005,
+    "old_flow_d_uv": 2.0,
+    "old_flow_delta_ds": 2.0
+  },
+  "mapped_alpha_s_under_explicit_scalings": {
+    "linear_in_beta_peak": {
+      "alpha_s": {
+        "central": -0.002198550504720567,
+        "high_1sigma": -0.0012824877944203309,
+        "low_1sigma": -0.0031146132150208033,
+        "sigma": 0.0009160627103002363
+      },
+      "central_survives_original_band": false,
+      "scale_central": 0.18321254206004725,
+      "scale_delta_minus_sigma": 0.12261025617434891,
+      "scale_delta_plus_sigma": 0.2543525794986621
+    },
+    "linear_in_dimension_excursion": {
+      "alpha_s": {
+        "central": -0.00474,
+        "high_1sigma": -0.002765,
+        "low_1sigma": -0.0067150000000000005,
+        "sigma": 0.001975
+      },
+      "central_survives_original_band": false,
+      "scale_central": 0.395,
+      "scale_delta_minus_sigma": 0.32,
+      "scale_delta_plus_sigma": 0.47000000000000003
+    },
+    "linear_in_integrated_abs_beta": {
+      "alpha_s": {
+        "central": -0.0008887027974999957,
+        "high_1sigma": -0.0005184099652083309,
+        "low_1sigma": -0.0012589956297916606,
+        "sigma": 0.0003702928322916649
+      },
+      "central_survives_original_band": false,
+      "scale_central": 0.07405856645833298,
+      "scale_delta_minus_sigma": 0.04019541333333354,
+      "scale_delta_plus_sigma": 0.12216506333333275
+    }
+  },
+  "purpose": "Inform D1 option (b); this output is not an author decision."
+}

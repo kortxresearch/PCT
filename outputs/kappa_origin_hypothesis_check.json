@@ -1,0 +1,30 @@
+{
+  "conclusion": "The cited 3+1 sweep is consistent with both hypotheses. The cited 2+1 sweep is central-value closer to universal n=5 (0.80) than to n=D+1 (0.75), but the difference is only about one sigma. This is not a derivation of n=5; at most it is weak numerical support for dimension-independent calibration.",
+  "hypotheses": {
+    "n_equals_D_plus_1": "n=D+1, where D is spacetime dimension, so kappa depends on dimension.",
+    "universal_n_5": "n is universal, so kappa=1-1/5=0.80 in every dimension."
+  },
+  "purpose": "Inform D2; this output does not decide whether kappa is derived or calibrated.",
+  "rows": [
+    {
+      "dimension_spacetime": 3,
+      "label": "2+1 dimensional angular-sector sweep cited in PROPOSED_RESTORATIONS",
+      "n_equals_D_plus_1_prediction": 0.75,
+      "n_equals_D_plus_1_z": 1.0000000000000009,
+      "observed_kappa": 0.81,
+      "sigma": 0.06,
+      "universal_n_5_prediction": 0.8,
+      "universal_n_5_z": 0.16666666666666682
+    },
+    {
+      "dimension_spacetime": 4,
+      "label": "3+1 dimensional tetrahedral-mesh sweep cited in PROPOSED_RESTORATIONS",
+      "n_equals_D_plus_1_prediction": 0.8,
+      "n_equals_D_plus_1_z": 0.14285714285714296,
+      "observed_kappa": 0.79,
+      "sigma": 0.07,
+      "universal_n_5_prediction": 0.8,
+      "universal_n_5_z": 0.14285714285714296
+    }
+  ]
+}

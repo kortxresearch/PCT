@@ -1,0 +1,192 @@
+{
+  "conclusion": "The spin law is algebraically fixed once kappa is supplied by the locked instantiation; public-data adjudication requires event-level change-point measurements and controls.",
+  "falsification_rule": "A stacked posterior/regression excludes kappa in [0.75,0.85] at 95% while event-level injection recovery passes and off-source or time-slide controls remain null.",
+  "formula": "tc/M = kappa * (1 + sqrt(1-a_*^2))",
+  "locked_inputs": {
+    "kappa": 0.8,
+    "kappa_sigma": 0.05,
+    "spin_factor_origin": "Kerr outer-horizon radius in units of M"
+  },
+  "predictions": [
+    {
+      "final_spin": 0.0,
+      "tc_over_M": 1.6,
+      "x_spin_factor": 2.0
+    },
+    {
+      "final_spin": 0.5,
+      "tc_over_M": 1.492820323027551,
+      "x_spin_factor": 1.8660254037844386
+    },
+    {
+      "final_spin": 0.67,
+      "tc_over_M": 1.393888878494959,
+      "x_spin_factor": 1.7423610981186985
+    },
+    {
+      "final_spin": 0.69,
+      "tc_over_M": 1.3790474937343224,
+      "x_spin_factor": 1.723809367167903
+    },
+    {
+      "final_spin": 0.9,
+      "tc_over_M": 1.148711915483254,
+      "x_spin_factor": 1.4358898943540672
+    }
+  ],
+  "purpose": "NP-1 spin-dependent ringdown law and stacked GWTC regression harness.",
+  "regression_harness": {
+    "errors": [],
+    "events_checked": [
+      {
+        "catalog_version": "GWTC-3-confident/v1",
+        "computed_detector_mass_msun": 71.036,
+        "detector_mass_abs_error_msun": 0.0,
+        "event": "GW200129_065458",
+        "final_mass_detector_msun": 71.036,
+        "final_mass_source_msun": 60.2,
+        "final_spin": 0.73,
+        "network_snr": 26.8,
+        "redshift": 0.18
+      },
+      {
+        "catalog_version": "GWTC-1-confident/v3",
+        "computed_detector_mass_msun": 68.77900000000001,
+        "detector_mass_abs_error_msun": 1.4210854715202004e-14,
+        "event": "GW150914",
+        "final_mass_detector_msun": 68.779,
+        "final_mass_source_msun": 63.1,
+        "final_spin": 0.69,
+        "network_snr": 25.2,
+        "redshift": 0.09
+      },
+      {
+        "catalog_version": "GWTC-2.1-confident/v2",
+        "computed_detector_mass_msun": 87.84599999999999,
+        "detector_mass_abs_error_msun": 1.4210854715202004e-14,
+        "event": "GW190521_074359",
+        "final_mass_detector_msun": 87.846,
+        "final_mass_source_msun": 72.6,
+        "final_spin": 0.71,
+        "network_snr": 25.9,
+        "redshift": 0.21
+      },
+      {
+        "catalog_version": "GWTC-3-confident/v1",
+        "computed_detector_mass_msun": 90.68400000000001,
+        "detector_mass_abs_error_msun": 1.4210854715202004e-14,
+        "event": "GW200224_222234",
+        "final_mass_detector_msun": 90.684,
+        "final_mass_source_msun": 68.7,
+        "final_spin": 0.73,
+        "network_snr": 20.0,
+        "redshift": 0.32
+      },
+      {
+        "catalog_version": "GWTC-2.1-confident/v4",
+        "computed_detector_mass_msun": 40.94,
+        "detector_mass_abs_error_msun": 0.0,
+        "event": "GW190412",
+        "final_mass_detector_msun": 40.94,
+        "final_mass_source_msun": 35.6,
+        "final_spin": 0.66,
+        "network_snr": 19.8,
+        "redshift": 0.15
+      },
+      {
+        "catalog_version": "GWTC-3-confident/v1",
+        "computed_detector_mass_msun": 75.392,
+        "detector_mass_abs_error_msun": 0.0,
+        "event": "GW200112_155838",
+        "final_mass_detector_msun": 75.392,
+        "final_mass_source_msun": 60.8,
+        "final_spin": 0.71,
+        "network_snr": 19.8,
+        "redshift": 0.24
+      },
+      {
+        "catalog_version": "GWTC-3-confident/v1",
+        "computed_detector_mass_msun": 72.57,
+        "detector_mass_abs_error_msun": 0.0,
+        "event": "GW200311_115853",
+        "final_mass_detector_msun": 72.57,
+        "final_mass_source_msun": 59.0,
+        "final_spin": 0.69,
+        "network_snr": 17.8,
+        "redshift": 0.23
+      },
+      {
+        "catalog_version": "GWTC-1-confident/v3",
+        "computed_detector_mass_msun": 59.58400000000001,
+        "detector_mass_abs_error_msun": 7.105427357601002e-15,
+        "event": "GW170814",
+        "final_mass_detector_msun": 59.584,
+        "final_mass_source_msun": 53.2,
+        "final_spin": 0.72,
+        "network_snr": 17.2,
+        "redshift": 0.12
+      },
+      {
+        "catalog_version": "GWTC-2.1-confident/v2",
+        "computed_detector_mass_msun": 74.93399999999998,
+        "detector_mass_abs_error_msun": 1.4210854715202004e-14,
+        "event": "GW190828_063405",
+        "final_mass_detector_msun": 74.934,
+        "final_mass_source_msun": 54.3,
+        "final_spin": 0.74,
+        "network_snr": 16.5,
+        "redshift": 0.38
+      },
+      {
+        "catalog_version": "GWTC-1-confident/v2",
+        "computed_detector_mass_msun": 58.67999999999999,
+        "detector_mass_abs_error_msun": 7.105427357601002e-15,
+        "event": "GW170104",
+        "final_mass_detector_msun": 58.68,
+        "final_mass_source_msun": 48.9,
+        "final_spin": 0.66,
+        "network_snr": 13.0,
+        "redshift": 0.2
+      },
+      {
+        "catalog_version": "GWTC-2.1-confident/v4",
+        "computed_detector_mass_msun": 229.94400000000002,
+        "detector_mass_abs_error_msun": 2.842170943040401e-14,
+        "event": "GW190521",
+        "final_mass_detector_msun": 229.944,
+        "final_mass_source_msun": 147.4,
+        "final_spin": 0.62,
+        "network_snr": 14.3,
+        "redshift": 0.56
+      },
+      {
+        "catalog_version": "GWTC-1-confident/v1",
+        "computed_detector_mass_msun": 88.29000000000002,
+        "detector_mass_abs_error_msun": 1.4210854715202004e-14,
+        "event": "GW170823",
+        "final_mass_detector_msun": 88.29,
+        "final_mass_source_msun": 65.4,
+        "final_spin": 0.72,
+        "network_snr": 11.5,
+        "redshift": 0.35
+      }
+    ],
+    "mass_detector_formula": "final_mass_detector_msun = final_mass_source_msun * (1 + redshift)",
+    "mass_detector_tolerance_msun": 0.0005,
+    "max_mass_detector_abs_error_msun": 2.842170943040401e-14,
+    "mode": "official_gwosc_table_column_validation_only",
+    "n_rows": 12,
+    "required_columns": [
+      "event",
+      "final_mass_source_msun",
+      "final_mass_detector_msun",
+      "final_spin",
+      "redshift",
+      "network_snr",
+      "source_url",
+      "catalog_version",
+      "preferred_pe_record"
+    ],
+    "status": "template_validation_completed"
+  }
+}

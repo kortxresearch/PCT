@@ -1,0 +1,11 @@
+{
+  "created_utc": "2026-07-09T21:38:20Z",
+  "hashes": {
+    "t1_extraction_rule.md": "48f2deb2ffa4114f508f6864ad6ee3dae551ed2a2e438cc376128b3a5a2e8d00",
+    "t1_horizon_profile_spec.md": "3107f6207a0ac447b38bf7f17926f2001dc23b3b9ba8dec4b124d59b522cf9d4",
+    "t1_step_height_adjudication.py": "2239c5161bd8cf46e8e9a7cde81eeedd5bb3b43083d15ab9df05232cd3c5a7b5"
+  },
+  "ladder_output_existed_at_freeze": false,
+  "provenance_label": "re-fixed construction, not recovered historical construction",
+  "purpose": "Freeze T1 spec, extraction rule, and executable before the refinement ladder."
+}

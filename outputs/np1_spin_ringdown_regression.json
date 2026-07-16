@@ -1,0 +1,50 @@
+{
+  "conclusion": "The spin law is algebraically fixed once kappa is supplied by the locked instantiation; public-data adjudication requires event-level change-point measurements and controls.",
+  "falsification_rule": "A stacked posterior/regression excludes kappa in [0.75,0.85] at 95% while event-level injection recovery passes and off-source or time-slide controls remain null.",
+  "formula": "tc/M = kappa * (1 + sqrt(1-a_*^2))",
+  "locked_inputs": {
+    "kappa": 0.8,
+    "kappa_sigma": 0.05,
+    "spin_factor_origin": "Kerr outer-horizon radius in units of M"
+  },
+  "predictions": [
+    {
+      "final_spin": 0.0,
+      "tc_over_M": 1.6,
+      "x_spin_factor": 2.0
+    },
+    {
+      "final_spin": 0.5,
+      "tc_over_M": 1.492820323027551,
+      "x_spin_factor": 1.8660254037844386
+    },
+    {
+      "final_spin": 0.67,
+      "tc_over_M": 1.393888878494959,
+      "x_spin_factor": 1.7423610981186985
+    },
+    {
+      "final_spin": 0.69,
+      "tc_over_M": 1.3790474937343224,
+      "x_spin_factor": 1.723809367167903
+    },
+    {
+      "final_spin": 0.9,
+      "tc_over_M": 1.148711915483254,
+      "x_spin_factor": 1.4358898943540672
+    }
+  ],
+  "purpose": "NP-1 spin-dependent ringdown law and stacked GWTC regression harness.",
+  "regression_harness": {
+    "required_event_columns": [
+      "event",
+      "final_spin",
+      "tc_over_M",
+      "sigma_tc_over_M",
+      "injection_pass",
+      "null_pass"
+    ],
+    "status": "template_only_no_events_csv",
+    "workflow": "Run the event-level change-point analysis on each candidate event; convert each accepted change-point time to tc_over_M using the event's redshifted remnant mass; then fit tc_over_M against 1+sqrt(1-a_*^2)."
+  }
+}

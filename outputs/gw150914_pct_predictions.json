@@ -1,0 +1,114 @@
+{
+  "capsule": {
+    "executed_utc": "2026-07-08T21:11:04.367986+00:00",
+    "input_file": "data/GW150914_GWTC-1.hdf5",
+    "input_status": "fallback",
+    "n_samples": 10000,
+    "name": "GW150914 PCT Event Prediction",
+    "pct_kappa": 0.8,
+    "redshift": 0.09,
+    "version": "2.0-corrected-spin-redshift"
+  },
+  "comparison_to_ringdown_capsule": {
+    "note": "The lvk_ringdown_end_to_end.py capsule tests change-point specificity using AIC-based segmentation on the log-envelope.",
+    "on_source_window_ms": "20-300 ms post-merger",
+    "predicted_tc_in_window": false,
+    "status": "Ringdown capsule returned NULL; current sensitivity is not expected to be decisive."
+  },
+  "event": {
+    "detection_date": "2015-09-14",
+    "gps_time": 1126259462.4,
+    "name": "GW150914"
+  },
+  "pct_predictions": {
+    "formula": "t_c/M = kappa*(1 + sqrt(1-a_*^2))",
+    "interpretation": "For the fallback/literature GW150914 values, the spin-scaled detector-frame timing is about 0.46 ms and the non-spinning detector-frame timing is about 0.53 ms.",
+    "kappa": 0.8,
+    "nonspinning_limit": "t_c/M = 2*kappa",
+    "tc_nonspinning_ms": {
+      "ci68": [
+        0.5108132794515893,
+        0.5539270953923123
+      ],
+      "ci90": [
+        0.49675950393286333,
+        0.568007243110151
+      ],
+      "mean": 0.5324999462297476,
+      "median": 0.5324372736836391,
+      "std": 0.021615672402695657
+    },
+    "tc_over_M_nonspinning": 1.6,
+    "tc_over_M_spin_scaled": {
+      "ci68": [
+        1.370440310654082,
+        1.414119940026104
+      ],
+      "ci90": [
+        1.3543684415882127,
+        1.4267197114060859
+      ],
+      "mean": 1.3925547158763334,
+      "median": 1.3936919356916095,
+      "std": 0.021902687531145153
+    },
+    "tc_spin_scaled_ms": {
+      "ci68": [
+        0.44332607123144985,
+        0.48358954641904955
+      ],
+      "ci90": [
+        0.43011526095255354,
+        0.4962459113424252
+      ],
+      "mean": 0.4634630762920212,
+      "median": 0.46345683265606885,
+      "std": 0.020253142926084534
+    }
+  },
+  "posterior_sources": {
+    "final_mass_source": "literature_fallback_Mf_62_pm_2p5",
+    "final_spin": "literature_fallback_af_0p67_pm_0p03"
+  },
+  "posteriors": {
+    "final_mass_detector_frame_Msun": {
+      "ci68": [
+        64.80093414029821,
+        70.27028205997479
+      ],
+      "ci90": [
+        63.01809524701565,
+        72.05646648714729
+      ],
+      "mean": 67.55206908949683,
+      "median": 67.54411855317338,
+      "std": 2.742128719263437
+    },
+    "final_mass_source_Msun": {
+      "ci68": [
+        59.450398293851556,
+        64.46814867887595
+      ],
+      "ci90": [
+        57.81476628166573,
+        66.10684998820851
+      ],
+      "mean": 61.97437531146498,
+      "median": 61.967081241443466,
+      "std": 2.5157144213426026
+    },
+    "final_spin": {
+      "ci68": [
+        0.6408694036582165,
+        0.7011127894370563
+      ],
+      "ci90": [
+        0.6215183064026221,
+        0.7209755011951167
+      ],
+      "mean": 0.6706105523642191,
+      "median": 0.6702726654210616,
+      "std": 0.030086663589210947
+    }
+  }
+}

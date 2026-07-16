@@ -1,0 +1,25 @@
+{
+  "bootstrap_replicates": 256,
+  "bootstrap_seed_base": 20260710,
+  "deterministic_payload": true,
+  "hashes": {
+    "t2_extraction_rule.md": "3d1ea19f81ab860c94fedaa10b2354343ef69700719ae465468a9e8936de7903",
+    "t2_horizon_profile_campaign.py": "f6cf254741d4f62da42d5137c4d4f983f32502ca73dd71fccafde425f1981e6e",
+    "t2_horizon_profile_spec.md": "663b56eb9a536ad91a33d116adc99335b139e3214e6d5e231f488f38268341c5"
+  },
+  "ladder_output_existed_at_freeze": false,
+  "levels": [
+    12,
+    16,
+    20,
+    24,
+    28,
+    32
+  ],
+  "prescriptions": [
+    "fixed_physical",
+    "fixed_critical_cells"
+  ],
+  "purpose": "Freeze the T2 spec, extraction rule, and executable before the first ladder run.",
+  "status": "frozen_before_first_ladder_run"
+}

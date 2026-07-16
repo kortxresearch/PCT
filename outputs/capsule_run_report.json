@@ -1,0 +1,7 @@
+{
+  "gw_change_point": {
+    "ok": true,
+    "output": "outputs\\gw_change_points_synth.json"
+  },
+  "outputs_dir": "outputs"
+}

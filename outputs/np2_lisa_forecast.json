@@ -1,0 +1,73 @@
+{
+  "conclusion": "For 10^5-10^7 solar-mass redshifted remnants, the change-point falls on second-to-minute timescales.  With LISA ringdown SNR of order 10^2-10^3, the representative PCT component SNR is order 2-20 per event under the same epsilon0 model used for ground-based stacking.",
+  "formulae": {
+    "snr_pct": "epsilon0*rho*sqrt(tau_d/Tobs)*exp(-tc/tau_d)",
+    "tc": "tc = kappa*(1+sqrt(1-a_*^2))*G*M_z/c^3"
+  },
+  "inputs": {
+    "Tobs_over_M": 55.0,
+    "epsilon0": 0.02,
+    "kappa": 0.8,
+    "mass_is_redshifted_detector_frame": true,
+    "rho_values": [
+      100.0,
+      300.0,
+      1000.0
+    ],
+    "spin": 0.67,
+    "tau_over_M": 55.0
+  },
+  "purpose": "NP-2 LISA per-event decisiveness forecast.",
+  "rows": [
+    {
+      "redshifted_remnant_mass_Msun": 100000.0,
+      "snr_pct_by_ringdown_snr": {
+        "100": 1.949950029608458,
+        "1000": 19.49950029608458,
+        "300": 5.849850088825374
+      },
+      "tc_seconds_nonspinning": 0.78807855152,
+      "tc_seconds_spin_a_0.67": 0.6865587052150903
+    },
+    {
+      "redshifted_remnant_mass_Msun": 300000.0,
+      "snr_pct_by_ringdown_snr": {
+        "100": 1.949950029608458,
+        "1000": 19.49950029608458,
+        "300": 5.849850088825374
+      },
+      "tc_seconds_nonspinning": 2.36423565456,
+      "tc_seconds_spin_a_0.67": 2.059676115645271
+    },
+    {
+      "redshifted_remnant_mass_Msun": 1000000.0,
+      "snr_pct_by_ringdown_snr": {
+        "100": 1.949950029608458,
+        "1000": 19.49950029608458,
+        "300": 5.849850088825374
+      },
+      "tc_seconds_nonspinning": 7.8807855152,
+      "tc_seconds_spin_a_0.67": 6.865587052150904
+    },
+    {
+      "redshifted_remnant_mass_Msun": 3000000.0,
+      "snr_pct_by_ringdown_snr": {
+        "100": 1.949950029608458,
+        "1000": 19.49950029608458,
+        "300": 5.849850088825374
+      },
+      "tc_seconds_nonspinning": 23.6423565456,
+      "tc_seconds_spin_a_0.67": 20.59676115645271
+    },
+    {
+      "redshifted_remnant_mass_Msun": 10000000.0,
+      "snr_pct_by_ringdown_snr": {
+        "100": 1.949950029608458,
+        "1000": 19.49950029608458,
+        "300": 5.849850088825374
+      },
+      "tc_seconds_nonspinning": 78.807855152,
+      "tc_seconds_spin_a_0.67": 68.65587052150903
+    }
+  ]
+}

@@ -1,0 +1,1111 @@
+{
+  "assumption_and_derivation_ledger": [
+    {
+      "consequence": "A conditional map selection cannot open the D-B4-1 P2 gate by itself.",
+      "id": "R2-L1",
+      "statement": "R2 tests documented identifications only and creates no scalar-sector paper.",
+      "status": "[locked]"
+    },
+    {
+      "consequence": "The rerun isolates map selection; it does not silently tune another A1 degree of freedom.",
+      "id": "R2-L2",
+      "statement": "The A1 dispersion, background, vacuum, interpolation, numerical tolerances, derivative fits, and five transition offsets are inherited unchanged.",
+      "status": "[locked]"
+    },
+    {
+      "consequence": "The exact finite-width correction to the asymptotic square-root law is computable.",
+      "id": "R2-D1",
+      "statement": "The executed P6b expected-width rows imply a constant xi_0^2 via xi^2-2t_flow.",
+      "status": "[derived]"
+    },
+    {
+      "consequence": "This selects the scale-factor reading; FW-2a heat dynamics alone does not prove it.",
+      "id": "R2-A1",
+      "statement": "The correlation width is a comoving scale surrogate, a/a_ref=xi/xi_ref.",
+      "status": "[assumed]"
+    },
+    {
+      "consequence": "The heat-flow exponent is preserved, but no seconds, energy scale, or CMB epoch is calibrated.",
+      "id": "R2-A2",
+      "statement": "The physical cosmic clock is proportional to t_flow, with a fixed conversion carrying physical time per flow unit.",
+      "status": "[assumed]"
+    },
+    {
+      "consequence": "The q=1/2 A1 candidate is derived under stated identifications, not an unqualified PCT prediction.",
+      "id": "R2-D2",
+      "statement": "Under R2-A1 and R2-A2, a/a_ref=sqrt[(xi_0^2+2t)/(xi_0^2+2t_ref)] and q(t)=t/(xi_0^2+2t), approaching q=1/2.",
+      "status": "[derived]"
+    },
+    {
+      "consequence": "V.Y.2 does not independently corroborate q=1/2; N proportional to xi^2 would be a new assumption.",
+      "id": "R2-D3",
+      "statement": "Metric renormalisation gives a proportional to N/xi; without a law for N(t), it permits a continuum of q values.",
+      "status": "[derived]"
+    },
+    {
+      "consequence": "It can supply an expansion sign under assumptions but no A1 exponent.",
+      "id": "R2-D4",
+      "statement": "The projection-capacity criterion gives a proportional to C_out^(1/3) only after a volume identification, and no C_out(t_flow) was produced by FW-2a.",
+      "status": "[derived]"
+    },
+    {
+      "consequence": "The approximation error is reported at every sampled time and at the d_s transition center.",
+      "id": "R2-A3",
+      "statement": "The exact finite-xi law is represented in A1 by its q=1/2 late-flow power law.",
+      "status": "[assumed]"
+    },
+    {
+      "consequence": "Any remaining envelope is a placement sensitivity interval, not a theory probability or confidence interval.",
+      "id": "R2-D5",
+      "statement": "After restricting A1 to q=1/2, the only scanned map/placement identifiability coordinate is the transition-center offset delta N.",
+      "status": "[derived]"
+    }
+  ],
+  "conclusion": "FW-2a conditionally selects the q=1/2 A1 branch when a is identified with xi and physical time with t_flow. It does not select that bridge unconditionally. With q fixed, the locked +/-2 e-fold placement scan still changes alpha_s sign and spans a wide range, so no scalar-running band is identifiable and no P2 is opened.",
+  "conditional_q_half_derivation": {
+    "asymptotic_exponent": 0.5,
+    "claim_status": "[derived-under-stated-identification]",
+    "exact_local_exponent": "q(t_flow)=t_flow/(xi_0^2+2t_flow)",
+    "exact_scale_factor_law": "a/a_ref=sqrt[(xi_0^2+2t_flow)/(xi_0^2+2t_ref)]",
+    "interpretation": "q=1/2 is the late-flow representative of the exact finite-width law; the bridge to scale and physical time remains assumed.",
+    "local_q_at_ds_center": 0.499839991142,
+    "maximum_relative_exact_vs_q_half_a_difference_on_samples": 0.0570400644024,
+    "reference_t_flow_at_ds_center": 7.80956750806,
+    "relative_exact_vs_q_half_a_difference_at_ds_center": 0.0,
+    "sample_rows": [
+      {
+        "exact_a_over_a_at_ds_center": 0.0536671169587,
+        "local_q": 0.444444444444,
+        "q_half_a_over_a_at_ds_center": 0.0506059411511,
+        "relative_a_difference": 0.0570400644024,
+        "t_flow": 0.02
+      },
+      {
+        "exact_a_over_a_at_ds_center": 0.0894451949311,
+        "local_q": 0.48,
+        "q_half_a_over_a_at_ds_center": 0.0876520612385,
+        "relative_a_difference": 0.0200472892259,
+        "t_flow": 0.06
+      },
+      {
+        "exact_a_over_a_at_ds_center": 0.161001350876,
+        "local_q": 0.493827160494,
+        "q_half_a_over_a_at_ds_center": 0.160030037174,
+        "relative_a_difference": 0.00603295374198,
+        "t_flow": 0.2
+      },
+      {
+        "exact_a_over_a_at_ds_center": 0.27771256637,
+        "local_q": 0.497925311203,
+        "q_half_a_over_a_at_ds_center": 0.277180155122,
+        "relative_a_difference": 0.0019171305612,
+        "t_flow": 0.6
+      },
+      {
+        "exact_a_over_a_at_ds_center": 0.5062945688,
+        "local_q": 0.499375780275,
+        "q_half_a_over_a_at_ds_center": 0.506059411511,
+        "relative_a_difference": 0.000464467335628,
+        "t_flow": 2.0
+      },
+      {
+        "exact_a_over_a_at_ds_center": 0.876562910325,
+        "local_q": 0.499791753436,
+        "q_half_a_over_a_at_ds_center": 0.876520612385,
+        "relative_a_difference": 4.82543121077e-05,
+        "t_flow": 6.0
+      },
+      {
+        "exact_a_over_a_at_ds_center": 1.60014428866,
+        "local_q": 0.499937507812,
+        "q_half_a_over_a_at_ds_center": 1.60030037174,
+        "relative_a_difference": 9.75431291696e-05,
+        "t_flow": 20.0
+      }
+    ]
+  },
+  "failure_tests": {
+    "asymptotic_q_half_check_matches_archived_a1_max_abs_difference": 3.74256181601e-13,
+    "asymptotic_q_half_check_matches_archived_a1_pass": true,
+    "exact_width_local_q_within_0p001_of_half_at_ds_center": true,
+    "fw2a_width_law_pass": true,
+    "metric_normalisation_independently_selects_q": false,
+    "projection_capacity_independently_selects_q": false,
+    "restricted_rerun_numerical_validation_pass": true,
+    "transition_placement_identifiability_pass": false,
+    "transition_placement_retains_one_alpha_sign": false
+  },
+  "fw2a_width_law_audit": {
+    "declared_relative_tolerance": 0.05,
+    "maximum_measured_vs_expected_relative_error": 0.002828854314,
+    "maximum_xi0_squared_sample_deviation": 0.000625000000002,
+    "p6b_initial_laplace_scale": 0.05,
+    "pass": true,
+    "xi0_squared_exact_from_p6b_initial_profile": 0.005,
+    "xi0_squared_samples_from_expected_rows": [
+      0.00498641,
+      0.00503296,
+      0.00500496,
+      0.00494529,
+      0.00480144,
+      0.00483904,
+      0.005625
+    ]
+  },
+  "gate_outcome": {
+    "p2_draft_created": false,
+    "p2_gate": "blocked",
+    "r2_outcome": "conditional_map_selection_but_scalar_closure_still_fails",
+    "what_remains": [
+      "A primitive or calibrated reason that correlation width is the FLRW scale rather than its inverse or a separately normalized distance.",
+      "A physical flow-to-proper-time conversion beyond proportional-clock assumption and toy units.",
+      "A derived absolute transition energy/epoch fixing the d_s center relative to k_pivot.",
+      "The previously recorded perturbation-action, matter/background, and interpolation assumptions."
+    ],
+    "what_was_gained": [
+      "The three-way A1 map bracket is reduced to q=1/2 under two explicit physical identifications.",
+      "The exact finite-width correction and local q(t_flow) are derived from the FW-2a width law.",
+      "The A1 failure is localized to transition placement within this conditional branch rather than conflated with the discrete q scan."
+    ]
+  },
+  "identifiability_reduction": {
+    "map_and_placement_ambiguity_reduced_to_transition_placement": true,
+    "old_three_map_centered_alpha_s_width": 0.00629612463813,
+    "old_three_map_centered_beta_s_width": 0.0266212009773,
+    "placement_alpha_width_divided_by_removed_centered_map_width": 9.47029435708,
+    "prediction_identifiable_after_reduction": false,
+    "remaining_degree_of_freedom": "continuous absolute transition/pivot placement, sampled at five locked offsets",
+    "removed_degree_of_freedom": "discrete A1 power-map choice q in {1/2,1,2}, conditionally",
+    "scope": "the frozen A1 map-versus-placement subproblem; other perturbation and physical-calibration assumptions remain open",
+    "selected_map_centered_alpha_s": 0.0068340215232,
+    "selected_map_centered_beta_s": -0.0248980011252,
+    "selected_map_placement_alpha_s_width": 0.059626153632,
+    "selected_map_placement_beta_s_width": 0.131798896193,
+    "selected_placement_fraction_of_original_all_map_alpha_width": 0.931577302741,
+    "selected_placement_fraction_of_original_all_map_beta_width": 0.923107731105
+  },
+  "identification_principles": [
+    {
+      "a1_representative_q": 0.5,
+      "derivation": [
+        "a(t_flow)/a_ref=sqrt[(xi_0^2+2t_flow)/(xi_0^2+2t_ref)]",
+        "q(t_flow):=d ln(a)/d ln(tau)=t_flow/(xi_0^2+2t_flow)",
+        "q(t_flow)->1/2 when t_flow>>xi_0^2/2, so a proportional to tau^(1/2) in the late-flow regime"
+      ],
+      "id": "P1",
+      "name": "direct_correlation_length_surrogate",
+      "premises": [
+        {
+          "statement": "FW-2a heat evolution gives xi(t_flow)^2=xi_0^2+2t_flow in kernel-label units.",
+          "status": "[derived]"
+        },
+        {
+          "statement": "The normalized FLRW surrogate is identified with the normalized correlation width: a/a_ref=xi/xi_ref.",
+          "status": "[assumed]"
+        },
+        {
+          "statement": "Physical cosmic time is proportional to the heat-flow parameter, tau/tau_ref=t_flow/t_ref; the conversion constant supplies units but not a new exponent.",
+          "status": "[assumed]"
+        }
+      ],
+      "result_status": "[derived-under-stated-identification]",
+      "selection": "selected conditionally",
+      "source": [
+        "v56 V.I.0.1 and the cosmology capsule: a(tau) proportional to xi(tau)",
+        "CODEX_PLAN.md R2: comoving scale proportional to correlation length"
+      ]
+    },
+    {
+      "a1_representative_q": null,
+      "derivation": [
+        "a(t_flow) is proportional to N(t_flow)/xi(t_flow)",
+        "if, only as a parameterization, N is proportional to xi^p, then a is proportional to xi^(p-1)",
+        "at late flow q=(p-1)/2; expansion requires p>1 and q=1/2 requires the additional choice p=2"
+      ],
+      "id": "P2",
+      "name": "v56_metric_renormalisation",
+      "premises": [
+        {
+          "statement": "For the documented exponential decay class, d_corr is proportional to r/xi for fixed label separation r.",
+          "status": "[derived]"
+        },
+        {
+          "statement": "Write the unspecified global metric normalization as N(t_flow), so physical distance is D=N d_corr=a r.",
+          "status": "[assumed]"
+        }
+      ],
+      "result_status": "[derived]",
+      "selection": "not selected: V.Y.2 supplies no evolution law for N",
+      "source": [
+        "v56 V.Y.2: expansion is a global rescaling of the correlator-to-distance map",
+        "v56 IV.A decay-class remark: for exponential decay d_corr is proportional to r/xi"
+      ]
+    },
+    {
+      "a1_representative_q": null,
+      "derivation": [
+        "a is proportional to C_out^(1/3)",
+        "if C_out is proportional to t_flow^s, then q=s/3",
+        "FW-2a did not measure C_out or derive s, so the sign condition can imply q>0 but cannot choose its value"
+      ],
+      "id": "P3",
+      "name": "outward_projection_capacity_volume",
+      "premises": [
+        {
+          "statement": "On a homogeneous patch, identify normalized physical volume a^3 with normalized outward-compatible capacity C_out.",
+          "status": "[assumed]"
+        },
+        {
+          "statement": "The documented expansion-signature condition fixes only d C_out/d tau_int>0, not C_out(t_flow).",
+          "status": "[derived]"
+        }
+      ],
+      "result_status": "[derived]",
+      "selection": "not selected: the capacity evolution law is absent",
+      "source": [
+        "v56 V.Y.5: expansion signature d C_out/d tau_int > 0",
+        "v56 IV.C.4c/IV.C.8h: C_out is integrated outward-compatible projection capacity"
+      ]
+    }
+  ],
+  "map_selection": {
+    "a1_candidate_count_after": 1,
+    "a1_candidate_count_before": 3,
+    "discrete_candidate_fraction_removed": 0.666666666667,
+    "executed_exact_map_id": "diffusive_xi_exact_width",
+    "reason": "FW-2a fixes xi(t_flow); q=1/2 follows only after the direct xi-to-a and proportional-clock identifications. The other documented principles do not fix their required normalization/evolution functions.",
+    "selected_a1_branch_id": "diffusive_xi",
+    "selected_q": [
+      0.5
+    ],
+    "status": "conditional_selection_only",
+    "unconditional_theory_selection_achieved": false
+  },
+  "provenance": {
+    "a1_executable": "a1_scalar_sector_attempt.py",
+    "a1_executable_sha256": "3b8930a61dfd6fd3f82c3f24ab9da84ae784085029bfb527af6a8d3569bca33c",
+    "documented_sections": [
+      "IV.A decay-class remark",
+      "IV.C.4c",
+      "V.I.0.1",
+      "V.Y.2",
+      "V.Y.5"
+    ],
+    "fw2a_source": "outputs/p6b_emergence_cosmology_probe.json",
+    "fw2a_source_sha256": "8aa8f3e60f538e6da16225c25a2087beb995deb9bb5da219a494c971c2823bc2",
+    "previous_a1_result": "outputs/a1_scalar_sector_attempt.json",
+    "previous_a1_result_sha256": "d0e99abbd0ecde83104609cc953b835558cab6453ec39a875d9550d4ae359fde",
+    "v56_text_source": "../8. HISTORY/springer-v1-submission/PCT/PCT_researchpaper.txt"
+  },
+  "purpose": "Bounded D-B4-1 test of whether FW-2a selects the A1 flow-clock map, followed by an A1 rerun on selected maps only.",
+  "restricted_a1_rerun": {
+    "baseline_validation": {
+      "absolute_errors": {
+        "alpha_s": 2.31678483619e-09,
+        "beta_s": 1.77357777013e-08,
+        "n_s": 1.46976542048e-10
+      },
+      "amplitude_scale": 2.87888485694e-09,
+      "analytic_constant_epsilon": {
+        "alpha_s": 0.0,
+        "beta_s": 0.0,
+        "n_s": 0.965
+      },
+      "max_wronskian_abs_error_at_c_s_k_over_aH_1": 2.73482170243e-09,
+      "ode_function_evaluations": 238548,
+      "pivot_observables": {
+        "alpha_s": 2.31678483619e-09,
+        "beta_s": 1.77357777013e-08,
+        "n_s": 0.964999999853
+      }
+    },
+    "inherited_a1_ledger": [
+      {
+        "consequence": "The dispersion amplitude and sign are not scanned or fitted.",
+        "id": "L1",
+        "statement": "Use omega^2=k^2[1+alpha_PCT(d_s-4)^2] with alpha_PCT=0.02 and the positive sign specified by CODEX_PLAN A1.",
+        "status": "[locked]"
+      },
+      {
+        "consequence": "The epoch engine is the existing toy heat-flow probe, not the historical cubic beta-flow assertion.",
+        "id": "L2",
+        "statement": "The seven d_s(t_flow) values are read from the executed P6b JSON field d_s_at_ell1; their source SHA256 is recorded.",
+        "status": "[derived]"
+      },
+      {
+        "consequence": "No window amplitude, width, or sign is available for post hoc tuning.",
+        "id": "L3",
+        "statement": "The A1 dispersion is used without an additional k-window: W=1 in the notation of v56 V.I.0.3.",
+        "status": "[locked]"
+      },
+      {
+        "consequence": "A noncanonical kinetic prefactor or PCT mass term would change the transfer map.",
+        "id": "A1",
+        "statement": "A canonical single scalar mode is valid, v=z R with z=a sqrt(2 epsilon_H), and mu_PCT=0.",
+        "status": "[assumed]"
+      },
+      {
+        "consequence": "The calculation isolates PCT-induced running; it does not derive the inflationary background.",
+        "id": "A2",
+        "statement": "The background has constant epsilon_H chosen so its alpha_PCT=0 baseline has n_s=0.965 and zero running.",
+        "status": "[assumed]"
+      },
+      {
+        "consequence": "Excited initial states are out of scope and could alter P_R(k).",
+        "id": "A3",
+        "statement": "The initial state is the zeroth-order adiabatic/Bunch-Davies vacuum at c_s k/(aH)=160.",
+        "status": "[assumed]"
+      },
+      {
+        "consequence": "This supplies an explicit smoothing/interpolation rule but PCT has not selected it physically.",
+        "id": "A4",
+        "statement": "The sampled d_s curve is reconstructed by monotone PCHIP in ln(t_flow), clamped to its measured endpoints.",
+        "status": "[assumed]"
+      },
+      {
+        "consequence": "Their envelope is a sensitivity set, not a probability or confidence interval.",
+        "id": "A5",
+        "statement": "Three positive flow-clock maps a proportional to t_flow^q with q in {1/2,1,2} are carried without weights.",
+        "status": "[assumed]"
+      },
+      {
+        "consequence": "The absolute scale map is not derived; offsets of +/-2 e-folds are scanned.",
+        "id": "A6",
+        "statement": "For centered runs, the midpoint of the measured d_s range exits at k_pivot=0.05 Mpc^-1 and N_before_end=57.5.",
+        "status": "[assumed]"
+      },
+      {
+        "consequence": "Absolute P_R values are conditional normalization; n_s, alpha_s, and beta_s do not depend on it.",
+        "id": "A7",
+        "statement": "The baseline scalar amplitude at the pivot is normalized to A_s=2.10e-9.",
+        "status": "[assumed]"
+      },
+      {
+        "consequence": "Failure of adiabatic single-clock evolution would invalidate this mode equation even with the locked dispersion.",
+        "id": "A8",
+        "statement": "Linear perturbation theory, negligible backreaction, and the same constant-epsilon z throughout the emergence transition are valid.",
+        "status": "[assumed]"
+      },
+      {
+        "consequence": "They can disprove robustness on this declared range but cannot turn the range into a confidence interval.",
+        "id": "A9",
+        "statement": "The +/-2 e-fold alignment grid and factor-10 spread ceiling are operational identifiability tests, not probability statements.",
+        "status": "[assumed]"
+      },
+      {
+        "consequence": "Only the assumed A_s normalization supplies the absolute vertical scale of P_R.",
+        "id": "A10",
+        "statement": "Natural units c=M_Pl=H_pivot(code)=1 are used during mode evolution; a common scale factor fixes the displayed baseline amplitude.",
+        "status": "[assumed]"
+      },
+      {
+        "consequence": "The mode equation becomes v_xx+(1-epsilon_H)v_x+[(c_s k/aH)^2-(2-epsilon_H)]v=0.",
+        "id": "D1",
+        "statement": "With x=ln(a/a_pivot), H=H_pivot exp(-epsilon_H x), d/deta=aH d/dx, and z proportional to a, z''/[z(aH)^2]=2-epsilon_H.",
+        "status": "[derived]"
+      },
+      {
+        "consequence": "All four requested observables follow from the same evolved mode functions.",
+        "id": "D2",
+        "statement": "P_R=k^3|v/z|^2/(2 pi^2); n_s=1+d ln P_R/d ln k, alpha_s=d^2 ln P_R/d(ln k)^2, beta_s=d^3 ln P_R/d(ln k)^3.",
+        "status": "[derived]"
+      },
+      {
+        "consequence": "Derivative-extraction uncertainty is reported separately from physical map sensitivity.",
+        "id": "D3",
+        "statement": "A local quintic fit in ln k differentiates the numerical spectrum; 0.4, 0.5, and 0.6 half-width fits audit derivative sensitivity.",
+        "status": "[derived]"
+      },
+      {
+        "consequence": "Differentiation with respect to ln(k/k_pivot) is identical to differentiation with respect to physical ln k.",
+        "id": "D4",
+        "statement": "For each candidate and alignment, k_code,pivot=1/c_s(x=0) follows from the sound-horizon condition c_s k=aH with aH(x=0)=1.",
+        "status": "[derived]"
+      }
+    ],
+    "late_flow_q_half_approximation_audit": {
+      "archived_a1_reproduction_max_abs_difference": 3.74256181601e-13,
+      "centered_pivot_observables": {
+        "alpha_s": 0.0073411487952,
+        "beta_s": -0.0263047087675,
+        "n_s": 0.984604686823
+      },
+      "mapping": "original A1 diffusive_xi branch a proportional to t_flow^(1/2)",
+      "maximum_exact_vs_asymptotic_absolute_observable_differences": {
+        "alpha_s": 0.000747184739622,
+        "beta_s": 0.0132431574781,
+        "n_s": 0.000152958711704
+      },
+      "placement_rows": [
+        {
+          "center_offset_efolds": -2.0,
+          "pivot_observables": {
+            "alpha_s": -0.0338552805495,
+            "beta_s": 0.105144508502,
+            "n_s": 0.965182848496
+          }
+        },
+        {
+          "center_offset_efolds": -1.0,
+          "pivot_observables": {
+            "alpha_s": -0.0518202690009,
+            "beta_s": 0.00717678896017,
+            "n_s": 0.96579556332
+          }
+        },
+        {
+          "center_offset_efolds": 0.0,
+          "pivot_observables": {
+            "alpha_s": 0.0073411487952,
+            "beta_s": -0.0263047087675,
+            "n_s": 0.984604686823
+          }
+        },
+        {
+          "center_offset_efolds": 1.0,
+          "pivot_observables": {
+            "alpha_s": 0.00749707448634,
+            "beta_s": 0.0109240596139,
+            "n_s": 0.975271771053
+          }
+        },
+        {
+          "center_offset_efolds": 2.0,
+          "pivot_observables": {
+            "alpha_s": 0.00532326055077,
+            "beta_s": -0.00928114114374,
+            "n_s": 0.969806846809
+          }
+        }
+      ]
+    },
+    "primary_mapping": "exact a proportional to xi, implemented with flow coordinate u=xi_0^2+2t_flow and q=1/2",
+    "selected_centered_result": {
+      "center_offset_efolds": 0.0,
+      "curves": [
+        {
+          "P_R": 2.21136562384e-09,
+          "alpha_s": 0.00273182173238,
+          "beta_s": 0.0188502871444,
+          "k_mpc_inverse": 0.00410424993119,
+          "k_over_k_pivot": 0.0820849986239,
+          "n_s": 0.966912807813
+        },
+        {
+          "P_R": 2.20409396683e-09,
+          "alpha_s": 0.00437758059644,
+          "beta_s": 0.0140705352255,
+          "k_mpc_inverse": 0.00453589766447,
+          "k_over_k_pivot": 0.0907179532894,
+          "n_s": 0.967272261056
+        },
+        {
+          "P_R": 2.19694898468e-09,
+          "alpha_s": 0.00554705779521,
+          "beta_s": 0.00932465383766,
+          "k_mpc_inverse": 0.00501294218614,
+          "k_over_k_pivot": 0.100258843723,
+          "n_s": 0.967772447877
+        },
+        {
+          "P_R": 2.18994489447e-09,
+          "alpha_s": 0.0062436403817,
+          "beta_s": 0.00461264298088,
+          "k_mpc_inverse": 0.00554015791812,
+          "k_over_k_pivot": 0.110803158362,
+          "n_s": 0.968365909461
+        },
+        {
+          "P_R": 2.18309511562e-09,
+          "alpha_s": 0.00647071540902,
+          "beta_s": -6.5497345022e-05,
+          "k_mpc_inverse": 0.00612282141265,
+          "k_over_k_pivot": 0.122456428253,
+          "n_s": 0.969005525701
+        },
+        {
+          "P_R": 2.17640680009e-09,
+          "alpha_s": 0.00623166993037,
+          "beta_s": -0.00470976713992,
+          "k_mpc_inverse": 0.00676676416183,
+          "k_over_k_pivot": 0.135335283237,
+          "n_s": 0.969644515193
+        },
+        {
+          "P_R": 2.16987680221e-09,
+          "alpha_s": 0.00534503964398,
+          "beta_s": -0.0121127094719,
+          "k_mpc_inverse": 0.00747843096113,
+          "k_over_k_pivot": 0.149568619223,
+          "n_s": 0.970254781053
+        },
+        {
+          "P_R": 2.16348784451e-09,
+          "alpha_s": 0.003837196578,
+          "beta_s": -0.0172813126081,
+          "k_mpc_inverse": 0.00826494441108,
+          "k_over_k_pivot": 0.165298888222,
+          "n_s": 0.970748377592
+        },
+        {
+          "P_R": 2.15720766408e-09,
+          "alpha_s": 0.00223929429187,
+          "beta_s": -0.0150529273875,
+          "k_mpc_inverse": 0.00913417620264,
+          "k_over_k_pivot": 0.182683524053,
+          "n_s": 0.971065219002
+        },
+        {
+          "P_R": 2.15099775239e-09,
+          "alpha_s": 0.00160192581525,
+          "beta_s": -0.000431362002765,
+          "k_mpc_inverse": 0.0100948258997,
+          "k_over_k_pivot": 0.201896517995,
+          "n_s": 0.97120984128
+        },
+        {
+          "P_R": 2.14483019998e-09,
+          "alpha_s": 0.00294611069098,
+          "beta_s": 0.0237088368701,
+          "k_mpc_inverse": 0.0111565080074,
+          "k_over_k_pivot": 0.223130160148,
+          "n_s": 0.97132201012
+        },
+        {
+          "P_R": 2.13871823723e-09,
+          "alpha_s": 0.00615664802747,
+          "beta_s": 0.0410351542692,
+          "k_mpc_inverse": 0.0123298481971,
+          "k_over_k_pivot": 0.246596963942,
+          "n_s": 0.971670969027
+        },
+        {
+          "P_R": 2.1327301758e-09,
+          "alpha_s": 0.00924204951644,
+          "beta_s": 0.02951671041,
+          "k_mpc_inverse": 0.0136265896517,
+          "k_over_k_pivot": 0.272531793034,
+          "n_s": 0.972489320015
+        },
+        {
+          "P_R": 2.12697446431e-09,
+          "alpha_s": 0.00989312262786,
+          "beta_s": -0.00824740892636,
+          "k_mpc_inverse": 0.0150597105956,
+          "k_over_k_pivot": 0.301194211912,
+          "n_s": 0.973667905496
+        },
+        {
+          "P_R": 2.12151067234e-09,
+          "alpha_s": 0.00855148525403,
+          "beta_s": -0.0291877101414,
+          "k_mpc_inverse": 0.0166435541849,
+          "k_over_k_pivot": 0.332871083698,
+          "n_s": 0.974716655624
+        },
+        {
+          "P_R": 2.11627593769e-09,
+          "alpha_s": 0.00773821965068,
+          "beta_s": -0.00621845975101,
+          "k_mpc_inverse": 0.0183939720586,
+          "k_over_k_pivot": 0.367879441171,
+          "n_s": 0.975364581225
+        },
+        {
+          "P_R": 2.11112989267e-09,
+          "alpha_s": 0.0078139131434,
+          "beta_s": 0.0185359950245,
+          "k_mpc_inverse": 0.020328482987,
+          "k_over_k_pivot": 0.406569659741,
+          "n_s": 0.97598182996
+        },
+        {
+          "P_R": 2.10607647389e-09,
+          "alpha_s": 0.00877046352813,
+          "beta_s": 0.0191786260406,
+          "k_mpc_inverse": 0.0224664482059,
+          "k_over_k_pivot": 0.449328964117,
+          "n_s": 0.976830397241
+        },
+        {
+          "P_R": 2.10131778375e-09,
+          "alpha_s": 0.0106697416109,
+          "beta_s": 0.00977451588645,
+          "k_mpc_inverse": 0.0248292651896,
+          "k_over_k_pivot": 0.496585303791,
+          "n_s": 0.977859855146
+        },
+        {
+          "P_R": 2.09687916898e-09,
+          "alpha_s": 0.0107320653255,
+          "beta_s": -0.0133403463994,
+          "k_mpc_inverse": 0.0274405818047,
+          "k_over_k_pivot": 0.548811636094,
+          "n_s": 0.979072592986
+        },
+        {
+          "P_R": 2.09253877014e-09,
+          "alpha_s": 0.0100792863542,
+          "beta_s": -0.00621616432121,
+          "k_mpc_inverse": 0.0303265329856,
+          "k_over_k_pivot": 0.606530659713,
+          "n_s": 0.980034741441
+        },
+        {
+          "P_R": 2.08843977132e-09,
+          "alpha_s": 0.00919145112191,
+          "beta_s": 0.00106828720674,
+          "k_mpc_inverse": 0.0335160023018,
+          "k_over_k_pivot": 0.670320046036,
+          "n_s": 0.980943481602
+        },
+        {
+          "P_R": 2.08463738725e-09,
+          "alpha_s": 0.00954218146992,
+          "beta_s": 0.0010458841987,
+          "k_mpc_inverse": 0.0370409110341,
+          "k_over_k_pivot": 0.740818220682,
+          "n_s": 0.981879748521
+        },
+        {
+          "P_R": 2.08088417015e-09,
+          "alpha_s": 0.00972739210264,
+          "beta_s": -0.00429630382251,
+          "k_mpc_inverse": 0.0409365376539,
+          "k_over_k_pivot": 0.818730753078,
+          "n_s": 0.982852707696
+        },
+        {
+          "P_R": 2.07747269862e-09,
+          "alpha_s": 0.00848817071188,
+          "beta_s": -0.00888664620982,
+          "k_mpc_inverse": 0.0452418709018,
+          "k_over_k_pivot": 0.904837418036,
+          "n_s": 0.983751106272
+        },
+        {
+          "P_R": 2.07413493312e-09,
+          "alpha_s": 0.0068340215232,
+          "beta_s": -0.0248980011252,
+          "k_mpc_inverse": 0.05,
+          "k_over_k_pivot": 1.0,
+          "n_s": 0.98459227332
+        },
+        {
+          "P_R": 2.07104963079e-09,
+          "alpha_s": 0.00435609878405,
+          "beta_s": -0.0357019267719,
+          "k_mpc_inverse": 0.0552585459038,
+          "k_over_k_pivot": 1.10517091808,
+          "n_s": 0.985180799496
+        },
+        {
+          "P_R": 2.06801085722e-09,
+          "alpha_s": 0.000864817525716,
+          "beta_s": -0.029707896207,
+          "k_mpc_inverse": 0.061070137908,
+          "k_over_k_pivot": 1.22140275816,
+          "n_s": 0.985339035782
+        },
+        {
+          "P_R": 2.0649554104e-09,
+          "alpha_s": -0.00264315566036,
+          "beta_s": -0.0422121587675,
+          "k_mpc_inverse": 0.0674929403788,
+          "k_over_k_pivot": 1.34985880758,
+          "n_s": 0.985277183021
+        },
+        {
+          "P_R": 2.06186721143e-09,
+          "alpha_s": -0.00800258295745,
+          "beta_s": -0.0549501015111,
+          "k_mpc_inverse": 0.0745912348821,
+          "k_over_k_pivot": 1.49182469764,
+          "n_s": 0.984750637418
+        },
+        {
+          "P_R": 2.05864363914e-09,
+          "alpha_s": -0.0147397333505,
+          "beta_s": -0.084725213215,
+          "k_mpc_inverse": 0.082436063535,
+          "k_over_k_pivot": 1.6487212707,
+          "n_s": 0.983748603794
+        },
+        {
+          "P_R": 2.05512727825e-09,
+          "alpha_s": -0.0243621733642,
+          "beta_s": -0.105222069386,
+          "k_mpc_inverse": 0.0911059400195,
+          "k_over_k_pivot": 1.82211880039,
+          "n_s": 0.981894184254
+        },
+        {
+          "P_R": 2.0511197986e-09,
+          "alpha_s": -0.0347916412981,
+          "beta_s": -0.103054402237,
+          "k_mpc_inverse": 0.100687635374,
+          "k_over_k_pivot": 2.01375270747,
+          "n_s": 0.978954886556
+        },
+        {
+          "P_R": 2.04643072026e-09,
+          "alpha_s": -0.0440448219349,
+          "beta_s": -0.0816404838481,
+          "k_mpc_inverse": 0.111277046425,
+          "k_over_k_pivot": 2.22554092849,
+          "n_s": 0.974996142303
+        },
+        {
+          "P_R": 2.04085309238e-09,
+          "alpha_s": -0.050297604662,
+          "beta_s": -0.0407866926329,
+          "k_mpc_inverse": 0.122980155558,
+          "k_over_k_pivot": 2.45960311116,
+          "n_s": 0.970228745895
+        },
+        {
+          "P_R": 2.03423736324e-09,
+          "alpha_s": -0.0517487012246,
+          "beta_s": 0.0163020586078,
+          "k_mpc_inverse": 0.135914091423,
+          "k_over_k_pivot": 2.71828182846,
+          "n_s": 0.965064541096
+        },
+        {
+          "P_R": 2.02664755291e-09,
+          "alpha_s": -0.0463266167397,
+          "beta_s": 0.0916816471106,
+          "k_mpc_inverse": 0.150208301197,
+          "k_over_k_pivot": 3.00416602395,
+          "n_s": 0.96005150311
+        },
+        {
+          "P_R": 2.01813568829e-09,
+          "alpha_s": -0.0309278841849,
+          "beta_s": 0.197130235275,
+          "k_mpc_inverse": 0.166005846137,
+          "k_over_k_pivot": 3.32011692274,
+          "n_s": 0.955850034424
+        },
+        {
+          "P_R": 2.00899534953e-09,
+          "alpha_s": -0.00433191996046,
+          "beta_s": 0.311625334884,
+          "k_mpc_inverse": 0.183464833381,
+          "k_over_k_pivot": 3.66929666762,
+          "n_s": 0.953472332791
+        },
+        {
+          "P_R": 1.99967582403e-09,
+          "alpha_s": 0.028099250094,
+          "beta_s": 0.343190035123,
+          "k_mpc_inverse": 0.202759998342,
+          "k_over_k_pivot": 4.05519996684,
+          "n_s": 0.954225848064
+        },
+        {
+          "P_R": 1.99084012729e-09,
+          "alpha_s": 0.0527650962287,
+          "beta_s": 0.189618585783,
+          "k_mpc_inverse": 0.224084453517,
+          "k_over_k_pivot": 4.48168907034,
+          "n_s": 0.958710290566
+        },
+        {
+          "P_R": 1.98321388822e-09,
+          "alpha_s": 0.0537479707425,
+          "beta_s": -0.125145893328,
+          "k_mpc_inverse": 0.24765162122,
+          "k_over_k_pivot": 4.9530324244,
+          "n_s": 0.9654464162
+        },
+        {
+          "P_R": 1.97700664734e-09,
+          "alpha_s": 0.0284419494394,
+          "beta_s": -0.399457951848,
+          "k_mpc_inverse": 0.273697369586,
+          "k_over_k_pivot": 5.47394739173,
+          "n_s": 0.970941544752
+        },
+        {
+          "P_R": 1.97160859374e-09,
+          "alpha_s": -0.00762005328338,
+          "beta_s": -0.398236507827,
+          "k_mpc_inverse": 0.302482373221,
+          "k_over_k_pivot": 6.04964746441,
+          "n_s": 0.971958771019
+        },
+        {
+          "P_R": 1.96592075547e-09,
+          "alpha_s": -0.0322727879535,
+          "beta_s": -0.128425994604,
+          "k_mpc_inverse": 0.334294722114,
+          "k_over_k_pivot": 6.68589444228,
+          "n_s": 0.968557209849
+        },
+        {
+          "P_R": 1.95916563483e-09,
+          "alpha_s": -0.030022222759,
+          "beta_s": 0.20104920281,
+          "k_mpc_inverse": 0.369452804947,
+          "k_over_k_pivot": 7.38905609893,
+          "n_s": 0.963745885635
+        },
+        {
+          "P_R": 1.95165222674e-09,
+          "alpha_s": -0.00612260012039,
+          "beta_s": 0.257791217465,
+          "k_mpc_inverse": 0.408308495628,
+          "k_over_k_pivot": 8.16616991257,
+          "n_s": 0.961891359479
+        },
+        {
+          "P_R": 1.94419248402e-09,
+          "alpha_s": 0.0177056142351,
+          "beta_s": 0.199621037149,
+          "k_mpc_inverse": 0.451250674972,
+          "k_over_k_pivot": 9.02501349943,
+          "n_s": 0.962518985335
+        },
+        {
+          "P_R": 1.93720376339e-09,
+          "alpha_s": 0.0299712008103,
+          "beta_s": 0.02653866186,
+          "k_mpc_inverse": 0.498709122741,
+          "k_over_k_pivot": 9.97418245481,
+          "n_s": 0.9650470614
+        },
+        {
+          "P_R": 1.93090327186e-09,
+          "alpha_s": 0.019182940108,
+          "beta_s": -0.261455908401,
+          "k_mpc_inverse": 0.551158819032,
+          "k_over_k_pivot": 11.0231763806,
+          "n_s": 0.967744763921
+        },
+        {
+          "P_R": 1.92457879586e-09,
+          "alpha_s": -0.0261503873689,
+          "beta_s": -0.664362673634,
+          "k_mpc_inverse": 0.609124698035,
+          "k_over_k_pivot": 12.1824939607,
+          "n_s": 0.967732147196
+        }
+      ],
+      "derivative_method_check": {
+        "max_abs_difference_from_main": 0.0142041874628,
+        "narrow_half_width_0p4": {
+          "alpha_s": 0.00749252243434,
+          "beta_s": -0.039102188588,
+          "n_s": 0.984676397345
+        },
+        "wide_half_width_0p6": {
+          "alpha_s": 0.00661606171984,
+          "beta_s": -0.0204224685249,
+          "n_s": 0.984552016478
+        }
+      },
+      "flow_map_q": 0.5,
+      "map_id": "diffusive_xi_exact_width",
+      "numerics": {
+        "max_wronskian_abs_error_at_c_s_k_over_aH_1": 1.55765059628e-07,
+        "ode_function_evaluations": 239376
+      },
+      "pivot_observables": {
+        "alpha_s": 0.0068340215232,
+        "beta_s": -0.0248980011252,
+        "n_s": 0.98459227332
+      },
+      "pivot_state": {
+        "P_R_at_pivot": 2.07413493312e-09,
+        "c_s": 1.00294686362,
+        "d_s": 3.45675,
+        "k_code_at_sound_horizon_exit": 0.997061794867
+      }
+    },
+    "tight_tolerance_centered_result": {
+      "absolute_difference_from_production": {
+        "alpha_s": 2.1257692278e-06,
+        "beta_s": 7.24567841086e-05,
+        "n_s": 7.75968261313e-07
+      },
+      "pivot_observables": {
+        "alpha_s": 0.00683614729243,
+        "beta_s": -0.0248255443411,
+        "n_s": 0.984591497352
+      }
+    },
+    "transition_placement_scan": {
+      "alpha_s": {
+        "max": 0.00773016028879,
+        "min": -0.0518959933432,
+        "width": 0.059626153632
+      },
+      "alpha_s_sign_class": "mixed",
+      "beta_s": {
+        "max": 0.106900895068,
+        "min": -0.0248980011252,
+        "width": 0.131798896193
+      },
+      "historical_band_status": "not rederived; placement choices enter, overshoot, and leave the historical band",
+      "historical_negative_alpha_band": [
+        -0.02,
+        -0.005
+      ],
+      "n_s": {
+        "max": 0.98459227332,
+        "min": 0.96516692275,
+        "width": 0.0194253505703
+      },
+      "nonzero_abs_alpha_spread_ratio": 8.54895989679,
+      "only_free_identifiability_coordinate_scanned": "delta N: d_s transition center relative to k_pivot",
+      "rows": [
+        {
+          "center_offset_efolds": -2.0,
+          "derivative_method_check": {
+            "max_abs_difference_from_main": 0.0639261968381,
+            "narrow_half_width_0p4": {
+              "alpha_s": -0.0431264218864,
+              "beta_s": 0.170827091906,
+              "n_s": 0.964788321088
+            },
+            "wide_half_width_0p6": {
+              "alpha_s": -0.0221442292052,
+              "beta_s": 0.0647273616113,
+              "n_s": 0.965546268276
+            }
+          },
+          "pivot_observables": {
+            "alpha_s": -0.0339685328415,
+            "beta_s": 0.106900895068,
+            "n_s": 0.96516692275
+          },
+          "pivot_state": {
+            "P_R_at_pivot": 2.10110438707e-09,
+            "c_s": 1.00000462249,
+            "d_s": 4.0215,
+            "k_code_at_sound_horizon_exit": 0.999995377532
+          }
+        },
+        {
+          "center_offset_efolds": -1.0,
+          "derivative_method_check": {
+            "max_abs_difference_from_main": 0.00118750120358,
+            "narrow_half_width_0p4": {
+              "alpha_s": -0.052095584075,
+              "beta_s": 0.00600598622812,
+              "n_s": 0.965802365271
+            },
+            "wide_half_width_0p6": {
+              "alpha_s": -0.0515516047729,
+              "beta_s": 0.00801773041137,
+              "n_s": 0.965786802286
+            }
+          },
+          "pivot_observables": {
+            "alpha_s": -0.0518959933432,
+            "beta_s": 0.00683022920779,
+            "n_s": 0.965797483707
+          },
+          "pivot_state": {
+            "P_R_at_pivot": 2.1064764674e-09,
+            "c_s": 1.00000462249,
+            "d_s": 4.0215,
+            "k_code_at_sound_horizon_exit": 0.999995377532
+          }
+        },
+        {
+          "center_offset_efolds": 0.0,
+          "derivative_method_check": {
+            "max_abs_difference_from_main": 0.0142041874628,
+            "narrow_half_width_0p4": {
+              "alpha_s": 0.00749252243434,
+              "beta_s": -0.039102188588,
+              "n_s": 0.984676397345
+            },
+            "wide_half_width_0p6": {
+              "alpha_s": 0.00661606171984,
+              "beta_s": -0.0204224685249,
+              "n_s": 0.984552016478
+            }
+          },
+          "pivot_observables": {
+            "alpha_s": 0.0068340215232,
+            "beta_s": -0.0248980011252,
+            "n_s": 0.98459227332
+          },
+          "pivot_state": {
+            "P_R_at_pivot": 2.07413493312e-09,
+            "c_s": 1.00294686362,
+            "d_s": 3.45675,
+            "k_code_at_sound_horizon_exit": 0.997061794867
+          }
+        },
+        {
+          "center_offset_efolds": 1.0,
+          "derivative_method_check": {
+            "max_abs_difference_from_main": 0.0126226704379,
+            "narrow_half_width_0p4": {
+              "alpha_s": 0.0055910260699,
+              "beta_s": -0.0149417683021,
+              "n_s": 0.975499487286
+            },
+            "wide_half_width_0p6": {
+              "alpha_s": 0.00856755994907,
+              "beta_s": -0.00407818729317,
+              "n_s": 0.975440552549
+            }
+          },
+          "pivot_observables": {
+            "alpha_s": 0.00773016028879,
+            "beta_s": -0.00231909786415,
+            "n_s": 0.975424729765
+          },
+          "pivot_state": {
+            "P_R_at_pivot": 2.04415769175e-09,
+            "c_s": 1.00896507579,
+            "d_s": 3.05103940659,
+            "k_code_at_sound_horizon_exit": 0.991114582653
+          }
+        },
+        {
+          "center_offset_efolds": 2.0,
+          "derivative_method_check": {
+            "max_abs_difference_from_main": 0.000810929254941,
+            "narrow_half_width_0p4": {
+              "alpha_s": 0.00620720442966,
+              "beta_s": -0.00611480214005,
+              "n_s": 0.969807705138
+            },
+            "wide_half_width_0p6": {
+              "alpha_s": 0.00584283200188,
+              "beta_s": -0.00750650514503,
+              "n_s": 0.969818438963
+            }
+          },
+          "pivot_observables": {
+            "alpha_s": 0.00607044529039,
+            "beta_s": -0.00669557589009,
+            "n_s": 0.969811144759
+          },
+          "pivot_state": {
+            "P_R_at_pivot": 2.03010981132e-09,
+            "c_s": 1.0113348705,
+            "d_s": 2.93233384692,
+            "k_code_at_sound_horizon_exit": 0.988792168815
+          }
+        }
+      ]
+    }
+  },
+  "schema_version": "r2-flow-clock-selection-v1",
+  "scope": "Theory-identifiability audit in toy units; not an observational fit, physical calibration, P2 result, or manuscript claim.",
+  "units_and_normalizations": {
+    "a": "dimensionless after division by its value at the d_s-flow center",
+    "cmb_pivot_placement": "unfixed; represented only by delta N in {-2,-1,0,1,2}",
+    "q_definition": "q=d ln(a)/d ln(tau)",
+    "t_flow": "heat-flow units; dimension length^2 relative to the kernel-label coordinate",
+    "tau": "physical time only after an assumed fixed conversion tau=T_unit*t_flow; T_unit is not calibrated",
+    "xi": "kernel-label length units"
+  }
+}

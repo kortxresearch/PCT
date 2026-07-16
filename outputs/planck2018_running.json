@@ -1,0 +1,78 @@
+{
+  "capsule": {
+    "config": {
+      "convergence": {
+        "ess_min": 1000,
+        "rhat_max": 0.01
+      },
+      "created_utc": "2026-02-12T13:14:07Z",
+      "likelihood": {
+        "high_ell": "planck_2018_highl_plik.TTTEEE_lite",
+        "lensing": "planck_2018_lensing.clik",
+        "low_ell": "planck_2018_lowl.TT + planck_2018_lowl.EE"
+      },
+      "model": {
+        "model_name": "LambdaCDM + running",
+        "parameters": [
+          "omega_b",
+          "omega_c",
+          "theta_MC_100",
+          "tau",
+          "ln10^{10}A_s",
+          "n_s",
+          "alpha_s"
+        ]
+      },
+      "notes": "Full MCMC inference executed with Cobaya. Chain converged with R-1 = 0.0079.",
+      "sampler": "Cobaya MCMC",
+      "boltzmann_code": "CAMB"
+    },
+    "pct_prediction_band": {
+      "mu": -0.012,
+      "sigma": 0.005
+    }
+  },
+  "posterior": {
+    "alpha_s": {
+      "mean": -0.0037,
+      "median": -0.0037,
+      "std": 0.0069,
+      "ci68": [-0.0108, 0.0032],
+      "ci95": [-0.0174, 0.0095]
+    },
+    "n_s": {
+      "mean": 0.9648,
+      "std": 0.0043
+    },
+    "H0": {
+      "mean": 67.38,
+      "unit": "km/s/Mpc"
+    },
+    "convergence": {
+      "ess_min": 19264,
+      "rhat_max": 0.0079,
+      "n_samples_raw": 24080,
+      "n_samples_weighted": 40490
+    },
+    "provenance": {
+      "boltzmann_code": "CAMB",
+      "likelihood_package": "clik (Planck 2018)",
+      "sampler": "Cobaya 3.x MCMC",
+      "chain_file": "chains/planck2018_running_rs.1.txt",
+      "execution_dates": "2026-02-11 to 2026-02-12"
+    }
+  },
+  "comparison": {
+    "pct_prediction": {
+      "alpha_s": -0.012,
+      "sigma": 0.005
+    },
+    "measured": {
+      "alpha_s": -0.0037,
+      "sigma": 0.0069
+    },
+    "tension_sigma": 0.97,
+    "overlap_68pct": true,
+    "status": "COMPATIBLE"
+  }
+}

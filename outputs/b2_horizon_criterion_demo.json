@@ -1,0 +1,135 @@
+{
+  "all_fixed_threshold_checks_pass": true,
+  "constraint_midpoint_refinement": [
+    {
+      "abs_error_against_analytic": 0.00390625,
+      "bracket_r_high": 1.28125,
+      "bracket_r_low": 1.21875,
+      "linear_interpolant_radius": 1.25390625,
+      "points": 80,
+      "spacing": 0.0625,
+      "status": "bracketed interior crossing"
+    },
+    {
+      "abs_error_against_analytic": 0.0009765625,
+      "bracket_r_high": 1.265625,
+      "bracket_r_low": 1.234375,
+      "linear_interpolant_radius": 1.2509765625,
+      "points": 160,
+      "spacing": 0.03125,
+      "status": "bracketed interior crossing"
+    },
+    {
+      "abs_error_against_analytic": 0.000244140625,
+      "bracket_r_high": 1.2578125,
+      "bracket_r_low": 1.2421875,
+      "linear_interpolant_radius": 1.250244140625,
+      "points": 320,
+      "spacing": 0.015625,
+      "status": "bracketed interior crossing"
+    },
+    {
+      "abs_error_against_analytic": 6.103515625e-05,
+      "bracket_r_high": 1.25390625,
+      "bracket_r_low": 1.24609375,
+      "linear_interpolant_radius": 1.25006103515625,
+      "points": 640,
+      "spacing": 0.0078125,
+      "status": "bracketed interior crossing"
+    },
+    {
+      "abs_error_against_analytic": 1.52587890625e-05,
+      "bracket_r_high": 1.251953125,
+      "bracket_r_low": 1.248046875,
+      "linear_interpolant_radius": 1.2500152587890625,
+      "points": 1280,
+      "spacing": 0.00390625,
+      "status": "bracketed interior crossing"
+    },
+    {
+      "abs_error_against_analytic": 3.814697265625e-06,
+      "bracket_r_high": 1.2509765625,
+      "bracket_r_low": 1.2490234375,
+      "linear_interpolant_radius": 1.2500038146972656,
+      "points": 2560,
+      "spacing": 0.001953125,
+      "status": "bracketed interior crossing"
+    }
+  ],
+  "fixed_label_grid_locator": {
+    "abs_error_against_analytic": 0.00054931640625,
+    "bracket_r_high": 1.25390625,
+    "bracket_r_low": 1.21484375,
+    "linear_interpolant_radius": 1.25054931640625,
+    "points": 128,
+    "spacing": 0.0390625,
+    "status": "bracketed interior crossing"
+  },
+  "fixed_physical_threshold": {
+    "analytic_radius_over_r_H": 1.25,
+    "bisection_abs_error": 0.0,
+    "bisection_radius_over_r_H": 1.25,
+    "dimensionless_profile_derivative_at_surface": -16.0,
+    "profile_residual_at_bisection": 8.881784197001252e-16,
+    "rho_crit_over_rho_0": 5.0,
+    "unique_surface": true
+  },
+  "purpose": "Executed P5 illustration: locate the principal-symbol critical surface on the frozen T1 profile.",
+  "scope": "This is a level-set and principal-symbol illustration only. It does not establish a global event horizon, an interior Lorentzian extension, or a matter-coupling law.",
+  "status_ledger": {
+    "assumed": [
+      "principal-symbol collapse occurs at the chosen critical density",
+      "the continued local Lorentzian principal-symbol description is admissible outside the surface"
+    ],
+    "derived": [
+      "the profile is strictly decreasing for r>r_H",
+      "r_critical/r_H = q/(q-1) when q=rho_crit/rho_0>1",
+      "q=5 gives r_critical/r_H=1.25"
+    ],
+    "locked": [
+      "r_H=1, R=6 r_H, rho_crit/rho_0=5, midpoint grids, M=128 fixed labels",
+      "rho_bar/rho_0 = 1/(1-r_H/r) from t1_horizon_profile_spec.md"
+    ]
+  },
+  "v56_threshold_scaling_diagnostic": {
+    "rows": [
+      {
+        "N": 80,
+        "analytic_radius_over_r_H": 1.25,
+        "scaled_rho_crit_over_rho_0": 5.0,
+        "status": "one interior critical surface"
+      },
+      {
+        "N": 160,
+        "analytic_radius_over_r_H": 1.6666666666666667,
+        "scaled_rho_crit_over_rho_0": 2.5,
+        "status": "one interior critical surface"
+      },
+      {
+        "N": 320,
+        "analytic_radius_over_r_H": 5.0,
+        "scaled_rho_crit_over_rho_0": 1.25,
+        "status": "one interior critical surface"
+      },
+      {
+        "N": 640,
+        "analytic_radius_over_r_H": null,
+        "scaled_rho_crit_over_rho_0": 0.625,
+        "status": "no crossing; whole T1 domain is above the scaled threshold"
+      },
+      {
+        "N": 1280,
+        "analytic_radius_over_r_H": null,
+        "scaled_rho_crit_over_rho_0": 0.3125,
+        "status": "no crossing; whole T1 domain is above the scaled threshold"
+      },
+      {
+        "N": 2560,
+        "analytic_radius_over_r_H": null,
+        "scaled_rho_crit_over_rho_0": 0.15625,
+        "status": "no crossing; whole T1 domain is above the scaled threshold"
+      }
+    ],
+    "warning": "The scaled rho_crit column is a provenance diagnostic, not one fixed physical criterion: its surface moves with N and disappears from the domain by N=640."
+  }
+}

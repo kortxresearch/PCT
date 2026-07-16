@@ -1,0 +1,56 @@
+{
+  "purpose": "P9 PiSR pilot: constrained dynamics selection (spec frozen; see p9_freeze_manifest.json).",
+  "seed_kernel": "Laplace profile (PSD, non-Gaussian)",
+  "rows": [
+    {
+      "flow": "P m=1.0",
+      "family": "P",
+      "param": 1.0,
+      "T1a_profile_positivity": true,
+      "min_profile_rel": 0.0,
+      "T1b_bochner_psd": true,
+      "min_spectrum_rel": -1.5857750230031247e-15,
+      "T1c_mass_conservation": true,
+      "mass_err_max": 2.0839003253016254e-07,
+      "T2_entropy_monotone": true,
+      "admissible": true,
+      "C2_clock_exponent_p": 0.49839223492817336,
+      "C2_eps_H": 2.006451806264832,
+      "C1_gauss_shape_distance": 0.00012625105446648744,
+      "audit_delta_aic_smooth_minus_step": -56.162298800331854,
+      "audit_step_preferred": false,
+      "validity_eps_matches_analytic": true
+    },
+    {
+      "flow": "S a=2.0",
+      "family": "S",
+      "param": 2.0,
+      "T1a_profile_positivity": true,
+      "min_profile_rel": -3.319536286484479e-16,
+      "T1b_bochner_psd": true,
+      "min_spectrum_rel": -2.601568349312151e-16,
+      "T1c_mass_conservation": true,
+      "mass_err_max": 4.662010481967375e-15,
+      "T2_entropy_monotone": true,
+      "admissible": true,
+      "C2_clock_exponent_p": 0.5001004794628295,
+      "C2_eps_H": 1.9995981629014334,
+      "C1_gauss_shape_distance": 1.3845107210752605e-05,
+      "audit_delta_aic_smooth_minus_step": -54.30277073572342,
+      "audit_step_preferred": false,
+      "validity_eps_matches_analytic": true
+    }
+  ],
+  "heat_flow_crosscheck_eps2": true,
+  "admissible_flows": [
+    "P m=1.0",
+    "S a=2.0"
+  ],
+  "pareto_front": [
+    "S a=2.0"
+  ],
+  "dominant_winner": "S a=2.0",
+  "flows_satisfying_BOTH_register_and_inflation_clock": [],
+  "resurrection_audit_triggers": [],
+  "headline": "Within the scanned families, register-consistency (Gaussian fixed point) and an inflation-compatible derived clock (eps_H < 0.1) are NOT jointly achievable: the two criteria pull in opposite directions (C1 selects alpha=2/m=1; C2 selects small alpha), and no scanned flow satisfies both."
+}

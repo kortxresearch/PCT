@@ -1,0 +1,19 @@
+{
+  "computed": {
+    "cosmological_ds_minus_4": 0.0,
+    "cosmological_fractional_speed_shift": 0.0,
+    "local_threshold_fractional_shift_if_ds_changes_by_delta": 0.006221645563242673,
+    "local_threshold_shift_is_cumulative_propagation_prediction": false,
+    "passes_gw170817_bound": true
+  },
+  "conclusion": "Within the locked assumptions, PCT predicts no cumulative cosmological GW propagation delay and therefore passes the GW170817-style speed constraint by construction.",
+  "falsification_rule": "A robust cumulative GW dispersion signal on propagation paths for which the locked instantiation requires d_s=4 would falsify this null statement, provided source and detector systematics are ruled out.",
+  "inputs": {
+    "alpha_pct": 0.02,
+    "delta_ds_local_threshold_example": 0.79,
+    "gw170817_speed_bound_abs": 1e-15
+  },
+  "locked_dispersion_form": "omega^2 = c^2 k^2 [1 + alpha_PCT (d_s-4)^2]",
+  "premise": "The locked dispersion correction is active only where the local spectral dimension differs from four, such as the near-horizon threshold region.  Ordinary cosmological propagation paths have d_s=4 in this locked account.",
+  "purpose": "NP-6 propagation null test."
+}

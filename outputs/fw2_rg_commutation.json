@@ -1,0 +1,81 @@
+{
+  "purpose": "FW-2/P8: RG behaviour of the postulated emergence dynamics.",
+  "locked_diffusivity_D": 0.1225,
+  "E1_gaussian_coarse_graining_commutator": [
+    {
+      "t": 0.5,
+      "b": 0.2,
+      "commutator_sup": 2.220446049250313e-16
+    },
+    {
+      "t": 0.5,
+      "b": 0.7,
+      "commutator_sup": 1.1102230246251565e-16
+    },
+    {
+      "t": 0.5,
+      "b": 1.5,
+      "commutator_sup": 1.1102230246251565e-16
+    },
+    {
+      "t": 2.0,
+      "b": 0.2,
+      "commutator_sup": 2.220446049250313e-16
+    },
+    {
+      "t": 2.0,
+      "b": 0.7,
+      "commutator_sup": 1.1102230246251565e-16
+    },
+    {
+      "t": 2.0,
+      "b": 1.5,
+      "commutator_sup": 8.326672684688674e-17
+    },
+    {
+      "t": 8.0,
+      "b": 0.2,
+      "commutator_sup": 1.1102230246251565e-16
+    },
+    {
+      "t": 8.0,
+      "b": 0.7,
+      "commutator_sup": 1.1102230246251565e-16
+    },
+    {
+      "t": 8.0,
+      "b": 1.5,
+      "commutator_sup": 1.1102230246251565e-16
+    }
+  ],
+  "E1_max_commutator": 2.220446049250313e-16,
+  "E1_machine_zero": true,
+  "E2_decimation_commutator_by_grid": [
+    {
+      "grid": 1024,
+      "commutator_sup": 0.00019967775412488287
+    },
+    {
+      "grid": 2048,
+      "commutator_sup": 2.4867781925563825e-05
+    },
+    {
+      "grid": 4096,
+      "commutator_sup": 3.105585194118632e-06
+    }
+  ],
+  "E2_contracts_under_refinement": true,
+  "E3_rescaled_flow_shape_distance": [
+    0.411307,
+    0.189989,
+    0.125802,
+    0.091606,
+    0.070484,
+    0.056284,
+    0.046172,
+    0.038673,
+    0.032931
+  ],
+  "E3_monotone_to_gaussian": true,
+  "reading": "E1: the emergence flow commutes with Gaussian coarse-graining to machine precision (exact theorem verified). E2: block decimation gives a nonzero commutator that contracts under grid refinement, so the discretised practice converges to the exact statement. E3: the rescaled flow is an RG trajectory into the Gaussian fixed point -- the CLT attractor and the RG fixed point are the same object, measured."
+}

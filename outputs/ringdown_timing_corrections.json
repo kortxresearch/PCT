@@ -1,0 +1,36 @@
+{
+  "conclusion": "With the (1+z) factor retained, the non-spinning GW150914 timing is 0.532 ms, not 0.489 ms. Using the spin-scaled horizon law with a_*=0.67 gives t_c/M=1.393 and 0.463 ms. The old 50M SNR estimate is not consistent with the locked t_c/M~1.6 timing; the same representative formula gives SNR~0.39*sqrt(N), not 0.16*sqrt(N).",
+  "inputs": {
+    "GMsun_over_c3_s": 4.925490947e-06,
+    "final_spin": 0.67,
+    "final_spin_sigma": 0.03,
+    "kappa": 0.8,
+    "kappa_sigma": 0.05,
+    "mass_sigma_msun": 2.5,
+    "mass_source_msun": 62.0,
+    "redshift": 0.09
+  },
+  "purpose": "Correct C3/C4 for v4 draft; no author decision is made here.",
+  "representative_snr_forecast": {
+    "T_obs_over_M": 55.0,
+    "epsilon0": 0.02,
+    "formula": "epsilon0*rho*sqrt(tau_d/T_obs)*exp(-t_c/tau_d)",
+    "nonspinning_stack_law": "SNR_stack ~= 0.389*sqrt(N)",
+    "nonspinning_tc_1p6M_snr": 0.38853126315716885,
+    "old_restoration_snr": 0.1611561286116532,
+    "old_restoration_tc_over_M": 50.0,
+    "rho": 20.0,
+    "spin_scaled_stack_law": "SNR_stack ~= 0.390*sqrt(N)",
+    "spin_scaled_tc_at_a_0p67_snr": 0.38999000592169164,
+    "tau_d_over_M": 55.0
+  },
+  "timing": {
+    "nonspinning_detector_frame_ms_sigma_from_kappa_and_mass": 0.03961275805415693,
+    "nonspinning_detector_frame_ms_with_1_plus_z": 0.5325834851172161,
+    "nonspinning_source_frame_ms_no_redshift": 0.4886087019424,
+    "nonspinning_tc_over_M": 1.6,
+    "spin_scaled_detector_frame_ms_at_a_0p67": 0.46397637298435807,
+    "spin_scaled_law": "t_c/M = kappa*(1 + sqrt(1-a_*^2))",
+    "spin_scaled_tc_over_M_at_a_0p67": 1.393888878494959
+  }
+}

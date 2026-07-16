@@ -1,0 +1,31 @@
+{
+  "input": {
+    "date_col": "date",
+    "n_loaded": 120,
+    "path": ".\\data\\gw_synth_monthly.csv",
+    "value_col": "value"
+  },
+  "params": {
+    "max_cps": 3,
+    "min_segment_size": 12,
+    "select": "bic"
+  },
+  "result": {
+    "breakpoint_dates": [
+      "2020-01-01"
+    ],
+    "breakpoints": [
+      60
+    ],
+    "n": 120,
+    "segment_means": [
+      10.110333333333331,
+      12.231499999999999
+    ],
+    "segment_sse": [
+      0.5073933333333116,
+      0.7943649999961053
+    ],
+    "total_sse": 1.301758333329417
+  }
+}

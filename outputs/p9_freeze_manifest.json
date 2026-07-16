@@ -1,0 +1,8 @@
+﻿{
+    "script_sha256":  "cf52eca1020e172743e03c3d6767bbf3541400e32353a60d20098ac51aef5170",
+    "scan_output_existed_at_freeze":  false,
+    "smoke_output_declared":  "outputs/p9_pisr_pilot_smoke.json",
+    "purpose":  "P9 PiSR pilot freeze manifest",
+    "frozen_before_scan":  true,
+    "spec_sha256":  "5a1277a9dfe0f564a0107c4f1f243ab7d29f88415714262b07cb90ba3f607e88"
+}
