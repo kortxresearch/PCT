@@ -1,0 +1,23 @@
+Repository: https://github.com/kortxresearch/PCT
+Publication date: 2026-07-16
+Branch: main
+
+Previous remote state:
+- Commit: 12a7b97497f7cbe0896f57f9a2b187f9c51b034e
+- Verified again on 2026-07-16.
+- The previous main branch contained only LICENSE, README.md, and a deprecated plain-text manuscript export.
+
+Published v4 content:
+- Canonical article source: PCT_FoP_v4_submission.tex
+- Compiled article: PCT_FoP_v4_submission.pdf
+- Cover-letter source and PDF
+- Executable capsules, configurations, data, outputs, chains, and bundled Planck/CAMB support material
+- Deterministic checksum manifest: outputs/sha256SUMS.txt
+- Archived release: https://doi.org/10.5281/zenodo.21396416
+
+Publication policy:
+- The deprecated plain-text manuscript export is intentionally not published.
+- The LaTeX source and compiled PDF are the canonical public manuscript copies.
+- Historical execution dates and upstream version strings remain unchanged where they are provenance.
+
+Content snapshot commit: 8aa95ac689ba3a8c849f9de09ecd8760651dd016

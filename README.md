@@ -1,8 +1,8 @@
 # Projective Correlation Theory (PCT)
 
-Reproducibility package for the manuscript **“Projective Correlation Theory: A Pregeometric Correlator Framework for Emergent Spacetime Observables”** (Foundations of Physics resubmission).
+Reproducibility package for the manuscript **“Projective Correlation Theory: A Pregeometric Correlator Framework for Emergent Spacetime Observables”** (submitted to Foundations of Physics on 2026-07-17 and currently under review).
 
-[Manuscript PDF](PCT_FoP_v4_submission.pdf) · [LaTeX source](PCT_FoP_v4_submission.tex) · [Zenodo DOI 10.5281/zenodo.21396416](https://doi.org/10.5281/zenodo.21396416) · [OSF project](https://osf.io/9vc3x) · [OSF DOI 10.17605/OSF.IO/F4WTD](https://doi.org/10.17605/OSF.IO/F4WTD)
+[Manuscript PDF](PCT_FoP_submission.pdf) · [LaTeX source](PCT_FoP_submission.tex) · [Zenodo DOI 10.5281/zenodo.21396416](https://doi.org/10.5281/zenodo.21396416) · [Current OSF project](https://osf.io/7skhc/) · [Legacy OSF DOI 10.17605/OSF.IO/F4WTD](https://doi.org/10.17605/OSF.IO/F4WTD)
 
 ## Scope
 
@@ -37,7 +37,7 @@ See [README/README_EXECUTION.md](README/README_EXECUTION.md) for individual comm
 
 | Path | Contents |
 |---|---|
-| `PCT_FoP_v4_submission.tex`, `.pdf` | Canonical public manuscript source and compiled article. |
+| `PCT_FoP_submission.tex`, `.pdf` | Canonical public manuscript source and compiled article. |
 | `pct_ds.py`, `gw_change_point_runner.py` | Spectral-dimension toy chain and synthetic change-point checks. |
 | `planck2018_running_inference.py`, `planck_running.yaml` | Planck running scaffold/configuration and result serialization. |
 | `lvk_ringdown_end_to_end.py`, `gw150914_pct_predictions.py` | Public-strain null control and posterior-derived parameter propagation. |
@@ -46,7 +46,7 @@ See [README/README_EXECUTION.md](README/README_EXECUTION.md) for individual comm
 | `chains/` | Planck chain and configuration artifacts. |
 | `outputs/` | Executed results and `sha256SUMS.txt`. |
 | `packages/` | Bundled CAMB/Planck support tree retained for reproducibility. |
-| `MANUSCRIPT_ALIGNMENT.md` | Claim and release alignment notes. |
+| `README/DELIVERABLES.txt` | Capsule scope and status ledger. |
 
 Additional D/NP/P/T/FW scripts record derivation checks, forecasts, null tests, construction adjudications, and explicitly exploratory work. Their epistemic status is recorded in their JSON outputs and in the execution guide.
 
